@@ -20,6 +20,9 @@ public interface RegistrationMybatisRepository {
 	@Select("SELECT * FROM items WHERE item = #{item}")
 		public ArrayList<Item> selectItem(Item item);
 	
+	@Select("SELECT * FROM items WHERE section = #{setion}")
+		public ArrayList<Item> selectAllItemsBySection(Item item);
+	
 	@Insert("INSERT INTO users(username, department, name, password) VALUES (#{username}, #{department}, #{name}, #{password})")
 		public int registerAccount(UserAccount acount);
 	

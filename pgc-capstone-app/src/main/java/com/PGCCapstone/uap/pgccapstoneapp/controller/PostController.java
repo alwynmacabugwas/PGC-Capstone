@@ -38,6 +38,13 @@ public class PostController {
 		return items;
 	}
 	
+	@GetMapping("/item/bySection")
+	public ArrayList<Item> displayItemBySection(@RequestBody Item item) {
+		ArrayList<Item> items = new ArrayList<Item>();
+		items.addAll(registrationRepo.selectAllItemsBySection(item));
+		return items;
+	}
+	
 	@PostMapping("event/register/account")
 	public UserAccount registerAccount(@RequestBody UserAccount user) {
 		registrationRepo.registerAccount(user);
