@@ -1,5 +1,7 @@
 package com.PGCCapstone.uap.pgccapstoneapp.repository;
 
+import java.util.ArrayList;
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -12,11 +14,15 @@ public interface RegistrationMybatisRepository {
 	@Insert("INSERT INTO items(po_num, date, supplier, item, item_type, unit, quantity, price_per_unit, total_price, section, department, expiry_date) VALUES (#{po_num}, #{date}, #{supplier}, #{item}, #{item_type}, #{unit}, #{quantity}, #{price_per_unit}, #{total}, #{section}, #{department}, #{expiry_date})")
 			public int insertItem(Item item);
 	
-	@Select("SELECT all FROM items")
-		public Item selectAllItems();
+	@Select("SELECT * FROM items")
+		public ArrayList<Item> selectAllItems();
+	
+	@Select("SELECT * FROM items WHERE item = #{item}")
+		public ArrayList<Item> selectItem(Item item);
 	
 	@Insert("INSERT INTO users(username, department, name, password) VALUES (#{username}, #{department}, #{name}, #{password})")
 		public int registerAccount(UserAccount acount);
 	
-
+	@Select("SELECT * FROM users WHERE username = #{username}")
+		public UserAccount selectUser(UserAccount account);
 }

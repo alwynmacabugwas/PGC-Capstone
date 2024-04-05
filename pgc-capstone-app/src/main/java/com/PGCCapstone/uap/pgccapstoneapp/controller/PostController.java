@@ -1,5 +1,7 @@
 package com.PGCCapstone.uap.pgccapstoneapp.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,14 +25,28 @@ public class PostController {
 	}
 	
 	@GetMapping("/item")
-	public void displayItems() {
-		registrationRepo.selectAllItems();
+	public ArrayList<Item> displayItems() {
+		ArrayList<Item> items = new ArrayList<Item>();
+		items.addAll(registrationRepo.selectAllItems());
+		return items;
+	}
+	
+	@GetMapping("/item/itemName")
+	public ArrayList<Item> displayItem(@RequestBody Item item) {
+		ArrayList<Item> items = new ArrayList<Item>();
+		items.addAll(registrationRepo.selectItem(item));
+		return items;
 	}
 	
 	@PostMapping("event/register/account")
 	public UserAccount registerAccount(@RequestBody UserAccount user) {
 		registrationRepo.registerAccount(user);
 		return user;
-		
+	}
+	
+	@GetMapping("/account/passwordCheck")
+	public UserAccount checkPassword(@RequestBody UserAccount user) {
+		registrationRepo.selectUser(user);
+		return user;
 	}
 }
