@@ -1,0 +1,92 @@
+body {
+    font-family: 'Inter', extra-bold;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative; /* Ensure absolute positioning works */
+}
+
+body::before {
+    background-image: url("file:///C:/Users/Lenovo/Pictures/PGC BG.jpg");
+    content: '';
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    inset: 0;
+    opacity: 0.2; /* Set opacity */
+}
+
+h2 {
+    color: #1e1e1e; /* Change text color */
+    margin-bottom: 50px; /* Adjust bottom margin */
+    margin-top: 10px; /* Remove default margin */
+    text-align: center; /* Center the text */
+}
+
+
+.image-container {
+    position: absolute;
+    top: 200px;
+    left: 300px;
+    width: 200px; /* Adjust width */
+    height: 200px; /* Adjust height */
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    opacity: 1; /* Set opacity of the image */
+}
+
+.welcome-text {
+    position: absolute;
+    height: 500px;
+    width: 400px;
+    top: 120px; /* Adjust bottom position */
+    left: 150px; /* Adjust left position */
+    font-size: 100px; /* Adjust font size */
+    color: #1e1e1e; /* Adjust text color */
+    font-size: 80px; /* Adjust font size */
+    line-height: 120px;
+    font-weight: bold
+}
+
+form {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 50px rgba(0,0,0,0.1);
+    width: 500px;
+    height: 350px;
+    position: relative; /* Ensure it's on top of the background */
+    z-index: 1; /* Ensure it's on top of the background */
+    margin-left: 600px; /* Move form to the left */
+}
+input[type="text"], input[type="password"] {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #e1e1e1
+}
+input[type="submit"] {
+    background-color: #0076a9;
+    width: 100%;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
