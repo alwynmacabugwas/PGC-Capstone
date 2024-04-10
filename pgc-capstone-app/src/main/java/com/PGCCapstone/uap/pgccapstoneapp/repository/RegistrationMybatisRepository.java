@@ -2,9 +2,11 @@ package com.PGCCapstone.uap.pgccapstoneapp.repository;
 
 import java.util.ArrayList;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import com.PGCCapstone.uap.pgccapstoneapp.model.Item;
 import com.PGCCapstone.uap.pgccapstoneapp.model.UserAccount;
@@ -28,4 +30,10 @@ public interface RegistrationMybatisRepository {
 	
 	@Select("SELECT * FROM users WHERE username = #{username}")
 		public UserAccount selectUser(UserAccount account);
+	
+	@Delete("DELETE FROM items WHERE po_num = #{po_num}")
+		public void deleteItemByPoNum(Item item);
+	
+	@Update("UPDATE items SET quantity = #{quantity} WHERE po_num = #{po_num}")
+		public  void updateItemByPoNum(Item item);
 }
