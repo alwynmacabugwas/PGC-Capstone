@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <style>
+        body {
+            font-family: 'Inter', extra-bold;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            position: relative; /* Ensure absolute positioning works */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+        }
+
+        body::before {
+            background-image: url("file:///C:/Users/Lenovo/Pictures/PGC BG.jpg");
+            content: '';
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            inset: 0;
+            opacity: 0.2; /* Set opacity */
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #890000;
+            height: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding-top: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            padding: 10px;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .sidebar li:hover {
+            background-color: #1e1e1e;
+        }
+
+        .sidebar-content {
+            display: flex;
+            align-items: center; /* Center vertically */
+            padding-left: -30px; /* Adjust the amount of padding as needed */
+            margin-top: -15px;
+        }
+
+        .sidebar-content img {
+            width: 80px; /* Adjust the width of the image */
+            height: auto;
+            margin-right: 10px; /* Adjust the spacing between image and text */
+            vertical-align: middle; /* Align image vertically with text */
+            padding-left: 10px;
+        }
+
+        .home-div img,
+        .item-div img {
+            width: 24px; /* Adjust the width of the icons */
+            height: 24px; /* Adjust the height of the icons */
+            margin-right: 20px; /* Adjust the spacing between the icons and text */
+            vertical-align: middle; /* Align icons vertically with text */
+            margin-left: 12px;
+        }
+
+
+        h1{
+            font-size: 19px;
+            color: #e1e1e1;
+            font-weight: bold; /* Change weight to bold */
+        
+        }
+
+        .middle-logo {
+            position: absolute;
+            top: 125px;
+            left: 750px;
+        }
+        
+        .middle-logo img{
+        width: 250px; /* Adjust width */
+        height: 250px; /* Adjust height */ 
+        filter: drop-shadow(0px 0px 10px rgba(0,0,0,1));
+        }
+
+        .home-div{
+            margin-top: 100px;
+            
+        }
+
+        .item-div{
+            margin-top: 40px;
+            line-height: 2.5;
+        }
+
+        .middle-logo h2 {
+            font-size: 40px;
+            color: #1e1e1e; /* Adjust the color of the header text */
+            margin-top: 4%; /* Adjust the top margin */
+            margin-left: -500px; /* Adjust left margin */
+            text-align: center;
+        }
+
+        .middle-logo p {
+            font-size: 15px; /* Adjust font size of paragraph */
+            text-align: center; /* Center-align paragraph text */
+            margin-top: 35px; /* Adjust top margin */
+            margin-bottom: 30px; /* Adjust top margin */
+            margin-right: 50px; /* Adjust the value for desired indentation */
+            margin-left: -450px; /* Adjust the value for desired indentation */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-content">
+            <img src="C:\Users\Lenovo\Pictures\PGC logo.png" alt="Logo">
+            <h1>GOVERNMENT
+                OF CAVITE<br>
+                INVENTORY<br>
+            </h1>
+        </div>
+        <ul>
+            <div class = "item-div">
+
+                <li><img src="C:\Users\Lenovo\Pictures\home icon.png" alt="Home Icon">Home</li>
+   
+            <div class = "item-div">
+                <li><img src="C:\Users\Lenovo\Pictures\inventory icon.png" alt="Home Icon">Inventory</li>
+                <li><img src="C:\Users\Lenovo\Pictures\supplies icon.png" alt="Supplies Icon">Supplies</li>
+                <li><img src="C:\Users\Lenovo\Pictures\properties icon.png" alt="Properties Icon">Property</li>
+            </div> 
+        </ul>
+    </div>
+    <div class="middle-logo">
+        <img src="C:\Users\Lenovo\Pictures\PGC logo.png" alt="Logo">
+        <h2>Welcome to the Provincial Government of Cavite <br>
+            Inventory Asset Management System</h2>
+            <p>Our portal offers a centralized database of establishments and inventory items, ensuring transparency and accessibility. Users can easily access information 
+                <br>on the essential supplies and equipment across provincial departments.
+                <br>To ensure accuracy, please use correct spelling when searching for establishment names, product names, and other details. This helps maintain the integrity of the 
+                <br>database and ensures reliable information.
+                <br>Together, let's promote transparency and accountability in inventory management within PGC to ensure the availability of safe and quality commodities for Cavite residents.</p>
+    </div>
+</body>
+</html>
