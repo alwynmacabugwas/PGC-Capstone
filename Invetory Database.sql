@@ -18,7 +18,8 @@ CREATE TABLE PO (
     Place_of_delivery VARCHAR(255),
     Date_of_delivery DATE,
     Delivery_term VARCHAR(100),
-    Delivery_cost DECIMAL(10, 2)
+    Delivery_cost DECIMAL(10, 2),
+    INDEX (Supplier) -- Index added to Supplier column
 );
 
 CREATE TABLE Item (
@@ -26,7 +27,8 @@ CREATE TABLE Item (
     Item_Description TEXT,
     Unit VARCHAR(50),
     Unit_cost DECIMAL(10, 2),
-    Property_No INT
+    Property_No INT,
+    INDEX (Property_No) -- Index added to Property_No column
 );
 
 CREATE TABLE AIR (
@@ -50,6 +52,7 @@ CREATE TABLE AIR (
 
 CREATE TABLE BC (
     BC_No INT PRIMARY KEY,
+    Item_NO INT,
     Item_Info_Description TEXT,
     Stock_Location VARCHAR(100),
     BC_Date_1 DATE,
@@ -60,8 +63,9 @@ CREATE TABLE BC (
     Recipient VARCHAR(100),
     BC_Qty_2 INT,
     BC_Qty_3 INT,
+    INDEX (Supplier), -- Index added to Supplier column
     FOREIGN KEY (Supplier) REFERENCES PO(Supplier),
-	FOREIGN KEY (Item_No) REFERENCES Item(Item_No)
+    FOREIGN KEY (Item_No) REFERENCES Item(Item_No)
 );
 
 CREATE TABLE IIRUP (
@@ -80,7 +84,7 @@ CREATE TABLE IIRUP (
     Appraised_Value DECIMAL(10, 2),
     Disposition VARCHAR(100),
     IIRUP_Remarks_2 TEXT,
-    FOREIGN KEY (Property_No ) REFERENCES Item(Property_No)
+    FOREIGN KEY (Property_No) REFERENCES Item(Property_No)
 );
 
 CREATE TABLE ICS (
@@ -99,7 +103,7 @@ CREATE TABLE ICS (
 );
 
 CREATE TABLE ITR (
-	ITR_No INT PRIMARY KEY,
+    ITR_No INT PRIMARY KEY,
     PO_No INT,
     Entity_name VARCHAR(50),
     Found_Cluster VARCHAR(50),
@@ -127,7 +131,7 @@ CREATE TABLE ASSET_TRACKER (
 );
 
 CREATE TABLE MISSING (
-	Item_No INT PRIMARY KEY,
+    Item_No INT PRIMARY KEY,
     PPE_Account_Group VARCHAR(100),
     Sheet_No INT,
     Sheet VARCHAR(50),
@@ -146,11 +150,12 @@ CREATE TABLE PAR (
     PAR_Qty INT,
     Unit VARCHAR(50),
     PAR_Description TEXT,
-    Property_No INT
+    Property_No INT,
+    INDEX (Property_No) -- Index added to Property_No column
 );
 
 CREATE TABLE PRS (
-	PRS_No INT PRIMARY KEY,
+    PRS_No INT PRIMARY KEY,
     Name_of_Local_Government_Unit VARCHAR(100),
     PRS_Qty INT,
     Unit VARCHAR(50),
@@ -181,7 +186,7 @@ CREATE TABLE PTR (
 );
 
 CREATE TABLE SAI (
-	SAI_No INT PRIMARY KEY
+    SAI_No INT PRIMARY KEY
 );
 
 CREATE TABLE RIS (
@@ -218,7 +223,7 @@ CREATE TABLE STOCK (
 );
 
 CREATE TABLE RSMI (
-	RSMI_No INT PRIMARY KEY,
+    RSMI_No INT PRIMARY KEY,
     Serial_No INT,
     Fund VARCHAR(50),
     General VARCHAR(50),
@@ -236,7 +241,7 @@ CREATE TABLE RSMI (
 );
 
 CREATE TABLE RPCSP (
-	RPCSP_No INT PRIMARY KEY,
+    RPCSP_No INT PRIMARY KEY,
     RPCSP_Article VARCHAR(100),
     RPCSP_Description TEXT,
     Semi_expendable_old_Property_No INT,
@@ -252,7 +257,7 @@ CREATE TABLE RPCSP (
 );
 
 CREATE TABLE RPCPPE (
-	RPCPPE_No INT PRIMARY KEY,
+    RPCPPE_No INT PRIMARY KEY,
     RPCPPE_Article VARCHAR(100),
     RPCPPE_Description TEXT,
     Old_Property_No INT,
