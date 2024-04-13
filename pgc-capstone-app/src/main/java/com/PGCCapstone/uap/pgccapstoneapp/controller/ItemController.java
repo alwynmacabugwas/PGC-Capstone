@@ -3,7 +3,6 @@ package com.PGCCapstone.uap.pgccapstoneapp.controller;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,7 +13,7 @@ import com.PGCCapstone.uap.pgccapstoneapp.model.UserAccount;
 import com.PGCCapstone.uap.pgccapstoneapp.repository.RegistrationMybatisRepository;
 
 @RestController
-public class PostController {
+public class ItemController {
 	
 	@Autowired
 	RegistrationMybatisRepository registrationRepo;
@@ -33,9 +32,9 @@ public class PostController {
 	}
 	
 	@GetMapping("/item/itemName")
-	public ArrayList<Item> displayItem(@RequestBody Item item) {
+	public ArrayList<Item> displayItemByName(@RequestBody Item item) {
 		ArrayList<Item> items = new ArrayList<Item>();
-		items.addAll(registrationRepo.selectItem(item));
+		items.addAll(registrationRepo.selectItemByName(item));
 		return items;
 	}
 	
@@ -58,17 +57,6 @@ public class PostController {
 		return "item should be updated";
 	}
 	
-	@PostMapping("event/register/account")
-	public UserAccount registerAccount(@RequestBody UserAccount user) {
-		registrationRepo.registerAccount(user);
-		return user;
-	}
-	
-	@GetMapping("/account/passwordCheck")
-	public UserAccount checkPassword(@RequestBody UserAccount user) {
-		registrationRepo.selectUser(user);
-		return user;
-	}
 	
 	
 }

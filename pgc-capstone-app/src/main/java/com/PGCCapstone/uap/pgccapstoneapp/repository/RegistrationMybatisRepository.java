@@ -20,16 +20,16 @@ public interface RegistrationMybatisRepository {
 		public ArrayList<Item> selectAllItems();
 	
 	@Select("SELECT * FROM items WHERE item = #{item}")
-		public ArrayList<Item> selectItem(Item item);
+		public ArrayList<Item> selectItemByName(Item item);
 	
-	@Select("SELECT * FROM items WHERE section = #{setion}")
+	@Select("SELECT * FROM items WHERE section = #{section}")
 		public ArrayList<Item> selectAllItemsBySection(Item item);
 	
 	@Insert("INSERT INTO users(username, department, name, password) VALUES (#{username}, #{department}, #{name}, #{password})")
 		public int registerAccount(UserAccount acount);
 	
 	@Select("SELECT * FROM users WHERE username = #{username}")
-		public UserAccount selectUser(UserAccount account);
+		public UserAccount selectUser(String account);
 	
 	@Delete("DELETE FROM items WHERE po_num = #{po_num}")
 		public void deleteItemByPoNum(Item item);
