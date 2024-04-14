@@ -25,7 +25,7 @@ public class AccountsController {
 		return user;
 	}
 	
-	@GetMapping("/account/passwordCheck")
+	@PostMapping("/account/passwordCheck")
 	public String checkPassword(@RequestBody UserAccount user) {
 		return accountService.passwordCheck(user);
 	}
