@@ -29,6 +29,6 @@ async function login() {
         window.location.href = "loginPage.html";
     }
     else{
-        window.location.href = "testing homepage.html";
+        window.location.href = "../home/homePage.html";
     }
 }

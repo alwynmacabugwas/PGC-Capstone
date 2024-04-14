@@ -21,6 +21,7 @@ public class ItemController {
 	@PostMapping("event/register/item")
 	public Item registerItem(@RequestBody Item item) {
 		registrationRepo.insertItem(item);
+		item.setTotal(item.getPrice_per_unit(), item.getQuantity());		
 		return item;
 	}
 	
