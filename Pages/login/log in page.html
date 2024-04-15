@@ -18,11 +18,13 @@
     <div class="image-container">
         <img src="C:/Users/Lenovo/Pictures/PGC logo.png" alt="Image">
     </div>
-    <form action="login.php" method="POST">
+    <form>
         <h2>LOGIN</h2>
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <input type="submit" value="Enter">
+        <input type="text" id="input-username" name="username" placeholder="Username" required>
+        <input type="password" id="input-password" name="password" placeholder="Password" required>
+        <button class="login-button" id="login-button">Login</button>
     </form>
+
+    <script src="loginPage.js"></script>
 </body>
 </html>
