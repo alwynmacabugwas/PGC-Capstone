@@ -1,7 +1,159 @@
+body {
+    font-family: 'Inter', extra-bold;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.sidebar {
+    width: 250px;
+    background-color: #890000;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-top: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    padding: 10px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    background-color: #1e1e1e;
+}
+
+.sidebar-content {
+    display: flex;
+    align-items: center;
+    padding-left: -30px;
+    margin-top: -15px;
+}
+
+.sidebar-content img {
+    width: 80px;
+    height: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+    padding-left: 10px;
+}
+
+.home-div img,
+.item-div img {
+    width: 24px;
+    height: 24px;
+    margin-right: 20px;
+    vertical-align: middle;
+    margin-left: 12px;
+}
+
+h1 {
+    font-size: 19px;
+    color: #e1e1e1;
+    font-weight: bold;
+}
+
+.home-div {
+    margin-top: 100px;
+}
+
+.item-div {
+    margin-top: 40px;
+    line-height: 2.5;
+}
+
+.overall-header {
+    position: absolute;
+    color: #1e1e1e;
+    left: 275px;
+    top: -10px;
+    font-size: 40px;
+}
+
+.inventory-header {
+    position: absolute;
+    color: #1e1e1e;
+    left: 350px;
+    top: 35px;
+    font-size: 30px;
+}
+
+input[type=text] {
+    left: 275px;
+    top: 100px;
+    position: absolute;
+    width: 275px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    padding: 12px 20px 12px 40px;
+    height: 35px;
+    background-image: url("C:/Users/Lenovo/Pictures/search icon.png");
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: 8px 5px;
+    border: 2px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+
+.search-icon {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.search-btn {
+    font-family: 'Inter';
+    padding: 9.5px 20px;
+    background-color: #047CFC;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 100px;
+    left: 550px;
+    border-radius: 0px 4px 4px 0px;
+}
+
+.add-item-btn {
+    font-family: 'Inter';
+    padding: 9.5px;
+    background-color: #027400;
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 100px;
+    right: 30px;
+    width: 200px;
+    border-radius: 4px;
+}
+
+
+
+/* Table CSS */
+
 table {
-    font-family: arial, sans-serif;
+    font-family: 'Inter' ;
     border-collapse: collapse;
-    width: 100%;
+    width: 120%;
 }
 
 td,th {
