@@ -10,7 +10,7 @@ body {
 }
 
 body::before {
-    background-image: url("PGC\ BG.jpg");
+    background-image: url("../../icons/PGC\ BG.jpg");
     content: '';
     background-size: cover;
     background-position: center;
