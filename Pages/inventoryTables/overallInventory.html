@@ -6,7 +6,23 @@
         <title>Overall Inventory</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
         <link rel="stylesheet" href="../home/homePage.css">
-        <style></style>
+        <style>
+            table {
+              font-family: arial, sans-serif;
+              border-collapse: collapse;
+              width: 100%;
+            }
+            
+            td, th {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+            }
+            
+            tr:nth-child(even) {
+              background-color: #dddddd;
+            }
+            </style>
     </head>
     <body>
         <div class="sidebar">
@@ -29,7 +45,18 @@
         </div>
         <div class="table">
             <table id="overall">
-                
+                <tr id="tableHeader">
+                    <th>Date</th>
+                    <th>Supplier</th>
+                    <th>Item</th>
+                    <th>Item_Type</th>
+                    <th>Unit</th>
+                    <th>Quantity</th>
+                    <th>Price per Unit</th>
+                    <th>Total price</th>
+                    <th>Department</th>
+                    <th>Expiry Date</th>
+                </tr>                
             </table>
         </div>
         <script src="overallInventory.js"></script>
