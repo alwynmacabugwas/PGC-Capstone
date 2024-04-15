@@ -6,25 +6,13 @@
         <title>Overall Inventory</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
         <link rel="stylesheet" href="../home/homePage.css">
-        <style>
-            table {
-              font-family: arial, sans-serif;
-              border-collapse: collapse;
-              width: 100%;
-            }
-            
-            td, th {
-              border: 1px solid #dddddd;
-              text-align: left;
-              padding: 8px;
-            }
-            
-            tr:nth-child(even) {
-              background-color: #dddddd;
-            }
-            </style>
+        <link rel="stylesheet" href="../inventoryTables/tables.css">
     </head>
     <body>
+        <div class="search-box">
+            <input type="text" placeholder="Search...">
+            <button type="button">Search</button>
+        </div>
         <div class="sidebar">
             <div class="sidebar-content">
                 <img src="C:\Users\Lenovo\Pictures\PGC logo.png" alt="Logo">
@@ -59,5 +47,5 @@
                 </tr>                
             </table>
         </div>
-        <script src="overallInventory.js"></script>
+        <script src="inventory.js"></script>
     </body>

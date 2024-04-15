@@ -1,188 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
-    <style>
-        body {
-            font-family: 'Inter', extra-bold;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            height: 100vh;
-            position: relative; /* Ensure absolute positioning works */
-            justify-content: center; /* Center content horizontally */
-            align-items: center; /* Center content vertically */
-        }
-
-        body::before {
-            background-image: url("file:///C:/Users/Lenovo/Pictures/PGC BG.jpg");
-            content: '';
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: absolute;
-            inset: 0;
-            opacity: 0.2; /* Set opacity */
-        }
-
-        .sidebar {
-            width: 250px;
-            background-color: #890000;
-            height: 100%;
-            position: fixed;
-            left: 0;
-            top: 0;
-            padding-top: 20px;
-        }
-
-        .sidebar ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .sidebar li {
-            padding: 10px;
-            color: #fff;
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        .sidebar li:hover {
-            background-color: #1e1e1e;
-        }
-
-        .sidebar-content {
-            display: flex;
-            align-items: center; /* Center vertically */
-            padding-left: -30px; /* Adjust the amount of padding as needed */
-            margin-top: -15px;
-        }
-
-        .sidebar-content img {
-            width: 80px; /* Adjust the width of the image */
-            height: auto;
-            margin-right: 10px; /* Adjust the spacing between image and text */
-            vertical-align: middle; /* Align image vertically with text */
-            padding-left: 10px;
-        }
-
-        .home-div img,
-        .item-div img {
-            width: 24px; /* Adjust the width of the icons */
-            height: 24px; /* Adjust the height of the icons */
-            margin-right: 20px; /* Adjust the spacing between the icons and text */
-            vertical-align: middle; /* Align icons vertically with text */
-            margin-left: 12px;
-        }
-
-
-        h1{
-            font-size: 19px;
-            color: #e1e1e1;
-            font-weight: bold; /* Change weight to bold */
-        
-        }
-
-        .home-div{
-            margin-top: 100px;
-            
-        }
-
-        .item-div{
-            margin-top: 40px;
-            line-height: 2.5;
-        }
-
-
-        .overall-header{
-            position: absolute;
-            color: #1e1e1e; 
-            left: 275px;
-            top: -10px;
-            font-size: 40px;
-        }
-
-        .inventory-header{
-            position: absolute;
-            color: #1e1e1e; 
-            left: 350px;
-            top: 35px;
-            font-size: 30px;
-        }
-
-
-        /*
-        .search-box input {
-            padding: 10px;
-            width: 300px;
-            font-family: 'Inter';
-            height: 12px;
-            left: 275px;
-            top: 110px;
-            position: absolute;
-            border-radius: 5px; 
-            border-color: #1e1e1e;
-            color: black;
-        }
-
-        .search-box button {
-            font-family: 'Inter';
-            padding: 10px 20px;
-            background-color: #047CFC;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            position: absolute;
-            top: 110px;
-            left: 599px;
-            border-radius: 5px; 
-        }
-        */
-        input[type=text] {
-            left: 275px;
-            top: 100px;
-            position: absolute;
-            width: 275px;
-            box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px; 
-  font-size: 16px;
-  background-color: white;
-  padding: 12px 20px 12px 40px;
-  height: 35px;
-  background-image: url("C:/Users/Lenovo/Pictures/search icon.png"); /* Replace with your icon path */
-  background-repeat: no-repeat;
-  background-size: 20px 20px;
-  background-position: 8px 5px; /* Adjust the position of the search icon */
-  border: 2px solid #ccc; /* Set a solid border for all sides */
-  border-radius: 4px 0 0 4px; /* Rounded corners except top-right */
-}
-
-.search-icon {
-  position: absolute; /* Ensure absolute positioning */
-  bottom: 5px;
-  right: 5px;
-}
-
-button {
-  font-family: 'Inter';
-  padding: 9.5px 20px;
-  background-color: #047CFC;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  top: 100px;
-  left: 550px;
-  border-radius: 0px 4px 4px 0px; /* Rounded corners except top-right */
-}
-
-    </style>
+    <link rel="stylesheet" href="../home/homePage.css">
 </head>
+
 <body>
     <div class="sidebar">
         <div class="sidebar-content">
@@ -196,28 +22,29 @@ button {
             <h1 class="inventory-header">Inventory</h1>
         </div>
 
-    <!--<div class="search-box">
+        <!--<div class="search-box">
         <input type="text" placeholder="Search inventory">
         <button>Search</button>
-    </div>  --> 
+    </div>  -->
 
-    <form>
-        <input type="text" name="search" placeholder="Search item or order no.">
-        
-      </form>
-      <button type="submit"><i class="fas fa-search"></i>Search</button>
+        <form>
+            <input type="text" name="search" placeholder="Search item or order no.">
+
+        </form>
+        <button type="submit"><i class="fas fa-search"></i>Search</button>
         <ul>
-            <div class = "item-div">
+            <div class="item-div">
 
                 <li><img src="C:\Users\Lenovo\Pictures\home icon.png" alt="Home Icon">Home</li>
-   
-            <div class = "item-div">
-                <li><img src="C:\Users\Lenovo\Pictures\inventory icon.png" alt="Home Icon">Inventory</li>
-                <li><img src="C:\Users\Lenovo\Pictures\supplies icon.png" alt="Supplies Icon">Supplies</li>
-                <li><img src="C:\Users\Lenovo\Pictures\properties icon.png" alt="Properties Icon">Property</li>
-            </div> 
+
+                <div class="item-div">
+                    <li><img src="C:\Users\Lenovo\Pictures\inventory icon.png" alt="Home Icon">Inventory</li>
+                    <li><img src="C:\Users\Lenovo\Pictures\supplies icon.png" alt="Supplies Icon">Supplies</li>
+                    <li><img src="C:\Users\Lenovo\Pictures\properties icon.png" alt="Properties Icon">Property</li>
+                </div>
         </ul>
 
     </div>
 </body>
+
 </html>
