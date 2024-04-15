@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Overall Inventory</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+        <link rel="stylesheet" href="../home/homePage.css">
+        <style>
+            table {
+              font-family: arial, sans-serif;
+              border-collapse: collapse;
+              width: 100%;
+            }
+            
+            td, th {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+            }
+            
+            tr:nth-child(even) {
+              background-color: #dddddd;
+            }
+            </style>
+    </head>
+    <body>
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <img src="C:\Users\Lenovo\Pictures\PGC logo.png" alt="Logo">
+                <h1>GOVERNMENT
+                    OF CAVITE<br>
+                    INVENTORY<br>
+                </h1>
+            </div>
+            <ul>
+                <div class = "item-div">
+    
+                    <li id="home"><img src="C:\Users\Lenovo\Pictures\home icon.png" alt="Home Icon">Home</li>
+                    <li id="inventory_overall"><img src="C:\Users\Lenovo\Pictures\inventory icon.png" alt="Home Icon">Inventory</li>
+                    <li id="inventory_supply"><img src="C:\Users\Lenovo\Pictures\supplies icon.png" alt="Supplies Icon">Supplies</li>
+                    <li id="inventory_property"><img src="C:\Users\Lenovo\Pictures\properties icon.png" alt="Properties Icon">Property</li>
+                </div> 
+            </ul>
+        </div>
+        <div class="table">
+            <table id="overall">
+                <tr id="tableHeader">
+                    <th>Date</th>
+                    <th>Supplier</th>
+                    <th>Item</th>
+                    <th>Item_Type</th>
+                    <th>Unit</th>
+                    <th>Quantity</th>
+                    <th>Price per Unit</th>
+                    <th>Total price</th>
+                    <th>Department</th>
+                    <th>Expiry Date</th>
+                </tr>                
+            </table>
+        </div>
+        <script src="overallInventory.js"></script>
+    </body>
