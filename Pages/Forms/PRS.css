@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+form {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    padding: 3px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+.purpose-labels {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.purpose-labels label {
+    margin-right: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+th, td {
+    padding: 5px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.certification-boxes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.certification-box {
+    width: 49%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.certification {
+    border: none;
+    padding: 0;
+}
+
+.certification label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.certification input[type="text"] {
+    width: 15%;
+}
+
+.certification div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.certification div div {
+    width: 100%;
+}
