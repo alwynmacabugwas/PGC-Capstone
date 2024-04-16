@@ -1,0 +1,58 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-fields,
+.right-fields {
+    width: 20%; 
+    margin-left: 10%; 
+    margin-right: 10%;
+}
+
+.bin-card,
+.stock-location,
+.item-info {
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 110%; /* Adjusted width */
+    margin-left: 0; /* Remove left margin */
+}
+
+.stock-location {
+    width: 200%;
+}
+
+.stock-location-text,
+.stock-location-input {
+    display: block; /* Changed from inline-block to block */
+}
+
+.stock-location-input input {
+    width: 80%;
+    margin-top: 5px; /* Add margin for separation */
+}
+
+.bin-card {
+    width: 200%;
+}
+
+.item-info {
+    width: 90%; /* Adjusted width */
+}
+
+.description-box {
+    margin-top: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 5px;
+}
