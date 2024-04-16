@@ -1,4 +1,5 @@
-let role = localStorage.getItem('section');
+let page = localStorage.getItem('page');
+
 
 // function directToHome() {
 //     window.location.href = "../home/homePage.html";
@@ -18,10 +19,10 @@ let role = localStorage.getItem('section');
 
 async function generateTable() {
     let result;
-    if ( role == "Admin") {
+    if ( page == "overall") {
         result = await getOverallData();
     }
-    else {
+    if (page != "overall") {
         result = await getDataBySection();
     }
     var table = document.getElementById("inventory-table");
@@ -85,7 +86,7 @@ async function getDataBySection() {
             "Content-Type": "application/json"
         },
         body :JSON.stringify({
-            "section": role,
+            "section": page,
         }),
     };
 
