@@ -10,7 +10,7 @@ body {
 }
 
 body::before {
-    background-image: url("file:///C:/Users/Lenovo/Pictures/PGC BG.jpg");
+    background-image: url("../../icons/PGC\ BG.jpg");
     content: '';
     background-size: cover;
     background-position: center;

@@ -9,7 +9,16 @@ body {
     align-items: center;
 }
 
-
+body::before {
+    background-image: url("file:///C:/Users/Lenovo/Pictures/PGC BG.jpg");
+    content: '';
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    inset: 0;
+    opacity: 0.2;
+}
 
 .sidebar {
     width: 250px;
@@ -119,7 +128,7 @@ input[type=text] {
     right: 5px;
 }
 
-.search-btn {
+button {
     font-family: 'Inter';
     padding: 9.5px 20px;
     background-color: #047CFC;
@@ -130,38 +139,4 @@ input[type=text] {
     top: 100px;
     left: 550px;
     border-radius: 0px 4px 4px 0px;
-}
-
-.add-item-btn {
-    font-family: 'Inter';
-    padding: 9.5px;
-    background-color: #027400;
-    color: white;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    top: 100px;
-    right: 30px;
-    width: 200px;
-    border-radius: 4px;
-}
-
-
-
-/* Table CSS */
-
-table {
-    font-family: 'Inter' ;
-    border-collapse: collapse;
-    width: 120%;
-}
-
-td,th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
 }
