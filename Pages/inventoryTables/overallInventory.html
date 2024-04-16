@@ -13,7 +13,7 @@
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="sidebar-content">
-                <img src="../../icons/PGC logo.png" alt="Logo">
+                <img src="C:\Users\Lenovo\Pictures\PGC logo.png" alt="Logo">
                 <h1>GOVERNMENT
                     OF CAVITE<br>
                     INVENTORY<br>
@@ -22,9 +22,9 @@
             
             <ul>
                 <div class="item-div">
-                    <li><img src="../../icons/home icon.png" alt="Home Icon">Home</li>
+                    <li id="home"><img src="../../icons/home icon.png" alt="Home Icon">Home</li>
+
                 </div>
-    
                 <div class="item-div">
                     <li id="inventory_overall"><img src="../../icons/inventory icon.png" alt="Inventory Icon">Inventory</li>
                     <li id="inventory_supply"><img src="../../icons/supplies icon.png" alt="supplies icon">Supplies</li>
@@ -39,10 +39,8 @@
         <h1 class="inventory-header">Inventory</h1>
     
         <!-- Search form and search button -->
-        <form>
             <input type="text" name="search" placeholder="Search item or order no.">
             <button class="search-btn">Search</button>
-        </form>
     
         <!-- Search form and search button -->
         <button class="add-item-btn">Add Item to Inventory</button>
@@ -50,7 +48,7 @@
 
         <!-- Table -->
         <div class="table">
-            <table id="overall">
+            <table id="inventory-table">
                 <tr id="tableHeader">
                     <th>Date</th>
                     <th>Supplier</th>
@@ -66,6 +64,6 @@
             </table>
         </div>
 
-        
         <script src="inventory.js"></script>
+        <script> src="..home/homePage.js"</script>
     </body>

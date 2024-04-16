@@ -3,6 +3,9 @@ document.getElementById("inventory_overall").addEventListener("click", directToO
 document.getElementById("inventory_supply").addEventListener("click", directToSupply);
 document.getElementById("inventory_property").addEventListener("click", directToProperty);
 
+const result = localStorage.getItem('section')
+console.log(result)
+
 function directToHome() {
     window.location.href = "homePage.html";
 }

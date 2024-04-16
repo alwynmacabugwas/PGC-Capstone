@@ -20,8 +20,8 @@ public class ItemController {
 	
 	@PostMapping("event/register/item")
 	public Item registerItem(@RequestBody Item item) {
-		registrationRepo.insertItem(item);
 		item.setTotal(item.getPrice_per_unit(), item.getQuantity());		
+		registrationRepo.insertItem(item);
 		return item;
 	}
 	
@@ -39,7 +39,7 @@ public class ItemController {
 		return items;
 	}
 	
-	@GetMapping("/item/bySection")
+	@PostMapping("/item/bySection")
 	public ArrayList<Item> displayItemBySection(@RequestBody Item item) {
 		ArrayList<Item> items = new ArrayList<Item>();
 		items.addAll(registrationRepo.selectAllItemsBySection(item));
