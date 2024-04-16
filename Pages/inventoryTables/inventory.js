@@ -1,20 +1,20 @@
 let role = localStorage.getItem('section');
 
-function directToHome() {
-    window.location.href = "../home/homePage.html";
-}
+// function directToHome() {
+//     window.location.href = "../home/homePage.html";
+// }
 
-function directToOverAll() {
-    window.location.href = "../inventoryTables/overallInventory.html";
-}
+// function directToOverAll() {
+//     window.location.href = "../inventoryTables/overallInventory.html";
+// }
 
-function directToSupply() {
-    window.location.href = "../inventoryTables/supplyInventory.html";
-}
+// function directToSupply() {
+//     window.location.href = "../inventoryTables/supplyInventory.html";
+// }
 
-function directToProperty() {
-    window.location.href = "../inventoryTables/propertyInventory.html";
-}
+// function directToProperty() {
+//     window.location.href = "../inventoryTables/propertyInventory.html";
+// }
 
 async function generateTable() {
     let result;
@@ -105,7 +105,7 @@ async function getDataBySection() {
 
 window.addEventListener('load', generateTable);
 
-document.getElementById("home").addEventListener("click", directToHome);
-document.getElementById("inventory_overall").addEventListener("click", directToOverAll);
-document.getElementById("inventory_supply").addEventListener("click", directToSupply);
-document.getElementById("inventory_property").addEventListener("click", directToProperty);
+// document.getElementById("home").addEventListener("click", directToHome);
+// document.getElementById("inventory_overall").addEventListener("click", directToOverAll);
+// document.getElementById("inventory_supply").addEventListener("click", directToSupply);
+// document.getElementById("inventory_property").addEventListener("click", directToProperty);
