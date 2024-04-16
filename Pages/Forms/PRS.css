@@ -16,7 +16,7 @@ h2 {
 }
 
 form {
-    border: 1px solid #ccc;
+    border: 2px solid #000000;
     padding: 10px;
 }
 
@@ -26,9 +26,9 @@ label {
 }
 
 input[type="text"] {
-    padding: 3px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    padding: 5px; /* Decreased padding */
+    width: 120px; /* Decreased width */
+    font-size: 12px; /* Decreased font size */
     margin-bottom: 5px;
 }
 
@@ -46,17 +46,17 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
-    font-size: 12px;
+    font-size: 12px; /* Decreased font size */
 }
 
 th, td {
-    padding: 5px;
-    border: 1px solid #ccc;
+    padding: 5px; /* Decreased padding */
+    border: 2px solid #000000;
     text-align: left;
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: #ffffff;
     font-weight: bold;
 }
 
@@ -69,9 +69,9 @@ th {
 .certification-box {
     width: 49%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 2px solid #000000;
     border-radius: 3px;
-    font-size: 12px;
+    font-size: 12px; /* Decreased font size */
 }
 
 .certification {
