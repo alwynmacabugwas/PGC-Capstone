@@ -48,8 +48,10 @@
         <button class="add-item-btn">Add Item to Inventory</button>
 
 
-        <!-- Table -->
+    <!-- Outer div -->
         <div class="table">
+
+            <!-- First table -->
             <table class="overall">
                 <thead>
                     <tr id="tableHeader">
@@ -71,7 +73,7 @@
                         <td>
                             <div class="edit-text">Edit</div>
                                 <div class="print-icon">
-                                <img src="C:\Users\Lenovo\Pictures\print icon.png">
+                                <img src="../../icons/print icon.png">
                             </div>
                         </td>
                         <td>sample date</td>
@@ -89,8 +91,25 @@
             </table>
         
         
-         <!-- Second table -->
+    <!-- Second table Container-->
             <div class="second-table-container"></div>
+
+            <!-- Add Item Header -->
+            <div class="add-item-header">
+                <h2>Add Item</h2>
+            </div>
+    
+            <!-- Buttons -->
+            <div class="button-container">
+                <button class="discard-btn">Discard</button>
+                <button class="add-row-btn">Add Row</button>
+                <button class="done-btn">Done</button>
+            </div>
+
+            <!-- X button -->
+            <button class="close-btn">x</button>
+
+            <!-- Second table -->
                 <table class="second-table">
                     <thead>
                         <tr id="second-table-header">
@@ -124,5 +143,12 @@
             </div>
         </div>
         
-        <script src="inventory.js"></script>
+        <!--<script src="inventory.js"></script>-->
+        <script>
+            document.querySelector('.close-btn').addEventListener('click', function() {
+                document.querySelector('.second-table-container').style.display = 'none'; // Hide the container on click
+            });
+        </script>
+        
     </body>
+</html>

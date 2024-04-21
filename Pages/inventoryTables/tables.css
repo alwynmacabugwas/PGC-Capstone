@@ -147,26 +147,21 @@ input[type=text] {
 
 
 /* Table CSS */
-table {
-    font-family: 'Inter' ;
-    border-collapse: collapse;
-    width: 105%;
-    margin: 25px auto; /* Center the table horizontally */
-    border-top: 2px solid #1b1b1b;
-    border-left: 2px solid #1b1b1b;
-    border-right: 2px solid #1b1b1b;
-    z-index: 1; /* Add this line */
-    position: relative;
-    left: 96px;
-    top: -100px;
-
-}
-
 .overall{
+    font-family: 'Inter' ;
     border-collapse: collapse; /*reduces amount of spaces in cells*/
     margin: 25px 0;
     font-size: 12px;
     /*min-width: */
+    margin: 25px auto; /* Center the table horizontally */
+    border-top: 2px solid #1b1b1b;
+    border-left: 2px solid #1b1b1b;
+    border-right: 2px solid #1b1b1b;
+    width: 105%;
+    position: relative;
+    left: 96px;
+    top: -60px;
+    z-index: 1; /* Add this line */
 }
 
 .table thead tr{
@@ -174,6 +169,7 @@ table {
     color: #fff;
     text-align: left;
 }
+
 /* cells inside the table header and table content */
 .table th, table td{
     padding: 10px 10px;
@@ -226,23 +222,24 @@ td img{
     border-top: 2px solid #1b1b1b;
     border-left: 2px solid #1b1b1b;
     border-right: 2px solid #1b1b1b;
-    z-index: 3;
     width: 100%;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
+    position: relative;
     left: 1px;
-    transform: translate(-50%, -50%) scale(0); 
-
-
+    top:-265px;
+    z-index: 2;
   }
   
+  /*second table header and data*/
   .second-table th,
   .second-table td {
-    padding: 10px 10px;
-    border: 1px solid #1b1b1b;
-    text-align: left;
+      border: 1px solid #000000;
+      padding: 8px;
+      text-align: left;
   }
   
+  /*second table header*/
   .second-table thead tr {
     background-color: #464646;
     color: #fff;
@@ -263,8 +260,8 @@ td img{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    z-index: 3; /* Ensure the second table container is above other content */
+    transform: translate(-50%, -50%) ;
+    z-index: 1; /* Ensure the second table container is above other content */
     background-color: white;
     padding: 130px;
     height: 200px;
@@ -276,17 +273,11 @@ td img{
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     text-align: center;
+    opacity: 1;
 
 }
 
 
-
-.second-table th,
-.second-table td {
-    border: 1px solid #dddddd;
-    padding: 8px;
-    text-align: left;
-}
 
 #overlay{
     position:fixed;
@@ -302,4 +293,72 @@ td img{
 #overlay.active{
     pointer-events: all;
     opacity: 1;
+}
+
+
+
+.add-item-header {
+    margin-bottom: 10px; /* Adjust as needed */
+    position:relative; /* Add this line */
+    z-index: 2; /* Add this line */
+    top: -218px;
+    left: 1px;
+    font-size: 27px;
+}
+
+
+.add-row-btn {
+    z-index: 2;
+}
+
+.add-row-btn{
+    position: relative;
+    font-family: 'Inter';
+    padding: 9.5px;
+    background-color: #027400;
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 485px;
+    right: 200px;
+    width: 150px;
+    border-radius: 4px;
+    border: 1px solid #1b1b1b;
+}
+
+.discard-btn{
+    position: relative;
+    font-family: 'Inter';
+    padding: 9.5px;
+    background-color: #890000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 485px;
+    left: 170px;
+    width: 150px;
+    border-radius: 4px;
+    border: 1px solid #1b1b1b;
+    z-index: 2;
+
+}
+
+.close-btn {
+    position: absolute;
+    top: 135px;
+    right: 160px;
+    font-size: 28px;
+    background-color: transparent;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    z-index: 3; /* Ensure the button is above other content */
+}
+
+.close-btn:hover {
+    color: #ccc; /* Change color on hover if needed */
 }
