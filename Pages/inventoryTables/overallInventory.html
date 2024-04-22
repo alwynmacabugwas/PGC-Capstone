@@ -8,44 +8,147 @@
         <link rel="stylesheet" href="../home/homePage.css">
         <link rel="stylesheet" href="../inventoryTables/tables.css">
     </head>
+
     <body>
-        <div class="search-box">
-            <input type="text" placeholder="Search...">
-            <button type="button">Search</button>
-        </div>
+        <!-- Sidebar -->
         <div class="sidebar">
             <div class="sidebar-content">
-                <img src="C:\Users\Lenovo\Pictures\PGC logo.png" alt="Logo">
+                <img src="../../icons/PGC logo.png" alt="Logo">
                 <h1>GOVERNMENT
                     OF CAVITE<br>
                     INVENTORY<br>
                 </h1>
             </div>
+            
             <ul>
-                <div class = "item-div">
+                <div class="item-div">
+                    <li><img src="../../icons/home icon.png" alt="Home Icon">Home</li>
+                </div>
     
-                    <li id="home"><img src="C:\Users\Lenovo\Pictures\home icon.png" alt="Home Icon">Home</li>
-                    <li id="inventory_overall"><img src="C:\Users\Lenovo\Pictures\inventory icon.png" alt="Home Icon">Inventory</li>
-                    <li id="inventory_supply"><img src="C:\Users\Lenovo\Pictures\supplies icon.png" alt="Supplies Icon">Supplies</li>
-                    <li id="inventory_property"><img src="C:\Users\Lenovo\Pictures\properties icon.png" alt="Properties Icon">Property</li>
-                </div> 
+                <div class="item-div">
+                    <li id="inventory_overall"><img src="../../icons/inventory icon.png" alt="Inventory Icon">Inventory</li>
+                    <li id="inventory_supply"><img src="../../icons/supplies icon.png" alt="supplies icon">Supplies</li>
+                    <li id="inventory_property"><img src="../../icons/properties icon.png" alt="Properties Icon">Property</li>
+                </div>
             </ul>
         </div>
+    
+    
+        <!-- Overall Inventory header -->
+        <h1 class="overall-header">OVERALL</h1>
+        <h1 class="inventory-header">Inventory</h1>
+    
+        <!-- Search form and search button -->
+        <form>
+            <input type="text" name="search" placeholder="Search item or order no.">
+            <button class="search-btn">Search</button>
+        </form>
+    
+        <!-- Search form and search button -->
+        <button class="add-item-btn">Add Item to Inventory</button>
+
+
+    <!-- Outer div -->
         <div class="table">
-            <table id="overall">
-                <tr id="tableHeader">
-                    <th>Date</th>
-                    <th>Supplier</th>
-                    <th>Item</th>
-                    <th>Item_Type</th>
-                    <th>Unit</th>
-                    <th>Quantity</th>
-                    <th>Price per Unit</th>
-                    <th>Total price</th>
-                    <th>Department</th>
-                    <th>Expiry Date</th>
-                </tr>                
+
+            <!-- First table -->
+            <table class="overall">
+                <thead>
+                    <tr id="tableHeader">
+                        <th></th>
+                        <th>Date</th>
+                        <th>Supplier</th>
+                        <th>Item</th>
+                        <th>Item Type</th>
+                        <th>Unit</th>
+                        <th>Quantity</th>
+                        <th>Price per Unit</th>
+                        <th>Total price</th>
+                        <th>Department</th>
+                        <th>Expiry Date</th>
+                    </tr>      
+                </thead>          
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="edit-text">Edit</div>
+                                <div class="print-icon">
+                                <img src="../../icons/print icon.png">
+                            </div>
+                        </td>
+                        <td>sample date</td>
+                        <td>sample supplier</td>
+                        <td>sample item</td>
+                        <td>sample item type</td>
+                        <td>sample unit</td>
+                        <td>sample Quantity</td>
+                        <td>sample price</td>
+                        <td>sample total</td>
+                        <td>sample dept</td>
+                        <td>sample expiry</td>
+                    </tr>
+                </tbody>
             </table>
+        
+        
+    <!-- Second table Container-->
+            <div class="second-table-container"></div>
+
+            <!-- Add Item Header -->
+            <div class="add-item-header">
+                <h2>Add Item</h2>
+            </div>
+    
+            <!-- Buttons -->
+            <div class="button-container">
+                <button class="discard-btn">Discard</button>
+                <button class="add-row-btn">Add Row</button>
+                <button class="done-btn">Done</button>
+            </div>
+
+            <!-- X button -->
+            <button class="close-btn">x</button>
+
+            <!-- Second table -->
+                <table class="second-table">
+                    <thead>
+                        <tr id="second-table-header">
+                            <th>Date</th>
+                            <th>Supplier</th>
+                            <th>Item</th>
+                            <th>Item Type</th>
+                            <th>Unit</th>
+                            <th>Quantity</th>
+                            <th>Price per Unit</th>
+                            <th>Total price</th>
+                            <th>Department</th>
+                            <th>Expiry Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>sample date</td>
+                            <td>sample supplier</td>
+                            <td>sample item</td>
+                            <td>sample item type</td>
+                            <td>sample unit</td>
+                            <td>sample Quantity</td>
+                            <td>sample price</td>
+                            <td>sample total</td>
+                            <td>sample dept</td>
+                            <td>sample expiry</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <script src="inventory.js"></script>
+        
+        <!--<script src="inventory.js"></script>-->
+        <script>
+            document.querySelector('.close-btn').addEventListener('click', function() {
+                document.querySelector('.second-table-container').style.display = 'none'; // Hide the container on click
+            });
+        </script>
+        
     </body>
+</html>

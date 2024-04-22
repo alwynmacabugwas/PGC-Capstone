@@ -25,6 +25,8 @@ async function login() {
         console.error(error);
     }
 
+    localStorage.setItem('section', result)
+    
     if(result==="Invalid"){
         window.location.href = "loginPage.html";
     }

@@ -1,30 +1,31 @@
-document.getElementById("home").addEventListener("click", directToHome);
-document.getElementById("inventory_overall").addEventListener("click", directToOverAll);
-document.getElementById("inventory_supply").addEventListener("click", directToSupply);
-document.getElementById("inventory_property").addEventListener("click", directToProperty);
+let page = localStorage.getItem('page');
 
-function directToHome() {
-    window.location.href = "../home/homePage.html";
-}
 
-function directToOverAll() {
-    window.location.href = "../inventoryTables/overallInventory.html";
-}
+// function directToHome() {
+//     window.location.href = "../home/homePage.html";
+// }
 
-function directToSupply() {
-    window.location.href = "../inventoryTables/supplyInventory.html";
-}
+// function directToOverAll() {
+//     window.location.href = "../inventoryTables/overallInventory.html";
+// }
 
-function directToProperty() {
-    window.location.href = "../inventoryTables/propertyInventory.html";
-}
+// function directToSupply() {
+//     window.location.href = "../inventoryTables/supplyInventory.html";
+// }
 
-window.addEventListener('load', generateTable);
-//window.addEventListener('load', getOverallData);
+// function directToProperty() {
+//     window.location.href = "../inventoryTables/propertyInventory.html";
+// }
 
 async function generateTable() {
-    let result = await getOverallData();
-    var table = document.getElementById("overall");
+    let result;
+    if ( page == "overall") {
+        result = await getOverallData();
+    }
+    if (page != "overall") {
+        result = await getDataBySection();
+    }
+    var table = document.getElementById("inventory-table");
     var cellLen = document.getElementById('tableHeader').cells.length;
     
     for (x in result) {
@@ -46,7 +47,7 @@ async function generateTable() {
         cell4.innerHTML = result[x].unit;
         cell5.innerHTML = result[x].quantity;
         cell6.innerHTML = result[x].price_per_unit;
-        cell7.innerHTML = result[x].total_price;
+        cell7.innerHTML = result[x].total;
         cell8.innerHTML = result[x].department;
         cell9.innerHTML = result[x].expiry_date;
        
@@ -55,7 +56,6 @@ async function generateTable() {
 }
 
 async function getOverallData() {
-
     const url = 'http://localhost:8080/item';
     const options = {
         method: 'GET',
@@ -77,3 +77,36 @@ async function getOverallData() {
     return result;
 
 }
+
+async function getDataBySection() {
+    const url = 'http://localhost:8080/item/bySection';
+    const options = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body :JSON.stringify({
+            "section": page,
+        }),
+    };
+
+    let result;
+
+    try {
+        const response = await fetch(url, options);
+        result = await response.json();
+        //console.log(result);
+    } catch (error) {
+        console.error(error);
+    }
+
+    return result;
+
+}
+
+window.addEventListener('load', generateTable);
+
+// document.getElementById("home").addEventListener("click", directToHome);
+// document.getElementById("inventory_overall").addEventListener("click", directToOverAll);
+// document.getElementById("inventory_supply").addEventListener("click", directToSupply);
+// document.getElementById("inventory_property").addEventListener("click", directToProperty);
