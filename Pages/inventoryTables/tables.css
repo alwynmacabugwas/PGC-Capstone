@@ -8,6 +8,9 @@ body {
     justify-content: center;
     align-items: center;
 }
+table{
+    position: relative;
+}
 
 .sidebar {
     width: 250px;
@@ -145,23 +148,25 @@ input[type=text] {
 }
 
 
-
+.overall-table-container{
+    position: absolute; 
+    width: 100%;
+}
 /* Table CSS */
 .overall{
     font-family: 'Inter' ;
     border-collapse: collapse; /*reduces amount of spaces in cells*/
-    margin: 25px 0;
     font-size: 12px;
     /*min-width: */
-    margin: 25px auto; /* Center the table horizontally */
+    width: 100%;
     border-top: 2px solid #1b1b1b;
     border-left: 2px solid #1b1b1b;
     border-right: 2px solid #1b1b1b;
-    width: 105%;
-    position: relative;
-    left: 96px;
-    top: -60px;
     z-index: 1; /* Add this line */
+    width: 1200px;
+    position: absolute;
+    top: 145px;
+    left: 265px;   
 }
 
 .table thead tr{
@@ -195,6 +200,8 @@ input[type=text] {
 
 
 
+
+
 tr:nth-child(even) {
     background-color: #dddddd;
 }
@@ -207,9 +214,6 @@ td img{
 
 .edit-text{
     margin-bottom: 10px;
-}
-.print-icon{
-    margin-top: 15px; /* Adjust the margin as needed */
 }
 
 
@@ -227,7 +231,7 @@ td img{
     align-items: center; /* Center vertically */
     position: relative;
     left: 1px;
-    top:-265px;
+    top:-185px;
     z-index: 2;
   }
   
@@ -274,34 +278,37 @@ td img{
     align-items: center; /* Center vertically */
     text-align: center;
     opacity: 1;
-
 }
 
-
+/* Initially hide elements */
+.second-table,
+.add-item-header,
+.add-row-btn,
+.discard-btn,
+.second-table-container,
+.close-btn
+{
+    display: none;
+}
 
 #overlay{
-    position:fixed;
-    /* opacity: 0; */
+    position: fixed;
     top: 0;
-    left:0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, .5);
-    pointer-events: none;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 2; /* Ensure the overlay is above other content */
+    display: none; /* Initially hidden */
 }
 
-#overlay.active{
-    pointer-events: all;
-    opacity: 1;
-}
 
 
 
 .add-item-header {
-    margin-bottom: 10px; /* Adjust as needed */
     position:relative; /* Add this line */
     z-index: 2; /* Add this line */
-    top: -218px;
+    top: -160px;
     left: 1px;
     font-size: 27px;
 }
@@ -362,3 +369,9 @@ td img{
 .close-btn:hover {
     color: #ccc; /* Change color on hover if needed */
 }
+
+
+.sidebar li.active {
+    background-color: #333; /* Example background color */
+    color: #fff; /* Example text color */
+  }

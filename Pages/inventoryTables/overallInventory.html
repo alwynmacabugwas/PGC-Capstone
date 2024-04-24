@@ -10,28 +10,32 @@
     </head>
 
     <body>
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <div class="sidebar-content">
-                <img src="../../icons/PGC logo.png" alt="Logo">
-                <h1>GOVERNMENT
-                    OF CAVITE<br>
-                    INVENTORY<br>
-                </h1>
-            </div>
+        <!-- Overlay div for gray background while adding item -->
+        <div id="overlay"></div>
+        <!-- OUTSIDE DIV FOR THE WHOLE PAGE -->
+        <div class="table">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="sidebar-content">
+                    <img src="../../icons/PGC logo.png" alt="Logo">
+                    <h1>GOVERNMENT
+                        OF CAVITE<br>
+                        INVENTORY<br>
+                    </h1>
+                </div>
             
-            <ul>
-                <div class="item-div">
-                    <li><img src="../../icons/home icon.png" alt="Home Icon">Home</li>
-                </div>
+                <ul>
+                    <div class="item-div">
+                        <li><img src="../../icons/home icon.png" alt="Home Icon">Home</li>
+                    </div>
     
-                <div class="item-div">
-                    <li id="inventory_overall"><img src="../../icons/inventory icon.png" alt="Inventory Icon">Inventory</li>
-                    <li id="inventory_supply"><img src="../../icons/supplies icon.png" alt="supplies icon">Supplies</li>
-                    <li id="inventory_property"><img src="../../icons/properties icon.png" alt="Properties Icon">Property</li>
-                </div>
-            </ul>
-        </div>
+                    <div class="item-div">
+                        <li id="inventory_overall"><img src="../../icons/inventory icon.png" alt="Inventory Icon">Inventory</li>
+                        <li id="inventory_supply"><img src="../../icons/supplies icon.png" alt="supplies icon">Supplies</li>
+                        <li id="inventory_property"><img src="../../icons/properties icon.png" alt="Properties Icon">Property</li>
+                    </div>
+                </ul>
+            </div>
     
     
         <!-- Overall Inventory header -->
@@ -48,8 +52,8 @@
         <button class="add-item-btn">Add Item to Inventory</button>
 
 
-    <!-- Outer div -->
-        <div class="table">
+        <!-- Overall table container -->
+        <div class="overall-table-container"></div>
 
             <!-- First table -->
             <table class="overall">
@@ -72,8 +76,6 @@
                     <tr>
                         <td>
                             <div class="edit-text">Edit</div>
-                                <div class="print-icon">
-                                <img src="../../icons/print icon.png">
                             </div>
                         </td>
                         <td>sample date</td>
@@ -91,7 +93,7 @@
             </table>
         
         
-    <!-- Second table Container-->
+            <!-- Second table Container-->
             <div class="second-table-container"></div>
 
             <!-- Add Item Header -->
@@ -103,51 +105,86 @@
             <div class="button-container">
                 <button class="discard-btn">Discard</button>
                 <button class="add-row-btn">Add Row</button>
-                <button class="done-btn">Done</button>
+                <!--<button class="done-btn">Done</button>--> 
             </div>
 
             <!-- X button -->
             <button class="close-btn">x</button>
 
             <!-- Second table -->
-                <table class="second-table">
-                    <thead>
-                        <tr id="second-table-header">
-                            <th>Date</th>
-                            <th>Supplier</th>
-                            <th>Item</th>
-                            <th>Item Type</th>
-                            <th>Unit</th>
-                            <th>Quantity</th>
-                            <th>Price per Unit</th>
-                            <th>Total price</th>
-                            <th>Department</th>
-                            <th>Expiry Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>sample date</td>
-                            <td>sample supplier</td>
-                            <td>sample item</td>
-                            <td>sample item type</td>
-                            <td>sample unit</td>
-                            <td>sample Quantity</td>
-                            <td>sample price</td>
-                            <td>sample total</td>
-                            <td>sample dept</td>
-                            <td>sample expiry</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <table class="second-table">
+                <thead>
+                    <tr id="second-table-header">
+                        <th>Date</th>
+                        <th>Supplier</th>
+                        <th>Item</th>
+                        <th>Item Type</th>
+                        <th>Unit</th>
+                        <th>Quantity</th>
+                        <th>Price per Unit</th>
+                        <th>Total price</th>
+                        <th>Department</th>
+                        <th>Expiry Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>sample date</td>
+                        <td>sample supplier</td>
+                        <td>sample item</td>
+                        <td>sample item type</td>
+                        <td>sample unit</td>
+                        <td>sample Quantity</td>
+                        <td>sample price</td>
+                        <td>sample total</td>
+                        <td>sample dept</td>
+                        <td>sample expiry</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         
         <!--<script src="inventory.js"></script>-->
+
+        <!-- pressing x hides the second container div -->
         <script>
-            document.querySelector('.close-btn').addEventListener('click', function() {
-                document.querySelector('.second-table-container').style.display = 'none'; // Hide the container on click
+            document.addEventListener('DOMContentLoaded', function() {
+            // Get the "Add Item to Inventory" button
+            const addItemBtn = document.querySelector('.add-item-btn');
+        
+            // Get the overlay
+            const overlay = document.getElementById('overlay');
+        
+            // Get the elements to show/hide
+            const secondTableContainer = document.querySelector('.second-table-container');
+            const secondTable = document.querySelector('.second-table');
+            const addItemHeader = document.querySelector('.add-item-header');
+            const addRowBtn = document.querySelector('.add-row-btn');
+            const discardBtn = document.querySelector('.discard-btn');
+            const closeBtn = document.querySelector('.close-btn');
+        
+            // Add click event listener to the "Add Item to Inventory" button
+            addItemBtn.addEventListener('click', function() {
+                // Show the elements
+                secondTableContainer.style.display = 'block';
+                secondTable.style.display = 'block';
+                addItemHeader.style.display = 'block';
+                addRowBtn.style.display = 'block';
+                discardBtn.style.display = 'block';
+                closeBtn.style.display = 'block';
+            
+            // Show the overlay
+            overlay.style.display = 'block';
             });
+    
+            // Add click event listener to the close button
+            closeBtn.addEventListener('click', function() {
+                // Hide the second table container and overlay
+                secondTableContainer.style.display = 'none';
+                overlay.style.display = 'none';
+            });
+            });
+    
         </script>
         
     </body>
