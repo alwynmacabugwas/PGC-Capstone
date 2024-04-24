@@ -1,0 +1,84 @@
+/* General CSS */
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Center align text */
+}
+
+h1 {
+    padding: 0 10px; /* Add padding to the title */
+}
+
+/* Table CSS */
+table {
+    width: calc(100% - 10px); /* Adjust width to include side padding */
+    margin: 0 auto; /* Center the table */
+    border-collapse: collapse;
+    border: 1px solid #000;
+    page-break-inside: auto;
+    font-size: 12px; /* Decrease font size of table entries */
+}
+
+/* Table Header CSS */
+th {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center; /* Center align column headers */
+    background-color: #f2f2f2;
+}
+
+/* Table Cell CSS */
+td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Certification Section CSS */
+.certification-section {
+    width: calc(100% - 10px); /* Adjust width to match table width */
+    margin: 20px auto; /* Center the certification section */
+    padding: 0 10px; /* Match side padding of the table */
+    border: 1px solid #000;
+    line-height: 20px; /* Add line spacing */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space out the sections */
+}
+
+
+.certification-section p {
+    text-align: left; /* Left-align text */
+    margin: 5px 0; /* Add margin */
+    flex: 1; /* Grow to fill available space */
+}
+
+.certified-by,
+.approved-by,
+.verified-by {
+    flex: 1; /* Grow to fill available space */
+}
+
+.certified-by p,
+.approved-by p,
+.verified-by p {
+    margin: 0; /* Reset margin for p elements */
+}
+
+.certified-by p,
+.approved-by p,
+.verified-by p {
+    text-align: left; /* Left-align text */
+    margin: 5px 0; /* Add margin */
+    flex: 1; /* Grow to fill available space */
+}
+
+.certified-by input,
+.approved-by input,
+.verified-by input {
+    width: calc(100% - 10px); /* Adjust width to include side padding */
+    font-size: 12px; /* Decrease font size of inputs */
+}
+
+.small-input {
+    width: 50%; /* Adjust width of input fields */
+}
