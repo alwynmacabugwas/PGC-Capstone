@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Card</title>
+    <link rel="stylesheet" type="text/css" href="STOCK.css">
+</head>
+<body>
+    <h1>STOCK CARD</h1>
+    <form>
+        <div class="left-section">
+            <label for="unit-price:">Unit Price:</label>
+            <input type="text" id="unit-price" name="unit-price">
+
+            <label for="article:">Article:</label>
+            <input type="text" id="article" name="article">
+
+            <label for="description:">Description:</label>
+            <textarea id="description" name="description"></textarea>
+        </div>
+        <div class="right-section">
+            <label for="stock-no:">Stock No.</label>
+            <input type="text" id="stock-no" name="stock-no"><br>
+
+            <label for="quantity-unit:">Quantity Unit:</label>
+            <input type="text" id="quantity-unit" name="quantity-unit">
+        </div>
+
+        <table id="stock-table">
+            <thead>
+
+                <tr>
+                    <td colspan="7"></td>
+                </tr>
+
+                <tr>
+                    <th>Date Received or Issued</th>
+                    <th>Requisition or Issue Order Number</th>
+                    <th>From Whom Received or to Whom Issued</th>
+                    <th>Quantity Received</th>
+                    <th>Quantity Issued</th>
+                    <th>Quantity on Hand</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody id="stock-table-body">
+                <!-- rows added here -->
+            </tbody>
+        </table>
+    </form>
+    <script src="STOCK.js"></script>
+</body>
+</html>

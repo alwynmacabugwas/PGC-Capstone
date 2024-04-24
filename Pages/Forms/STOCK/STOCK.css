@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.left-section {
+    float: left;
+}
+
+.right-section {
+    float: right;
+}
+
+.left-section label, .right-section label {
+    display: block;
+}
+
+.left-section input, .left-section textarea {
+    width: 200px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.right-section input {
+    width: 150px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+textarea {
+    height: 100px;
+}
+
+table {
+    margin: 0 auto;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; 
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid black;
+    height: 10px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+thead tr:first-child td {
+    height: 5px;
+}
