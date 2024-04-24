@@ -1,0 +1,83 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.container {
+  margin: 20px;
+  border: 2px solid black;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.title {
+  text-align: center;
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative; /* Add position relative */
+}
+
+.lgu {
+  text-align: center;
+}
+
+.lgu h3 {
+  margin: 0;
+}
+
+.no {
+  text-align: right;
+}
+
+.approved-received {
+  border-top: 1px solid black;
+  padding-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  height: 15px;
+}
+
+input[type="text"], input[type="date"] {
+  width: calc(100% - 18px);
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.received {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  border-top: 1px solid black; /* Add top border */
+}
+
+.received div {
+  width: 45%;
+  position: relative; /* Add position relative */
+}
+
+.received div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 1px; /* Width of the dividing border */
+  background-color: black; /* Color of the dividing border */
+}
