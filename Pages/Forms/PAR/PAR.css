@@ -19,7 +19,7 @@ body {
 .subtitle {
   text-align: center;
   margin-bottom: 20px;
-  position: relative; /* Add position relative */
+  position: relative;
 }
 
 .lgu {
@@ -64,12 +64,12 @@ input[type="text"], input[type="date"] {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
-  border-top: 1px solid black; /* Add top border */
+  border-top: 1px solid black;
 }
 
 .received div {
   width: 45%;
-  position: relative; /* Add position relative */
+  position: relative;
 }
 
 .received div::after {
@@ -78,6 +78,6 @@ input[type="text"], input[type="date"] {
   top: 0;
   bottom: 0;
   right: 0;
-  width: 1px; /* Width of the dividing border */
-  background-color: black; /* Color of the dividing border */
+  width: 1px;
+  background-color: black; 
 }
