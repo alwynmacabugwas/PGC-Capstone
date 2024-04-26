@@ -183,7 +183,7 @@ input[type=text] {
 
 }
 /* targets table row and every second row is dark gray */
-.table tbody tr: nth-of-type(even) {
+.table tbody tr:nth-of-type(even) {
     background-color: #464646;
 }
 
