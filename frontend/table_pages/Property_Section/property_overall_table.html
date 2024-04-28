@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Property:Overall</title>
     <link rel="stylesheet" href="../../sidebar.css">
+    <link rel="stylesheet" href="../table_style.css">
 </head>
 <body>
 
@@ -56,5 +57,83 @@
           <a href="../../login_pages/loginPage.html">Log Out</a>
       </div> 
       
+    <div class="search-bar">
+        <input type="text" placeholder="Search..." name="search" id="search">
+        <button type="button" id="search-button">Search</button>
+    </div>
+
+    <div class="table-div">
+        <table class="table" id="property">
+            <thead>
+                <tr id="tableHeader">
+                    <th></th>
+                    <th>Date</th>
+                    <th>Supplier</th>
+                    <th>Item</th>
+                    <th>Item Type</th>
+                    <th>Unit</th>
+                    <th>Quantity</th>
+                    <th>Price per Unit</th>
+                    <th>Total price</th>
+                    <th>Department</th>
+                    <th>Expiry Date</th>
+                </tr>      
+            </thead>          
+            <tbody>
+                <tr>
+                    <td id="edit-link">Edit</td>
+                    <td>sample date</td>
+                    <td>sample supplier</td>
+                    <td>sample item</td>
+                    <td>sample item type</td>
+                    <td>sample unit</td>
+                    <td>sample Quantity</td>
+                    <td>sample price</td>
+                    <td>sample total</td>
+                    <td>sample dept</td>
+                    <td>sample expiry</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class=add-item-button-container>
+        <button type="button" id="add-item-button">Add item</button>
+    </div>
+    
+    <div class="add-item-popout" id="add-item-popout-id">
+        <h1>Add Item:</h1>
+        <label for="date">Date</label>
+        <input type="text" id="date" name="date">
+
+        <label for="supplier">Supplier</label>
+        <input type="text" id="supplier" name="supplier">
+
+        <label for="item">Item</label>
+        <input type="text" id="item" name="item">
+
+        <label for="item-type">Item type</label>
+        <input type="text" id="item-type" name="item-type">
+
+        <label for="unit">Unit</label>
+        <input type="text" id="unit" name="unit">
+
+        <label for="quantity">Quantity</label>
+        <input type="text" id="quantity" name="quantity">
+
+        <label for="price">Price</label>
+        <input type="text" id="price" name="price">
+
+        <label for="department">Department</label>
+        <input type="text" id="department" name="department">
+
+        <label for="expiry-date">Expiry Date</label>
+        <input type="text" id="expiry-date" name="expiry-date">
+
+        <button type="button" id="confirm-add">Confirm</button>
+        <button type="button" id="discard-add">Cancel</button>  
+    </div>
+      
       <script src="../../sidebar.js"></script>
-</body>
+      <script src="../table.js"></script>
+</body>    
