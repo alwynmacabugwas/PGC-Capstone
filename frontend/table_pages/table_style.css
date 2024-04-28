@@ -21,55 +21,29 @@
     height: 20px;
 }
 
+.add-item-button-container #add-item-button{
+    position: absolute;
+    top: 8%;
+    left: 90%;
+}
+
 .table{
-    font-family: 'Inter' ;
-    border-collapse: collapse; /*reduces amount of spaces in cells*/
-    margin: 25px 0;
-    font-size: 12px;
-    /*min-width: */
-    margin: 25px auto; /* Center the table horizontally */
-    border-top: 2px solid #1b1b1b;
-    border-left: 2px solid #1b1b1b;
-    border-right: 2px solid #1b1b1b;
-    width: 105%;
-    position: relative;
-    left: 250px;
-    top: 100px;
-    z-index: 1; /* Add this line */
+    position:fixed;
+    top: 20%;
+    left: 20%;
 }
 
-.table thead tr{
-    background-color: #464646;
-    color: #fff;
-    text-align: left;
-}
+#add-item-popout-id{
+    display: none;
+    position: absolute;
+    top: 30%;    
+    left:0;
+    right:0;
+    margin:0 auto;
+    width: 50%;
+    border: 3px solid #8d0000;
+    background-color: #380000;
+    padding: 10px;
+    z-index: 5;
 
-/* cells inside the table header and table content */
-.table th, table td{
-    padding: 10px 10px;
-    border: 1px solid #1b1b1b;
-    text-align: left;
-
-}
-/* targets table row and every second row is dark gray */
-.table tbody tr:nth-of-type(even) {
-    background-color: #464646;
-}
-
-/* makes the outside bottom border of the table dif color */
-.table tbody tr:last-of-type{
-    border-bottom: 2px solid #1b1b1b;
-    border-top: 2px solid #1b1b1b;
-}
-
-.table thead tr#tableHeader th:first-child {
-    width: 1px; /* Adjust the width as needed */
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-
-.edit-text{
-    margin-bottom: 10px;
 }
