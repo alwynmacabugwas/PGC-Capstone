@@ -7,6 +7,10 @@
   src: url("../font/static/Inter-Regular.ttf")
 }
 @font-face {
+  font-family: "Inter-ExtraBold";
+  src: url("../font/static/Inter-ExtraBold.ttf")
+}
+@font-face {
   font-family: "Inter-SemiBold";
   src: url("../font/static/Inter-SemiBold.ttf")
 }
@@ -63,6 +67,8 @@ body{
   margin-top: 30px;
 }
 
+
+/*sidebar icons*/
 .home-link img{
   width: 24px;
   height: auto;
@@ -70,14 +76,37 @@ body{
 
 }
 
-.logout-link{
-  position: absolute;
-  bottom: 50px; /* Adjust the distance from the bottom */
+.dropdown-btn img { /*sidebar for all dropdowns */
+  width: 24px; 
+  height: auto; 
+  margin-right: 10px; 
+}
+
+.logout-link img{
+  width: 23px;
+  height: auto;
+  margin-right: 5px;
+  vertical-align: middle; /* Align icons vertically with text */
+
 }
 
 
+
+
 .sidebar-dropdowns{
-  margin-top: 40px;
+  margin-top: 60px;
+}
+
+.dropdown-btn {
+  margin-top: 15px; 
+  position: relative; /* Set position to relative */
+}
+
+
+.logout-link{
+  position:absolute;
+  bottom: 40px; /* Adjust the distance from the bottom */
+
 }
 
 
@@ -111,10 +140,15 @@ body{
     /*background-color: #460000;*/
     padding-left: 18px;
     font-size: 10px;
+
   }
+
+
+
   .dropdown-container a {
     font-size: 15px; /* Adjust the font size as needed */
-}
+  }
+
 
 
   
@@ -125,3 +159,21 @@ body{
   }
 
 
+  .dropdown-btn::after {
+    content: '';
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    position: absolute;
+    right: 10px; /* Adjust the distance from the right */
+    top: calc(50% - 2px); /* Center vertically */
+    transform: rotate(45deg); /* Rotate the arrow */
+}
+
+
+
+
+.dropdown-container.show {
+  display: block;
+}

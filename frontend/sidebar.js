@@ -33,3 +33,12 @@ dropdownBtns.forEach(function(btn) {
             dropdownContent.style.display = 'block';
     });
 });
+// Function to toggle dropdown
+function toggleDropdown(button) {
+    var dropdownContent = button.nextElementSibling;
+    dropdownContent.classList.toggle('show');
+    
+    var caretIcon = button.querySelector('.fa-caret-down');
+    caretIcon.classList.toggle('rotate');
+}
+
