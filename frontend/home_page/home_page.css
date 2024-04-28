@@ -1,0 +1,7 @@
+.sidebar-header img {
+    width: 80px; /* Adjust the width of the image */
+    height: auto;
+    margin-right: 10px; /* Adjust the spacing between image and text */
+    vertical-align: middle; /* Align image vertically with text */
+    padding-left: 10px;
+}
