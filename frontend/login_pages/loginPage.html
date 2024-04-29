@@ -4,27 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <title>PGC INVENTORY</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../frontend/sidebar.css">
     <link rel="stylesheet" href="loginPage.css">
 </head>
 
 <body>
+    <!--Outer Div for the whole page-->
     <div class="box-form">
+         <!--left side of the page-->
         <div class="left">
-            <div class="overlay">
-                <h1>PGC INVENTORY SYSTEM</h1>
+            <div class="overlay"> 
+                <h1>
+                    PGC<br>
+                    INVENTORY<br>
+                    SYSTEM<br>
+                </h1>
+            </div>
+
+            <div class="logo-container">
+                <img src="C:/Users/Lenovo/Pictures/PGC logo.png" alt="Image">
             </div>
         </div>
 
+        <!--right side of the page--> 
         <div class="right">
-            <h5>Login</h5>
-            <div class="inputs">
-                <input type="text" id="input-username" placeholder="Username">
-                <input type="password" id="input-password" placeholder="Password">
-            </div>
+            <form>
+                <h2>LOGIN</h2>
+                <div class="inputs">
+                    <input type="text" id="input-username" placeholder="Username">
+                    <input type="password" id="input-password" placeholder="Password">
+                </div>
 
-            <button class="login-button" id="login-button">Login</button>
+                <button class="login-button" id="login-button">Enter</button>
+            </form>
         </div>
     </div>
 
