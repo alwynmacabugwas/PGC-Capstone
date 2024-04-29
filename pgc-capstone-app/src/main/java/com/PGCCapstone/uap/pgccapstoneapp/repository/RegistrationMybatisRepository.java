@@ -25,15 +25,18 @@ public interface RegistrationMybatisRepository {
 	@Select("SELECT * FROM items WHERE section = #{section}")
 		public ArrayList<Item> selectAllItemsBySection(Item item);
 	
-	@Insert("INSERT INTO users(username, department, name, password) VALUES (#{username}, #{department}, #{name}, #{password})")
-		public int registerAccount(UserAccount acount);
-	
-	@Select("SELECT * FROM users WHERE username = #{username}")
-		public UserAccount selectUser(String account);
-	
 	@Delete("DELETE FROM items WHERE po_num = #{po_num}")
 		public void deleteItemByPoNum(Item item);
 	
 	@Update("UPDATE items SET quantity = #{quantity} WHERE po_num = #{po_num}")
 		public  void updateItemByPoNum(Item item);
+	
+	@Insert("INSERT INTO users(username, department, name, password) VALUES (#{username}, #{department}, #{name}, #{password})")
+	public int registerAccount(UserAccount acount);
+
+	@Select("SELECT * FROM users WHERE username = #{username}")
+	public UserAccount selectUser(String account);
+	
+	@Delete("DELETE FROM users WHERE username = #{username}")
+	public int deleteUser(UserAccount account);
 }
