@@ -29,3 +29,7 @@
     line-height: 22px;
 }
 
+
+.active {
+    background-color: #262626 !important;
+  }

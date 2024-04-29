@@ -122,7 +122,7 @@ body{
     cursor: pointer;
     outline: none;
     font-family: "Inter-SemiBold";
-    font-size: 20px;
+    font-size: 18px;
   }
   
   .sidenav a:hover, .dropdown-btn:hover {
@@ -146,19 +146,23 @@ body{
 
 
   .dropdown-container a {
-    font-size: 15px; /* Adjust the font size as needed */
+    font-size: 16px; /* Adjust the font size as needed */
+
+
   }
 
 
 
-  
+  /*
   .fa-caret-down {
     float: right;
     padding-right: 8px;
     color: antiquewhite;
   }
+  */
 
 
+  
   .dropdown-btn::after {
     content: '';
     border: solid #fff;
@@ -169,11 +173,16 @@ body{
     right: 10px; /* Adjust the distance from the right */
     top: calc(50% - 2px); /* Center vertically */
     transform: rotate(45deg); /* Rotate the arrow */
-}
-
-
+  }
 
 
 .dropdown-container.show {
   display: block;
 }
+
+
+/*
+.dropdown-btn {
+  /* ... other styles */
+/*  position: relative; /* Set position to relative */
+/*}

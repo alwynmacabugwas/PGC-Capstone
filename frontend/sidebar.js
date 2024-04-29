@@ -42,3 +42,7 @@ function toggleDropdown(button) {
     caretIcon.classList.toggle('rotate');
 }
 
+
+
+
+
