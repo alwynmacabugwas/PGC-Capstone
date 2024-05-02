@@ -1,4 +1,5 @@
 function openAddItem() {
+    document.getElementById("overlay").style.display = "block";
     document.getElementById("add-item-popout-id").style.display = "block";
     document.getElementById("confirm-add").style.display = "block";
     document.getElementById("discard-add").style.display = "block";
@@ -7,6 +8,7 @@ function openAddItem() {
   }
 
 function closeAddItem() {
+    document.getElementById("overlay").style.display = "none";
     document.getElementById("add-item-popout-id").style.display = "none";
     document.getElementById("confirm-add").style.display = "none";
     document.getElementById("discard-add").style.display = "none";
