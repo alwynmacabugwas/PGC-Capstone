@@ -5,15 +5,16 @@ public class Item {
 	private int  po_num;
 	private String date;
 	private String supplier;
+	private String department;
+	private int item_id;
 	private String item;
 	private String item_type;
 	private String unit;
 	private int quantity;
 	private int price_per_unit;
 	private int total;
-	private String section;
-	private String department;
 	private String expiry_date;
+	private String section;
 	
 	public int getPo_num() {
 		return po_num;
@@ -86,6 +87,12 @@ public class Item {
 	}
 	public void setExpiry_date(String expiry_date) {
 		this.expiry_date = expiry_date;
+	}
+	public int getItem_id() {
+		return item_id;
+	}
+	public void setItem_id(int item_id) {
+		this.item_id = item_id;
 	}
 	
 	
