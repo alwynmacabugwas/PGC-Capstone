@@ -15,6 +15,7 @@ public class Item {
 	private int total;
 	private String expiry_date;
 	private String section;
+	private String status;
 	
 	public int getPo_num() {
 		return po_num;
@@ -93,6 +94,12 @@ public class Item {
 	}
 	public void setItem_id(int item_id) {
 		this.item_id = item_id;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	
 	
