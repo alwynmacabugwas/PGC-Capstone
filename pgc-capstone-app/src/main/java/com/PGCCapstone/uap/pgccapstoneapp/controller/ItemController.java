@@ -10,21 +10,25 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.PGCCapstone.uap.pgccapstoneapp.model.Item;
 import com.PGCCapstone.uap.pgccapstoneapp.model.UserAccount;
+import com.PGCCapstone.uap.pgccapstoneapp.repository.ItemRepository;
+import com.PGCCapstone.uap.pgccapstoneapp.repository.PoRepository;
 import com.PGCCapstone.uap.pgccapstoneapp.repository.RegistrationMybatisRepository;
 
 @RestController
 public class ItemController {
 	
 	@Autowired
-	RegistrationMybatisRepository registrationRepo;
+	ItemRepository ItemRepo;
+	PoRepository PoRepo;
 	
-	@PostMapping("event/register/item")
+	@PostMapping("item/register")
 	public Item registerItem(@RequestBody Item item) {
 		item.setTotal(item.getPrice_per_unit(), item.getQuantity());		
-		registrationRepo.insertItem(item);
+		ItemRepo.insertItem(item);
+		PoRepo.insertPurchaseOrder(item);
 		return item;
 	}
-	
+
 	@GetMapping("/item")
 	public ArrayList<Item> displayItems() {
 		ArrayList<Item> items = new ArrayList<Item>();

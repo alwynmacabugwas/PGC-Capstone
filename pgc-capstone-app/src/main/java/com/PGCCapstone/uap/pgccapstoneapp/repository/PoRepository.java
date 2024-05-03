@@ -6,5 +6,6 @@ import com.PGCCapstone.uap.pgccapstoneapp.model.Item;
 
 public interface PoRepository {
 	@Insert("INSERT INTO purchase_order(po_no, date, supplier, department, section) VALUES (#{po_num}, #{date}, #{supplier}, #{department}, #{section})")
-	public int insertExpendableItem(Item item);
+	public int insertPurchaseOrder(Item item);
+	
 }
