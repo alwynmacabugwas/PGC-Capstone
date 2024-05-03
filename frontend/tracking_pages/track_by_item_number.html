@@ -4,57 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tracking:By Item No.</title>
+    <link rel="stylesheet" href="../tracking_pages/track_by_item_number.css">
     <link rel="stylesheet" href="../sidebar.css">
 </head>
 <body>
 
     <div class="sidenav">
-        <a href="../home_page/home_page.html">Home</a>
-        <button class="dropdown-btn">Item Tracking
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-container">
-            <a href="../tracking_pages/track_by_PO.html">By PO number</a>
-            <a href="../tracking_pages/track_by_item_number.html">By item number</a>
+
+        <div class="sidebar-header">
+            <img src="../../icons/PGC logo.png" alt="Logo">
+            <h1>GOVERNMENT
+                OF CAVITE<br>
+                INVENTORY<br>
+            </h1>
         </div>
 
-        <button class="dropdown-btn">Overall
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-container">
-            <a href="../table_pages/admin_overall_table.html">All</a>
-            <a href="../table_pages/admin_PPE_table.html">PPE's</a>
-            <a href="../table_pages/admin_expendable_table.html">Expendables</a>
+        <a href="../home_page/home_page.html" class="home-link" >
+            <img src="../../icons/home icon.png" alt="Home Icon">
+            Home
+        </a>
+        <div class = sidebar-dropdowns>
+            <button class="dropdown-btn">
+                <img src="../../icons/item tracking icon.png">
+                Item Tracking
+                <i class="fa fa-caret-down caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="../tracking_pages/track_by_PO.html">By Item ID</a>
+                <a href="../tracking_pages/track_by_item_number.html">By Item Number</a>
+            </div>
+
+            <button class="dropdown-btn">
+                <img src="../../icons/inventory icon.png">
+                Overall
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="../table_pages/admin_overall_table.html">All</a>
+                <a href="../table_pages/admin_PPE_table.html">PPE's</a>
+                <a href="../table_pages/admin_expendable_table.html">Expendables</a>
+            </div>
+
+            <button class="dropdown-btn">
+                <img src="../../icons/supplies icon.png">
+                Supplies
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="../table_pages/Supply_Section/supply_overall_table.html">All</a>
+                <a href="../table_pages/Supply_Section/supply_PPE_table.html">Semi Expendable PPE's</a>
+                <a href="../table_pages/Supply_Section/supply_expendable_table.html">Expendables</a>
+            </div>
+        
+            <button class="dropdown-btn" onclick="toggleDropdown(this)">
+                <img src="../../icons/properties icon.png">
+                Properties
+                <i class="fa fa-caret-down"></i>
+            </button>
+
+            <div class="dropdown-container">
+                <a href="../table_pages/Property_Section/property_overall_table.html">All</a>
+                <a href="../table_pages/Property_Section/property_PPE_table.html">PPE's</a>
+                <a href="../table_pages/Property_Section/property_expendable_table.html">Expendables</a>
+            </div>
+        
+            <button class="dropdown-btn">
+                <img src="../../icons/forms icon.png">
+                Forms
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="Form1">Report</a>
+                <a href="Form2">Form2</a>
+                <a href="Form3">Form3</a>
+            </div>
         </div>
 
-        <button class="dropdown-btn">Supplies
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-container">
-              <a href="../table_pages/Supply_Section/supply_overall_table.html">All</a>
-              <a href="../table_pages/Supply_Section/supply_PPE_table.html">Semi Expendable PPE's</a>
-              <a href="../table_pages/Supply_Section/supply_expendable_table.html">Expendables</a>
-          </div>
-        
-        <button class="dropdown-btn">Properties
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-container">
-            <a href="../table_pages/Property_Section/property_overall_table.html">All</a>
-            <a href="../table_pages/Property_Section/property_PPE_table.html">PPE's</a>
-            <a href="../table_pages/Property_Section/property_expendable_table.html">Expendables</a>
-        </div>
-        
-        <button class="dropdown-btn">Forms
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-container">
-              <a href="Form1">Report</a>
-              <a href="Form2">Form2</a>
-              <a href="Form3">Form3</a>
-          </div>
-          <a href="../login_pages/loginPage.html">Log Out</a>
-      </div> 
-      
+        <a href="../login_pages/loginPage.html" class="logout-link">
+            <img src="../../icons/logout icon.png">
+            Log Out
+        </a>
+    </div> 
+
+        <!-- Overall Inventory header -->
+        <h1 class="overall-header">ITEM NUMBER</h1>
+        <h1 class="inventory-header">Tracking</h1>
       <script src="../sidebar.js"></script>
 </body>
