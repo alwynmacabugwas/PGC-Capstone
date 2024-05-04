@@ -7,6 +7,7 @@ public class Item {
 	private String supplier;
 	private String department;
 	private int item_id;
+	private int item_no;
 	private String item;
 	private String item_type;
 	private String unit;
@@ -100,6 +101,12 @@ public class Item {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public int getItem_no() {
+		return item_no;
+	}
+	public void setItem_no(int item_no) {
+		this.item_no = item_no;
 	}
 	
 	

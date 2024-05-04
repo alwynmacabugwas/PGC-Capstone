@@ -32,34 +32,34 @@ public class ItemController {
 	@GetMapping("/item")
 	public ArrayList<Item> displayItems() {
 		ArrayList<Item> items = new ArrayList<Item>();
-		items.addAll(registrationRepo.selectAllItems());
+		items.addAll(ItemRepo.getAllItem());
 		return items;
 	}
 	
-	@GetMapping("/item/itemName")
-	public ArrayList<Item> displayItemByName(@RequestBody Item item) {
-		ArrayList<Item> items = new ArrayList<Item>();
-		items.addAll(registrationRepo.selectItemByName(item));
-		return items;
-	}
-	
-	@PostMapping("/item/bySection")
-	public ArrayList<Item> displayItemBySection(@RequestBody Item item) {
-		ArrayList<Item> items = new ArrayList<Item>();
-		items.addAll(registrationRepo.selectAllItemsBySection(item));
-		return items;
-	}
-	
-	@PostMapping("/item/delete/poNum")
-	public String deleteItem(@RequestBody Item item) {
-		registrationRepo.deleteItemByPoNum(item);
-		return "item should be deleted";
-	}
-	
-	@PostMapping("/item/update/poNum")
-	public String updateItem(@RequestBody Item item) {
-		registrationRepo.updateItemByPoNum(item);
-		return "item should be updated";
-	}
+//	@GetMapping("/item/itemName")
+//	public ArrayList<Item> displayItemByName(@RequestBody Item item) {
+//		ArrayList<Item> items = new ArrayList<Item>();
+//		items.addAll(registrationRepo.selectItemByName(item));
+//		return items;
+//	}
+//	
+//	@PostMapping("/item/bySection")
+//	public ArrayList<Item> displayItemBySection(@RequestBody Item item) {
+//		ArrayList<Item> items = new ArrayList<Item>();
+//		items.addAll(registrationRepo.selectAllItemsBySection(item));
+//		return items;
+//	}
+//	
+//	@PostMapping("/item/delete/poNum")
+//	public String deleteItem(@RequestBody Item item) {
+//		registrationRepo.deleteItemByPoNum(item);
+//		return "item should be deleted";
+//	}
+//	
+//	@PostMapping("/item/update/poNum")
+//	public String updateItem(@RequestBody Item item) {
+//		registrationRepo.updateItemByPoNum(item);
+//		return "item should be updated";
+//	}
 	
 }

@@ -23,7 +23,7 @@ public class ItemIdController {
 		return itemId;
 	}
 	
-	@PostMapping("itemId/register/expendable")
+	@PostMapping("itemId/register/ppe")
 	public ItemId registerPpeItem(@RequestBody ItemId itemId) {		
 		itemIdRepo.insertPpeItem(itemId);
 		return itemId;

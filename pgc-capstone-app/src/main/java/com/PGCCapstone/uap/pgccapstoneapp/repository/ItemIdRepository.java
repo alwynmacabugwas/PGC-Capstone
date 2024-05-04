@@ -3,16 +3,17 @@ package com.PGCCapstone.uap.pgccapstoneapp.repository;
 import java.util.ArrayList;
 
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import com.PGCCapstone.uap.pgccapstoneapp.model.ItemId;
 
-
+@Mapper
 public interface ItemIdRepository {
 	@Insert("INSERT INTO expendable_items(item_id, item, unit) VALUES (#{itemId}, #{item}, #{unit})")
 	public int insertExpendableItem(ItemId itemId);
 	
-	@Insert("INSERT INTO expendable_items(item_id, item, unit) VALUES (#{itemId}, #{item}, #{unit})")
+	@Insert("INSERT INTO ppe_items(item_id, item, unit) VALUES (#{itemId}, #{item}, #{unit})")
 	public int insertPpeItem(ItemId itemId);
 	
 	@Select("SELECT * FROM expendable_items")
