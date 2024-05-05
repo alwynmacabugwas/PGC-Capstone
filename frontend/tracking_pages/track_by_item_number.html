@@ -6,6 +6,7 @@
     <title>Tracking:By Item No.</title>
     <link rel="stylesheet" href="../tracking_pages/track_by_item_number.css">
     <link rel="stylesheet" href="../sidebar.css">
+    <link rel="stylesheet" href="../../frontend/table_pages/table_style.css">
 </head>
 <body>
 
@@ -89,5 +90,53 @@
         <!-- Overall Inventory header -->
         <h1 class="overall-header">ITEM NUMBER</h1>
         <h1 class="inventory-header">Tracking</h1>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." name="search" id="search">
+            <button type="button" id="search-button">Search</button>
+        </div>
+    
+        <div class="pagination-container">
+            <div class="pagination">
+                <button class="prev">&#8249; Prev</button>
+                <div class="page-numbers">
+                    <span class="page-number">1</span>
+                    <span class="page-number">2</span>
+                    <!-- Add more page numbers dynamically -->
+                </div>
+                <button class="next">Next &#8250;</button>
+            </div>
+        </div>
+
+        <!-- First table -->
+    <div class="table-div">
+        <!-- First table -->
+        <table class="table" id="overall">
+            <thead>
+                <tr id="tableHeader">
+                    <th></th>
+                    <th>Item Number</th>
+                    <th>PO Number</th>
+                    <th>Item ID</th>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Expiry Date</th>
+ 
+                </tr>      
+            </thead>          
+            <tbody>
+                <tr>
+                    <td id="edit-link">Edit</td>
+                    <td>sample date</td>
+                    <td>sample supplier</td>
+                    <td>sample item</td>
+                    <td>sample date</td>
+                    <td>sample supplier</td>
+                    <td>sample item</td>
+   
+                </tr>
+            </tbody>
+        </table>
+    </div>
       <script src="../sidebar.js"></script>
 </body>
