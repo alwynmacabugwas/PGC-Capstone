@@ -36,6 +36,13 @@ public class ItemController {
 		return items;
 	}
 	
+	@GetMapping("/item/byId")
+	public ArrayList<Item> displayItemsByItemId() {
+		ArrayList<Item> items = new ArrayList<Item>();
+		items.addAll(ItemRepo.getItemByItemId());
+		return items;
+	}
+	
 //	@GetMapping("/item/itemName")
 //	public ArrayList<Item> displayItemByName(@RequestBody Item item) {
 //		ArrayList<Item> items = new ArrayList<Item>();

@@ -15,4 +15,7 @@ public interface ItemRepository {
 	
 	@Select("SELECT * FROM procured_items")
 	public ArrayList<Item> getAllItem();
+	
+	@Select("SELECT procured_items.item_id, expendable_items.item, SUM(procured_items.quantity) FROM procured_items, expendable_items WHERE procured_items.item_id = expendable_items.item_id GROUP BY procured_items.item_id ORDER BY count(quantity) DESC")
+	public ArrayList<Item> getItemByItemId();
 }
