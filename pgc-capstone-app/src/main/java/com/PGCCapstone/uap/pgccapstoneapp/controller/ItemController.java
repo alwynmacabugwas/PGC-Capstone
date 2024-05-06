@@ -19,6 +19,7 @@ public class ItemController {
 	
 	@Autowired
 	ItemRepository ItemRepo;
+	@Autowired
 	PoRepository PoRepo;
 	
 	@PostMapping("item/register")
