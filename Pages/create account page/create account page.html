@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Create Account</title>
+   <link rel="stylesheet" href="create account page.css">
+</head>
+<body>
+   <div class="sidebar">
+       <div class="sidebar-content">
+           <img src="C:\Users\Lenovo\Pictures\PGC logo.png" alt="Logo">
+           <h1>GOVERNMENT
+               OF CAVITE<br>
+               INVENTORY<br>
+           </h1>
+       </div>
+       <ul>
+           <div class="item-div">
+               <li id="home"><img src="C:\Users\Lenovo\Pictures\home icon.png" alt="Home Icon">Home</li>
+               <li id="inventory_overall"><img src="C:\Users\Lenovo\Pictures\inventory icon.png" alt="Home Icon">Inventory</li>
+               <li id="inventory_supply"><img src="C:\Users\Lenovo\Pictures\supplies icon.png" alt="Supplies Icon">Supplies</li>
+               <li id="inventory_property"><img src="C:\Users\Lenovo\Pictures\properties icon.png" alt="Properties Icon">Property</li>
+           </div>
+       </ul>
+   </div>
+   <form>
+       <h2>CREATE ACCOUNT</h2>
+       <input type="text" id="input-username" name="username" placeholder="Username" required>
+       <input type="password" id="input-password" name="password" placeholder="Password" required>
+       <div class="checkbox-container">
+           <input type="checkbox" id="admin" name="role" value="admin">
+           <label for="admin">Admin</label>
+           <input type="checkbox" id="supply" name="role" value="supply">
+           <label for="supply">Supply</label>
+           <input type="checkbox" id="property" name="role" value="property">
+           <label for="property">Property</label>
+       </div>
+       <input type="submit" value="Create Account">
+   </form>
+</body>
+</html>
