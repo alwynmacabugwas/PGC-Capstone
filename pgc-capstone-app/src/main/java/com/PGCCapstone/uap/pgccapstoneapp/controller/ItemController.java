@@ -13,6 +13,7 @@ import com.PGCCapstone.uap.pgccapstoneapp.model.UserAccount;
 import com.PGCCapstone.uap.pgccapstoneapp.repository.ItemRepository;
 import com.PGCCapstone.uap.pgccapstoneapp.repository.PoRepository;
 import com.PGCCapstone.uap.pgccapstoneapp.repository.RegistrationMybatisRepository;
+import com.PGCCapstone.uap.pgccapstoneapp.service.ItemService;
 
 @RestController
 public class ItemController {
@@ -21,12 +22,15 @@ public class ItemController {
 	ItemRepository ItemRepo;
 	@Autowired
 	PoRepository PoRepo;
+	@Autowired
+	ItemService itemService;
 	
 	@PostMapping("item/register")
 	public Item registerItem(@RequestBody Item item) {
 		item.setTotal(item.getPrice_per_unit(), item.getQuantity());		
 		ItemRepo.insertItem(item);
 		PoRepo.insertPurchaseOrder(item);
+		itemService.createPpeTracker(item);
 		return item;
 	}
 

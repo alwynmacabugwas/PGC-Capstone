@@ -9,7 +9,7 @@ public class ItemId {
 		return itemId;
 	}
 	public void setItemId(int itemId) {
-		this.itemId = itemId;
+		this.itemId = itemId + 1000;
 	}
 	public String getItem() {
 		return item;
