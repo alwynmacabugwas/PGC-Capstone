@@ -22,6 +22,6 @@ public interface ItemIdRepository {
 	@Select("SELECT * FROM ppe_items")
 	public ArrayList<ItemId> getAllPpeItem();
 
-	@Insert("INSERT INTO ppe_items_details(item_code, item_id, item_no, status) VALUES(#{item_code}, #{item_id}, #{item_no}, #{status}")
-	public String insertPpeDetails(int item_id, String item_code, String status);
+	@Insert("INSERT INTO ppe_items_details(item_code, item_id, item_no, status) VALUES(#{item_code}, #{item_id}, #{item_no}, #{status})")
+	public void insertPpeDetails(String item_code, int item_id, int item_no, String status);
 }

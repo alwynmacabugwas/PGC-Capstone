@@ -25,7 +25,7 @@ public class ItemIdController {
 	
 	@PostMapping("itemId/register/ppe")
 	public ItemId registerPpeItem(@RequestBody ItemId itemId) {
-		itemId.setItemId(itemId.getItemId());
+		//itemId.setItemId(itemId.getItemId());
 		itemIdRepo.insertPpeItem(itemId);
 		return itemId;
 	}

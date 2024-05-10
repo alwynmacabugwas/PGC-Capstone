@@ -11,16 +11,18 @@ public class ItemService {
 	@Autowired
 	ItemIdRepository itemIdRepo;
 	
-	public String createPpeTracker(Item item) {
+	public void createPpeTracker(Item item) {
 		int itemId = item.getItem_id();
-		if (itemId > 1000) {
-			String item_code = "ICTO-" + (item.getItem_id());
-			String status = "available";
-			itemIdRepo.insertPpeDetails(itemId, item_code, status);
-			return "PPE details created";
+		int count = item.getQuantity();
+		int itemNo = item.getItem_no();
+		
+		if (itemId > 1000) {	
+			for(int i = 0; count >= i; i++) {
+				String item_code = "ICTO -" + (itemId) + "-" + (i + 1);
+				String status = "available";
+				itemIdRepo.insertPpeDetails(item_code, itemId, itemNo, status);
+			}
 		}
-		else {
-			return "Not PPE Item";
-		}
+	
 	}
 }

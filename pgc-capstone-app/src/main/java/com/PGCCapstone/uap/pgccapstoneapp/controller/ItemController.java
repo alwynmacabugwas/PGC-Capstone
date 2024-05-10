@@ -23,7 +23,7 @@ public class ItemController {
 	@Autowired
 	PoRepository PoRepo;
 	@Autowired
-	ItemService itemService;
+	private ItemService itemService;
 	
 	@PostMapping("item/register")
 	public Item registerItem(@RequestBody Item item) {
