@@ -178,10 +178,6 @@
     background-color: #464646;
   }
   
-  .second-table tbody tr:last-of-type {
-    border-bottom: 2px solid #1b1b1b;
-    border-top: 2px solid #1b1b1b;
-  }
 
   #confirm-add{
     position: relative;
@@ -332,14 +328,7 @@
     text-align: left;
   }
   
-  .third-table tbody tr:nth-of-type(even) {
-    background-color: #464646;
-  }
-  
-  .third-table tbody tr:last-of-type {
-    border-bottom: 2px solid #1b1b1b;
-    border-top: 2px solid #1b1b1b;
-  }
+
 
   #edit-item-popout-id{
     /*
