@@ -64,7 +64,7 @@
     z-index: 1; /* Add this line */
     width: 1200px;
     position: absolute;
-    top: 200px;
+    top: 195px;
     left: 245px;  
 }
 
@@ -96,8 +96,9 @@
     width: 1px; /* Adjust the width as needed */
 }
 
-.edit-link{
-    color: oldlace;
+#edit-link{
+    color: #047CFC;
+    cursor: pointer;
 }
 
 
@@ -121,8 +122,8 @@
     transform: translate(-50%, -50%) ;
     z-index: 1; /* Ensure the second table container is above other content */
     background-color: white;
-    padding: 100px;
-    width: 980px;
+    padding: 90px;
+    width: 1300px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -137,10 +138,7 @@
 .second-table {
     font-family: 'Inter-SemiBold';
     border-collapse: collapse;
-    border-top: 2px solid #1b1b1b;
-    border-left: 2px solid #1b1b1b;
-    border-right: 2px solid #1b1b1b;
-    width: 115%;
+    width: 1450px;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     position: relative;
@@ -148,6 +146,18 @@
     top:-50px;
     z-index: 2;
   }
+  .second-table input[type="text"] {
+    width: 128px; /* Adjust the width as needed */
+    padding: 10px; /* Adjust padding as needed */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+.second-table input[type="date"] {
+    width: 128px; /* Adjust the width as needed */
+    padding: 10px; /* Adjust padding as needed */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+
 
   /*second table header and data*/
   .second-table th,
@@ -182,7 +192,7 @@
     border: none;
     cursor: pointer;
     position: absolute;
-    top: 350px;
+    top: 310px;
     right: 30px;
     width: 150px;
     border-radius: 4px;
@@ -198,7 +208,7 @@
     border: none;
     cursor: pointer;
     position: absolute;
-    top: 350px;
+    top: 310px;
     left: 30px;
     width: 150px;
     border-radius: 4px;
@@ -209,8 +219,8 @@
 .add-item-popout h1{
     position:relative; /* Add this line */
     z-index: 2; /* Add this line */
-    top: -110px;
-    left: -485px;
+    top: -105px;
+    left: -640px;
     font-size: 37px;
 }
 
@@ -225,12 +235,12 @@
 }
 
 .pagination-container {
-    position: relative;
-    top: 145px;
-    left: -17px;
+    position: absolute;
+    top: 150px;
+    left: 245px;
     background-color: #333; /* Dark gray background */
     padding: 5px; /* Add some padding for spacing */
-    width: 1000px; /* Adjust the width as needed */
+    width: 1250px; /* Adjust the width as needed */
     margin: 0 auto; /* Center the container horizontally */
     border-radius: 5px; /* Optional: Add some rounded corners */
 }
@@ -278,5 +288,142 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
     z-index: 3; /* Ensure the overlay covers everything */
+}
+
+
+
+
+.third-table {
+    font-family: 'Inter-SemiBold';
+    border-collapse: collapse;
+    width: 1450px;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative;
+    left: -75px;
+    top:-50px;
+    z-index: 2;
+  }
+  .third-table input[type="text"] {
+    width: 128px; /* Adjust the width as needed */
+    padding: 10px; /* Adjust padding as needed */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+.third-table input[type="date"] {
+    width: 128px; /* Adjust the width as needed */
+    padding: 10px; /* Adjust padding as needed */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+
+
+  /*second table header and data*/
+  .third-table th,
+  .third-table td {
+      border: 1px solid #000000;
+      padding: 8px;
+      text-align: left;
+  }
+  
+  /*second table header*/
+  .third-table thead tr {
+    background-color: #464646;
+    color: #fff;
+    text-align: left;
+  }
+  
+  .third-table tbody tr:nth-of-type(even) {
+    background-color: #464646;
+  }
+  
+  .third-table tbody tr:last-of-type {
+    border-bottom: 2px solid #1b1b1b;
+    border-top: 2px solid #1b1b1b;
+  }
+
+  #edit-item-popout-id{
+    /*
+    display: none;
+    position: absolute;
+    top: 30%;    
+    left:0;
+    right:0;
+    margin:0 auto;
+    width: 50%;
+    border: 3px solid #8d0000;
+    background-color: #380000;
+    padding: 10px;
+    z-index: 5;
+    */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) ;
+    z-index: 1; /* Ensure the second table container is above other content */
+    background-color: white;
+    padding: 90px;
+    width: 1300px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center;
+    opacity: 1;
+
+}
+
+
+
+  .edit-item-popout h1{
+    position:relative; /* Add this line */
+    z-index: 2; /* Add this line */
+    top: -105px;
+    left: -640px;
+    font-size: 37px;
+}
+
+#confirm-edit{
+    position: relative;
+    font-family: 'Inter-SemiBold';
+    padding: 9.5px;
+    background-color: #027400;
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 310px;
+    right: 30px;
+    width: 150px;
+    border-radius: 4px;
+    border: 1px solid #1b1b1b;
+  }
+
+#discard-edit{
+    position: relative;
+    font-family: 'Inter-SemiBold';
+    padding: 9.5px;
+    background-color: #890000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 310px;
+    left: 30px;
+    width: 150px;
+    border-radius: 4px;
+    border: 1px solid #1b1b1b;
+    z-index: 2;
+  }
+
+  /* Initially hides the popup div until add item is pressed */
+#edit-item-popout-id,
+#confirm-edit,
+#discard-edit,
+.third-table,
+.edit-item-popout h1 {
+    display: none;
+    z-index: 4;
 }
 
