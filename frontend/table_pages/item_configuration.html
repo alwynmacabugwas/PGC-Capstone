@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Property:Overall</title>
-    <link rel="stylesheet" href="../../sidebar.css">
-    <link rel="stylesheet" href="../table_style.css">
-    <link rel="stylesheet" href="../Property_Section/property_expendable_table.css">
+    <title>Admin:Overall</title>
+    <link rel="stylesheet" href="../sidebar.css">
+    <link rel="stylesheet" href="table_style.css">
+    <link rel="stylesheet" href="item_configuration.css">
 </head>
 <body>
 
     <div class="sidenav">
         <div class="sidebar-header">
-            <img src="../../../icons/PGC logo.png" alt="Logo">
+            <img src="../../icons/PGC logo.png" alt="Logo">
             <h1>GOVERNMENT
                 OF CAVITE<br>
                 INVENTORY<br>
             </h1>
         </div>
 
-        <a href="../../home_page/home_page.html" class="home-link" >
-            <img src="../../../icons/home icon.png" alt="Home Icon">
+        <a href="../home_page/home_page.html" class="home-link" >
+            <img src="../../icons/home icon.png" alt="Home Icon">
             Home
         </a>
         <div class = sidebar-dropdowns>
             <a href="../table_pages/item_configuration.html" class="home-link" >
-                <img src="../../../icons/item config.png" alt="Home Icon">
+                <img src="../../icons/item config.png" alt="Home Icon">
                 Item Configuration
             </a>
             <button class="dropdown-btn">
-                <img src="../../../icons/item tracking icon.png">
+                <img src="../../icons/item tracking icon.png">
                 Item Tracking
                 <i class="fa fa-caret-down caret-down"></i>
             </button>
@@ -39,7 +39,7 @@
             </div>
 
             <button class="dropdown-btn">
-                <img src="../../../icons/inventory icon.png">
+                <img src="../../icons/inventory icon.png">
                 Overall
                 <i class="fa fa-caret-down"></i>
             </button>
@@ -50,18 +50,18 @@
             </div>
 
             <button class="dropdown-btn">
-                <img src="../../../icons/supplies icon.png">
+                <img src="../../icons/supplies icon.png">
                 Supplies
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-container">
                 <a href="../table_pages/Supply_Section/supply_overall_table.html">All</a>
-                <a href="../Supply_Section/supply_PPE_table.html">Semi Expendable PPE's</a>
+                <a href="../table_pages/Supply_Section/supply_PPE_table.html">Semi Expendable PPE's</a>
                 <a href="../table_pages/Supply_Section/supply_expendable_table.html">Expendables</a>
             </div>
         
             <button class="dropdown-btn" onclick="toggleDropdown(this)">
-                <img src="../../../icons/properties icon.png">
+                <img src="../../icons/properties icon.png">
                 Properties
                 <i class="fa fa-caret-down"></i>
             </button>
@@ -73,7 +73,7 @@
             </div>
         
             <button class="dropdown-btn">
-                <img src="../../../icons/forms icon.png">
+                <img src="../../icons/forms icon.png">
                 Forms
                 <i class="fa fa-caret-down"></i>
             </button>
@@ -85,14 +85,14 @@
         </div>
 
         <a href="../login_pages/loginPage.html" class="logout-link">
-            <img src="../../../icons/logout icon.png">
+            <img src="../../icons/logout icon.png">
             Log Out
         </a>
       </div> 
 
         <!-- Overall Inventory header -->
-        <h1 class="overall-header">PROPERTY</h1>
-        <h1 class="inventory-header">Overall Table</h1>
+        <h1 class="overall-header">ITEM</h1>
+        <h1 class="inventory-header">Configuration</h1>
 
 
 
@@ -122,16 +122,9 @@
             <thead>
                 <tr id="tableHeader">
                     <th></th>
-                    <th>Date</th>
-                    <th>Supplier</th>
-                    <th>Item</th>
+                    <th>Item ID</th>
                     <th>Item Type</th>
-                    <th>Unit</th>
-                    <th>Quantity</th>
-                    <th>Price per Unit</th>
-                    <th>Total price</th>
-                    <th>Department</th>
-                    <th>Expiry Date</th>
+                    <th>Item Name</th>
                 </tr>      
             </thead>          
             <tbody>
@@ -140,13 +133,7 @@
                     <td>sample date</td>
                     <td>sample supplier</td>
                     <td>sample item</td>
-                    <td>sample item type</td>
-                    <td>sample unit</td>
-                    <td>sample Quantity</td>
-                    <td>sample price</td>
-                    <td>sample total</td>
-                    <td>sample dept</td>
-                    <td>sample expiry</td>
+
                 </tr>
             </tbody>
         </table>
@@ -234,7 +221,7 @@
         <button type="button" id="confirm-edit">Confirm</button>
         <button type="button" id="discard-edit">Cancel</button>  
     </div>
-      
-      <script src="../../sidebar.js"></script>
-      <script src="../table.js"></script>
-</body>    
+
+      <script src="../sidebar.js"></script>
+      <script src="table.js"></script>
+</body>

@@ -1,0 +1,18 @@
+.overall-header {
+    position: absolute;
+    color: #1e1e1e;
+    left: 240px;
+    top: -15px;
+    font-size: 40px;
+    font-family: "Inter-Bold";
+}
+
+.inventory-header {
+    position: absolute;
+    color: #1e1e1e;
+    left: 265px;
+    top: 30px;
+    font-size: 30px;
+    font-family: "Inter-Bold";
+}
+
