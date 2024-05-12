@@ -88,30 +88,34 @@
             <img src="../../icons/logout icon.png">
             Log Out
         </a>
-    </div> 
+      </div> 
 
         <!-- Overall Inventory header -->
         <h1 class="overall-header">ITEM ID</h1>
         <h1 class="inventory-header">Tracking</h1>
 
-        <div class="search-bar">
-            <input type="text" placeholder="Search..." name="search" id="search">
-            <button type="button" id="search-button">Search</button>
-        </div>
-    
-        <div class="pagination-container">
-            <div class="pagination">
-                <button class="prev">&#8249; Prev</button>
-                <div class="page-numbers">
-                    <span class="page-number">1</span>
-                    <span class="page-number">2</span>
-                    <!-- Add more page numbers dynamically -->
-                </div>
-                <button class="next">Next &#8250;</button>
-            </div>
-        </div>
 
-        <!-- First table -->
+
+      <div class="search-bar">
+        <input type="text" placeholder="Search..." name="search" id="search">
+        <button type="button" id="search-button">Search</button>
+      </div>
+
+      <div class="pagination-container">
+        <div class="pagination">
+            <button class="prev">&#8249; Prev</button>
+            <div class="page-numbers">
+                <span class="page-number">1</span>
+                <span class="page-number">2</span>
+                <!-- Add more page numbers dynamically -->
+            </div>
+            <button class="next">Next &#8250;</button>
+        </div>
+      </div>
+    
+ 
+
+     <!-- First table -->
     <div class="table-div">
         <!-- First table -->
         <table class="table" id="overall">
@@ -121,7 +125,6 @@
                     <th>Item ID</th>
                     <th>Item Name</th>
                     <th>Quantity</th>
- 
                 </tr>      
             </thead>          
             <tbody>
@@ -130,11 +133,43 @@
                     <td>sample date</td>
                     <td>sample supplier</td>
                     <td>sample item</td>
-   
                 </tr>
             </tbody>
         </table>
     </div>
+    
+
+    <div class="overlay" id="overlay"></div>
+
+
+    <div class="edit-item-popout" id="edit-item-popout-id">
+        <h1>Edit Item</h1>
+        <!--create a table-->
+        <div class="table-container">
+            <table class="third-table">
+                <thead>
+                    <tr id="third-table-header">
+                        <th></th>
+                        <th>Item ID</th>
+                        <th>Item Name</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="delete-link">Delete</td>
+                        <td><input type="text" class="input-date" placeholder="Enter Item ID"></td>
+                        <td><input type="text" class="input-date" placeholder="Enter Name"></td>
+                        <td><input type="text" class="input-date" placeholder="Enter Quantity"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <button type="button" id="confirm-edit">Confirm</button>
+        <button type="button" id="discard-edit">Cancel</button>  
+    </div>
       
       <script src="../sidebar.js"></script>
+      <script src="../tracking_pages/tracking.js"></script>
 </body>

@@ -150,12 +150,25 @@
     width: 128px; /* Adjust the width as needed */
     padding: 10px; /* Adjust padding as needed */
     box-sizing: border-box; /* Ensure padding is included in the width */
+    font-family: 'Inter-Regular';
 }
 .second-table input[type="date"] {
     width: 128px; /* Adjust the width as needed */
     padding: 10px; /* Adjust padding as needed */
     box-sizing: border-box; /* Ensure padding is included in the width */
+    font-family: 'Inter-Regular';
 }
+
+
+#department-dropdown {
+    font-family: 'Inter-Regular';
+    padding: 8px; /* Add padding for better appearance */
+    font-size: 14px; /* Adjust font size */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 4px; /* Add border radius */
+    background-color: #fff; /* Set background color */
+  }
+
 
 
 
@@ -288,18 +301,25 @@
 
 
 
+.table-container {
+    display: flex;
+    justify-content: center; /* center horizontally */
+    align-items: center; /* center vertically */
+    margin-top: 20px; /* adjust margin as needed */
+    max-width: 100%;
+}
 
 .third-table {
     font-family: 'Inter-SemiBold';
     border-collapse: collapse;
-    width: 1450px;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+   /* max-width: 100%; /* Ensure the table does not exceed the container's width */
+    /*width: 1335px; */
     position: relative;
-    left: -75px;
+    left: -80px;
     top:-50px;
     z-index: 2;
   }
+
   .third-table input[type="text"] {
     width: 128px; /* Adjust the width as needed */
     padding: 10px; /* Adjust padding as needed */
@@ -309,7 +329,16 @@
     width: 128px; /* Adjust the width as needed */
     padding: 10px; /* Adjust padding as needed */
     box-sizing: border-box; /* Ensure padding is included in the width */
+    font-family: 'Inter-Regular';
 }
+#department-dropdown {
+    font-family: 'Inter-Regular';
+    padding: 8px; /* Add padding for better appearance */
+    font-size: 14px; /* Adjust font size */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 4px; /* Add border radius */
+    background-color: #fff; /* Set background color */
+  }
 
 
 
@@ -331,19 +360,6 @@
 
 
   #edit-item-popout-id{
-    /*
-    display: none;
-    position: absolute;
-    top: 30%;    
-    left:0;
-    right:0;
-    margin:0 auto;
-    width: 50%;
-    border: 3px solid #8d0000;
-    background-color: #380000;
-    padding: 10px;
-    z-index: 5;
-    */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -351,7 +367,7 @@
     z-index: 1; /* Ensure the second table container is above other content */
     background-color: white;
     padding: 90px;
-    width: 1300px;
+    width: 1335px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -368,9 +384,11 @@
   .edit-item-popout h1{
     position:relative; /* Add this line */
     z-index: 2; /* Add this line */
-    top: -105px;
-    left: -640px;
+    top: -90px;
+    left: -660px;
     font-size: 37px;
+    font-family: 'Inter-Bold';
+
 }
 
 #confirm-edit{
@@ -406,6 +424,12 @@
     z-index: 2;
   }
 
+  #delete-link{
+    color: #a30000;
+    cursor: pointer;
+    font-size: 10px;
+}
+
   /* Initially hides the popup div until add item is pressed */
 #edit-item-popout-id,
 #confirm-edit,
@@ -415,4 +439,6 @@
     display: none;
     z-index: 4;
 }
+
+
 

@@ -185,38 +185,28 @@
     </div>
 
     <div class="edit-item-popout" id="edit-item-popout-id">
-        <h1>Edit Item:</h1>
+        <h1>Edit Item</h1>
         <!--create a table-->
-        <table class="third-table">
-            <thead>
-                <tr id="third-table-header">
-                    <th>Date</th>
-                    <th>Supplier</th>
-                    <th>Item</th>
-                    <th>Item Type</th>
-                    <th>Unit</th>
-                    <th>Quantity</th>
-                    <th>Price per Unit</th>
-                    <th>Total price</th>
-                    <th>Department</th>
-                    <th>Expiry Date</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><input type="date" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td>Php XX,XXX.00</td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="date" class="input-date" placeholder="Enter Date"></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-container">
+            <table class="third-table">
+                <thead>
+                    <tr id="third-table-header">
+                        <th></th>
+                        <th>Item ID</th>
+                        <th>Item Type</th>
+                        <th>Item Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="delete-link">Delete</td>
+                        <td><input type="text" class="input-date" placeholder="Enter Date"></td>
+                        <td><input type="text" class="input-date" placeholder="Enter Date"></td>
+                        <td><input type="text" class="input-date" placeholder="Enter Date"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <button type="button" id="confirm-edit">Confirm</button>
         <button type="button" id="discard-edit">Cancel</button>  
