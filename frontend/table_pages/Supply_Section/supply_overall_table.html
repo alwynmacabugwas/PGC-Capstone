@@ -18,19 +18,24 @@
                 INVENTORY<br>
             </h1>
         </div>
-        <a href="../../../frontend/home_page/home_page.html" class="home-link" >
+
+        <a href="../../home_page/home_page.html" class="home-link" >
             <img src="../../../icons/home icon.png" alt="Home Icon">
             Home
         </a>
         <div class = sidebar-dropdowns>
+            <a href="../table_pages/item_configuration.html" class="home-link" >
+                <img src="../../../icons/item config.png" alt="Home Icon">
+                Item Configuration
+            </a>
             <button class="dropdown-btn">
                 <img src="../../../icons/item tracking icon.png">
                 Item Tracking
                 <i class="fa fa-caret-down caret-down"></i>
             </button>
             <div class="dropdown-container">
-                <a href="../../tracking_pages/track_by_PO.html">By Item ID</a>
-                <a href="../../tracking_pages/track_by_item_number.html">By Item Number</a>
+                <a href="../tracking_pages/track_by_PO.html">By Item ID</a>
+                <a href="../tracking_pages/track_by_item_number.html">By Item Number</a>
             </div>
 
             <button class="dropdown-btn">
@@ -39,9 +44,9 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-container">
-                <a href="../admin_overall_table.html">All</a>
-                <a href="../admin_PPE_table.html">PPE's</a>
-                <a href="../admin_expendable_table.html">Expendables</a>
+                <a href="../table_pages/admin_overall_table.html">All</a>
+                <a href="../table_pages/admin_PPE_table.html">PPE's</a>
+                <a href="../table_pages/admin_expendable_table.html">Expendables</a>
             </div>
 
             <button class="dropdown-btn">
@@ -50,9 +55,9 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-container">
-                <a href="../Supply_Section/supply_overall_table.html">All</a>
+                <a href="../table_pages/Supply_Section/supply_overall_table.html">All</a>
                 <a href="../Supply_Section/supply_PPE_table.html">Semi Expendable PPE's</a>
-                <a href="../Supply_Section/supply_expendable_table.html">Expendables</a>
+                <a href="../table_pages/Supply_Section/supply_expendable_table.html">Expendables</a>
             </div>
         
             <button class="dropdown-btn" onclick="toggleDropdown(this)">
@@ -83,16 +88,20 @@
             <img src="../../../icons/logout icon.png">
             Log Out
         </a>
-    </div> 
-    <h1 class="overall-header">SUPPLY</h1>
-    <h1 class="inventory-header">Overall Table</h1>
+      </div> 
 
-    <div class="search-bar">
+        <!-- Overall Inventory header -->
+        <h1 class="overall-header">SUPPLY</h1>
+        <h1 class="inventory-header">Overall Table</h1>
+
+
+
+      <div class="search-bar">
         <input type="text" placeholder="Search..." name="search" id="search">
         <button type="button" id="search-button">Search</button>
-    </div>
+      </div>
 
-    <div class="pagination-container">
+      <div class="pagination-container">
         <div class="pagination">
             <button class="prev">&#8249; Prev</button>
             <div class="page-numbers">
@@ -102,10 +111,14 @@
             </div>
             <button class="next">Next &#8250;</button>
         </div>
-    </div>
+      </div>
+    
+ 
 
+     <!-- First table -->
     <div class="table-div">
-        <table class="table" id="supply">
+        <!-- First table -->
+        <table class="table" id="overall">
             <thead>
                 <tr id="tableHeader">
                     <th></th>
@@ -143,37 +156,83 @@
         <button type="button" id="add-item-button">Add item</button>
     </div>
     
+
+    <div class="overlay" id="overlay"></div>
+
     <div class="add-item-popout" id="add-item-popout-id">
         <h1>Add Item:</h1>
-        <label for="date">Date</label>
-        <input type="text" id="date" name="date">
-
-        <label for="supplier">Supplier</label>
-        <input type="text" id="supplier" name="supplier">
-
-        <label for="item">Item</label>
-        <input type="text" id="item" name="item">
-
-        <label for="item-type">Item type</label>
-        <input type="text" id="item-type" name="item-type">
-
-        <label for="unit">Unit</label>
-        <input type="text" id="unit" name="unit">
-
-        <label for="quantity">Quantity</label>
-        <input type="text" id="quantity" name="quantity">
-
-        <label for="price">Price</label>
-        <input type="text" id="price" name="price">
-
-        <label for="department">Department</label>
-        <input type="text" id="department" name="department">
-
-        <label for="expiry-date">Expiry Date</label>
-        <input type="text" id="expiry-date" name="expiry-date">
+        <!--create a table-->
+        <table class="second-table">
+            <thead>
+                <tr id="second-table-header">
+                    <th>Date</th>
+                    <th>Supplier</th>
+                    <th>Item</th>
+                    <th>Item Type</th>
+                    <th>Unit</th>
+                    <th>Quantity</th>
+                    <th>Price per Unit</th>
+                    <th>Total price</th>
+                    <th>Department</th>
+                    <th>Expiry Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="date" class="input-date" placeholder="Enter Date"></td>
+                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
+                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
+                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
+                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
+                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
+                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
+                    <td>Php XX,XXX.00</td>
+                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
+                    <td><input type="date" class="input-date" placeholder="Enter Date"></td>
+                </tr>
+            </tbody>
+        </table>
 
         <button type="button" id="confirm-add">Confirm</button>
         <button type="button" id="discard-add">Cancel</button>  
+    </div>
+
+    <div class="edit-item-popout" id="edit-item-popout-id">
+        <h1>Edit Item:</h1>
+        <!--create a table-->
+        <table class="third-table">
+            <thead>
+                <tr id="third-table-header">
+                    <th>Date</th>
+                    <th>Supplier</th>
+                    <th>Item</th>
+                    <th>Item Type</th>
+                    <th>Unit</th>
+                    <th>Quantity</th>
+                    <th>Price per Unit</th>
+                    <th>Total price</th>
+                    <th>Department</th>
+                    <th>Expiry Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="date" class="input-date" placeholder="Enter Date"></td>
+                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
+                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
+                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
+                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
+                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
+                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
+                    <td>Php XX,XXX.00</td>
+                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
+                    <td><input type="date" class="input-date" placeholder="Enter Date"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button type="button" id="confirm-edit">Confirm</button>
+        <button type="button" id="discard-edit">Cancel</button>  
     </div>
       
       <script src="../../sidebar.js"></script>
