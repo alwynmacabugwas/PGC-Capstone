@@ -12,7 +12,7 @@ async function setItemId() {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            "itemId": itemId,
+            "item_Id": itemId,
             "item": item,
             "unit": unit,
             "type": type

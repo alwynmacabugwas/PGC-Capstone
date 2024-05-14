@@ -1,6 +1,6 @@
-async function getAllItems() {
+async function getPPEItems() {
 
-    const url = 'http://localhost:8080/item/admin/all';
+    const url = 'http://localhost:8080/item/admin/ppe';
     const options = {
         method: 'GET',
         headers: {
@@ -21,9 +21,9 @@ async function getAllItems() {
 
 async function generateAdminPpeTable() {
     let result;
-    result = await getAllItems();
+    result = await getPPEItems();
     
-    var table = document.getElementById("admin-overall");
+    var table = document.getElementById("admin-ppe");
     
     for (x in result) {
         var row = table.insertRow(-1);

@@ -48,11 +48,20 @@ public class ItemController {
 		return items;
 	}
 	
+	@GetMapping("/item/admin/expendable")
 	public ArrayList<Item> displayAdminExpendableItems() {
 		ArrayList<Item> items = new ArrayList<Item>();
-		items.addAll(ItemRepo.getAdminAllItems());
+		items.addAll(ItemRepo.getAdminExpendableItems());
 		return items;
 	}
+	
+	@GetMapping("/item/admin/ppe")
+	public ArrayList<Item> displayAdminPpeItems() {
+		ArrayList<Item> items = new ArrayList<Item>();
+		items.addAll(ItemRepo.getAdminPpeItems());
+		return items;
+	}
+	
 	
 //	@GetMapping("/item/itemName")
 //	public ArrayList<Item> displayItemByName(@RequestBody Item item) {
