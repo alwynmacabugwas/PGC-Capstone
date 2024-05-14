@@ -52,7 +52,6 @@ async function generateTable() {
         cell9.innerHTML = result[x].expiry_date;
        
     }
-
 }
 
 async function getOverallData() {

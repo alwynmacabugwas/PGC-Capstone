@@ -30,7 +30,8 @@ async function login() {
     localStorage.setItem('section', result)
     
     if(result==="Invalid"){
-        console.log(result)
+        console.log(result);
+        window.location.href = "loginPage.html";
     }
     else{
         window.location.href = "../home_page/home_page.html";

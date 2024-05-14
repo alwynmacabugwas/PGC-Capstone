@@ -18,7 +18,13 @@ public class ItemIdController {
 	ItemIdRepository itemIdRepo;
 	
 	@PostMapping("itemId/register/expendable")
-	public ItemId registerExpandableItem(@RequestBody ItemId itemId) {		
+	public ItemId registerExpandableItem(@RequestBody ItemId itemId) {
+		String type = itemId.getType();
+		if(type.equals("PPE")) {
+			int id = itemId.getItemId();
+			itemId.setItem_Id(id + 1000);
+		}
+		System.out.println(itemId.getItemId());
 		itemIdRepo.insertExpendableItem(itemId);
 		return itemId;
 	}

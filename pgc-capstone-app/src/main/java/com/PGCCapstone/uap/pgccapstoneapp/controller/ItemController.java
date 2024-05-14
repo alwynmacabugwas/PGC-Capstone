@@ -33,18 +33,24 @@ public class ItemController {
 		itemService.createPpeTracker(item);
 		return item;
 	}
-
-	@GetMapping("/item")
-	public ArrayList<Item> displayItems() {
-		ArrayList<Item> items = new ArrayList<Item>();
-		items.addAll(ItemRepo.getAllItem());
-		return items;
-	}
 	
 	@GetMapping("/item/byId")
 	public ArrayList<Item> displayItemsByItemId() {
 		ArrayList<Item> items = new ArrayList<Item>();
 		items.addAll(ItemRepo.getItemByItemId());
+		return items;
+	}
+	
+	@GetMapping("/item/admin/all")
+	public ArrayList<Item> displayAdminItems() {
+		ArrayList<Item> items = new ArrayList<Item>();
+		items.addAll(ItemRepo.getAdminAllItems());
+		return items;
+	}
+	
+	public ArrayList<Item> displayAdminExpendableItems() {
+		ArrayList<Item> items = new ArrayList<Item>();
+		items.addAll(ItemRepo.getAdminAllItems());
 		return items;
 	}
 	

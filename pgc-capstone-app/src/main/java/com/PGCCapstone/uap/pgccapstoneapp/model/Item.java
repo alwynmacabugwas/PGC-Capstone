@@ -2,7 +2,7 @@ package com.PGCCapstone.uap.pgccapstoneapp.model;
 
 public class Item {
 
-	private int  po_num;
+	private int  po_no;
 	private String date;
 	private String supplier;
 	private String department;
@@ -19,10 +19,10 @@ public class Item {
 	private String status;
 	
 	public int getPo_num() {
-		return po_num;
+		return po_no;
 	}
 	public void setPo_num(int po_num) {
-		this.po_num = po_num;
+		this.po_no = po_num;
 	}
 	public String getDate() {
 		return date;
