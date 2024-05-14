@@ -1,6 +1,6 @@
 async function getPpeItems() {
 
-    const url = 'http://localhost:8080/supply/ppe';
+    const url = 'http://localhost:8080/item/supply/ppe';
     const options = {
         method: 'GET',
         headers: {

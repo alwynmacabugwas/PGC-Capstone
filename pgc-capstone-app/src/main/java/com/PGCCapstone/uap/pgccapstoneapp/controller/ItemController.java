@@ -29,10 +29,10 @@ public class ItemController {
 	@PostMapping("item/register")
 	public Item registerItem(@RequestBody Item item) {
 		item.setTotal(item.getPrice_per_unit(), item.getQuantity());		
-		ItemRepo.insertItem(item);
+		Item registeredItem = ItemRepo.insertItem(item);
 		PoRepo.insertPurchaseOrder(item);
-		itemService.createPpeTracker(item);
-		return item;
+		itemService.createPpeTracker(registeredItem);
+		return registeredItem;
 	}
 	
 	@GetMapping("/item/byId")
@@ -119,6 +119,11 @@ public class ItemController {
 	}
 	
 	@PostMapping("/item/edit")
+	public void editItem(@RequestBody Item item) {
+		ItemRepo.updateItem(item);
+	}
+	
+	@DeleteMapping("/item/edit")
 	public void editItem(@RequestBody Item item) {
 		ItemRepo.updateItem(item);
 	}

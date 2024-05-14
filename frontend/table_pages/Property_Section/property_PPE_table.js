@@ -1,6 +1,6 @@
 async function getPpeItems() {
 
-    const url = 'http://localhost:8080/property/ppe';
+    const url = 'http://localhost:8080/item/property/ppe';
     const options = {
         method: 'GET',
         headers: {
@@ -23,7 +23,7 @@ async function generatePropertyPpeTable() {
     let result;
     result = await getPpeItems();
     
-    var table = document.getElementById("property-expendable");
+    var table = document.getElementById("property-ppe");
     
     for (x in result) {
         var row = table.insertRow(-1);

@@ -1,6 +1,6 @@
 async function getItems() {
 
-    const url = 'http://localhost:8080/supply/all';
+    const url = 'http://localhost:8080/item/supply/all';
     const options = {
         method: 'GET',
         headers: {

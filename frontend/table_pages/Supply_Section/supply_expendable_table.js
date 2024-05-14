@@ -1,6 +1,6 @@
 async function getExpendableItems() {
 
-    const url = 'http://localhost:8080/supply/expendable';
+    const url = 'http://localhost:8080/item/supply/expendable';
     const options = {
         method: 'GET',
         headers: {

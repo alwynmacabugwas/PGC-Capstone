@@ -1,6 +1,6 @@
 async function getItems() {
 
-    const url = 'http://localhost:8080/property/all';
+    const url = 'http://localhost:8080/item/property/all';
     const options = {
         method: 'GET',
         headers: {
@@ -21,7 +21,7 @@ async function getItems() {
 
 async function generatePropertyTable() {
     let result;
-    result = await getExpendableItems();
+    result = await getItems();
     
     var table = document.getElementById("property-overall");
     
