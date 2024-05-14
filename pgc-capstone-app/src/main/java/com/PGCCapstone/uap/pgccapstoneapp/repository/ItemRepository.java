@@ -5,8 +5,10 @@ import java.util.ArrayList;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import com.PGCCapstone.uap.pgccapstoneapp.model.Item;
+import com.PGCCapstone.uap.pgccapstoneapp.model.TrackedItem;
 
 @Mapper
 public interface ItemRepository {
@@ -66,6 +68,16 @@ public interface ItemRepository {
 			+ "Where procured_items.po_no = purchase_order.po_no AND procured_items.item_id = expendable_items.item_id"
 			+ "AND expendable_items.type = 'PPE' AND purchase_order.section = 'property'")
 	public ArrayList<Item> getPropertyPpeItems();
+	
+	@Update("UPDATE procured_items SET quantity = #{quantity}, price_per_unit = #{price_per_unit}, total = #{total}, expiry_date = #{expiry_date} WHERE item_no = #{item_no}")
+	public void updateItem(Item item);
+	
+	
+	@Update("UPDATE ppe_items_details SET status = #{status}, issuer = #{issuer}, recipient = #{recipient}, date = #{date} WHERE item_code = #{item_code}")
+	public void updateItemTracker(TrackedItem trackedItem);
+	
+	@Select("SELECT * FROM ppe_items_details")
+	public ArrayList<TrackedItem> getAllTrackedItems();
 	
 	
 }

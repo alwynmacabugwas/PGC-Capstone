@@ -118,10 +118,9 @@
      <!-- First table -->
     <div class="table-div">
         <!-- First table -->
-        <table class="table" id="overall">
+        <table class="table" id="tracker-table">
             <thead>
                 <tr id="tableHeader">
-                    <th></th>
                     <th>Item Code</th>
                     <th>Item ID</th>
                     <th>Item No</th>
@@ -132,9 +131,7 @@
                 </tr>      
             </thead>          
             <tbody>
-                <tr>
-                    <td id="edit-link">Edit</td>
-                </tr>
+    
             </tbody>
         </table>
     </div>
@@ -151,9 +148,6 @@
                 <thead>
                     <tr id="third-table-header">
                         <th></th>
-                        <th>Item Code</th>
-                        <th>Item ID</th>
-                        <th>Item No</th>
                         <th>Status</th>
                         <th>Issuer</th>
                         <th>Recipient</th>
@@ -163,13 +157,10 @@
                 <tbody>
                     <tr>
                         <td id="delete-link">Delete</td>
-                        <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                        <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                        <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                        <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                        <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                        <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                        <td><input type="date" class="input-date" placeholder="Enter Date"></td>
+                        <td><input type="text" id="status" placeholder="Enter status"></td>
+                        <td><input type="text" id="issuer" placeholder="Enter Issuer"></td>
+                        <td><input type="text" id="recipient" placeholder="Enter Recipient"></td>
+                        <td><input type="date" id="date" placeholder="Enter Date"></td>
                     </tr>
                 </tbody>
             </table>
