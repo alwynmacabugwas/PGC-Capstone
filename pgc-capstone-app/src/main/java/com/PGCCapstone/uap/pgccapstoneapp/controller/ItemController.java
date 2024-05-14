@@ -63,6 +63,48 @@ public class ItemController {
 		return items;
 	}
 	
+	@GetMapping("/item/property/all")
+	public ArrayList<Item> displayPropertyItems() {
+		ArrayList<Item> items = new ArrayList<Item>();
+		items.addAll(ItemRepo.getPropertyAllItems());
+		return items;
+	}
+	
+	@GetMapping("/item/property/expendable")
+	public ArrayList<Item> displayPropertyExpendableItems() {
+		ArrayList<Item> items = new ArrayList<Item>();
+		items.addAll(ItemRepo.getPropertyExpendableItems());
+		return items;
+	}
+	
+	@GetMapping("/item/property/ppe")
+	public ArrayList<Item> displayPropertyPpeItems() {
+		ArrayList<Item> items = new ArrayList<Item>();
+		items.addAll(ItemRepo.getPropertyPpeItems());
+		return items;
+	}
+	
+	@GetMapping("/item/supply/all")
+	public ArrayList<Item> displaySupplyItems() {
+		ArrayList<Item> items = new ArrayList<Item>();
+		items.addAll(ItemRepo.getSupplyAllItems());
+		return items;
+	}
+	
+	@GetMapping("/item/supply/expendable")
+	public ArrayList<Item> displaySupplyExpendableItems() {
+		ArrayList<Item> items = new ArrayList<Item>();
+		items.addAll(ItemRepo.getSupplyExpendableItems());
+		return items;
+	}
+	
+	@GetMapping("/item/supply/ppe")
+	public ArrayList<Item> displaySupplyPpeItems() {
+		ArrayList<Item> items = new ArrayList<Item>();
+		items.addAll(ItemRepo.getSupplyPpeItems());
+		return items;
+	}
+	
 	@PostMapping("/itemtracker/edit")
 	public TrackedItem editTrackedItem(@RequestBody TrackedItem trackedItem){
 		ItemRepo.updateItemTracker(trackedItem);
