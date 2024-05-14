@@ -16,7 +16,7 @@ async function setItem() {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            "po_no": po_no,
+            "po_num": po_no,
             "date": date,
             "supplier": supplier,
             "department": department,
