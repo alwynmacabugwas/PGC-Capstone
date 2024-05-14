@@ -13,23 +13,23 @@ import com.PGCCapstone.uap.pgccapstoneapp.model.UserAccount;
 
 @Mapper
 public interface RegistrationMybatisRepository {
-	@Insert("INSERT INTO items(po_num, date, supplier, item, item_type, unit, quantity, price_per_unit, total_price, section, department, expiry_date) VALUES (#{po_num}, #{date}, #{supplier}, #{item}, #{item_type}, #{unit}, #{quantity}, #{price_per_unit}, #{total}, #{section}, #{department}, #{expiry_date})")
-			public int insertItem(Item item);
-	
-	@Select("SELECT * FROM items")
-		public ArrayList<Item> selectAllItems();
-	
-	@Select("SELECT * FROM items WHERE item = #{item}")
-		public ArrayList<Item> selectItemByName(Item item);
-	
-	@Select("SELECT * FROM items WHERE section = #{section}")
-		public ArrayList<Item> selectAllItemsBySection(Item item);
-	
-	@Delete("DELETE FROM items WHERE po_num = #{po_num}")
-		public void deleteItemByPoNum(Item item);
-	
-	@Update("UPDATE items SET quantity = #{quantity} WHERE po_num = #{po_num}")
-		public  void updateItemByPoNum(Item item);
+//	@Insert("INSERT INTO items(po_num, date, supplier, item, item_type, unit, quantity, price_per_unit, total_price, section, department, expiry_date) VALUES (#{po_num}, #{date}, #{supplier}, #{item}, #{item_type}, #{unit}, #{quantity}, #{price_per_unit}, #{total}, #{section}, #{department}, #{expiry_date})")
+//			public int insertItem(Item item);
+//	
+//	@Select("SELECT * FROM items")
+//		public ArrayList<Item> selectAllItems();
+//	
+//	@Select("SELECT * FROM items WHERE item = #{item}")
+//		public ArrayList<Item> selectItemByName(Item item);
+//	
+//	@Select("SELECT * FROM items WHERE section = #{section}")
+//		public ArrayList<Item> selectAllItemsBySection(Item item);
+//	
+//	@Delete("DELETE FROM items WHERE po_num = #{po_num}")
+//		public void deleteItemByPoNum(Item item);
+//	
+//	@Update("UPDATE items SET quantity = #{quantity} WHERE po_num = #{po_num}")
+//		public  void updateItemByPoNum(Item item);
 	
 	@Insert("INSERT INTO users(username, department, name, password) VALUES (#{username}, #{department}, #{name}, #{password})")
 	public int registerAccount(UserAccount acount);

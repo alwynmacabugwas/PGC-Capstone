@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin:Overall</title>
     <link rel="stylesheet" href="../sidebar.css">
-    <link rel="stylesheet" href="table_style.css">
+    <link rel="stylesheet" href="../table_pages/table_style.css">
     <link rel="stylesheet" href="item_configuration.css">
 </head>
 <body>
@@ -118,22 +118,23 @@
      <!-- First table -->
     <div class="table-div">
         <!-- First table -->
-        <table class="table" id="overall">
+        <table class="table" id="item-configuration-table">
             <thead>
                 <tr id="tableHeader">
                     <th></th>
                     <th>Item ID</th>
                     <th>Item Type</th>
                     <th>Item Name</th>
+                    <th>Units</th>
                 </tr>      
             </thead>          
             <tbody>
                 <tr>
                     <td id="edit-link">Edit</td>
-                    <td>sample date</td>
-                    <td>sample supplier</td>
-                    <td>sample item</td>
-
+                    <td>Sample id</td>
+                    <td>sample type</td>
+                    <td>sample name</td>
+                    <td>sample units</td>
                 </tr>
             </tbody>
         </table>
@@ -147,35 +148,28 @@
     <div class="overlay" id="overlay"></div>
 
     <div class="add-item-popout" id="add-item-popout-id">
-        <h1>Add Item:</h1>
+        <h1>Configure item ID:</h1>
         <!--create a table-->
         <table class="second-table">
             <thead>
                 <tr id="second-table-header">
-                    <th>Date</th>
-                    <th>Supplier</th>
-                    <th>Item</th>
-                    <th>Item Type</th>
+                    <th>Item ID</th>
+                    <th>Item name</th>
                     <th>Unit</th>
-                    <th>Quantity</th>
-                    <th>Price per Unit</th>
-                    <th>Total price</th>
-                    <th>Department</th>
-                    <th>Expiry Date</th>
+                    <th>Type</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><input type="date" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td>Php XX,XXX.00</td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="date" class="input-date" placeholder="Enter Date"></td>
+                    <td><input type="number" id="item-id" placeholder="Enter item ID" max="999"></td>
+                    <td><input type="text" id="item" placeholder="Enter item name"></td>
+                    <td><input type="text" id="unit" placeholder="Enter units"></td>
+                    <td><select id="item-type">
+                        <option value="">Select Item Type</option>
+                        <option value="PPE">PPE</option>
+                        <option value="expendable">Expendable</option>
+                        </select>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -213,5 +207,6 @@
     </div>
 
       <script src="../sidebar.js"></script>
-      <script src="table.js"></script>
+      <script src="../table_pages/table.js"></script>
+      <script src="item_configuration.js"></script>
 </body>

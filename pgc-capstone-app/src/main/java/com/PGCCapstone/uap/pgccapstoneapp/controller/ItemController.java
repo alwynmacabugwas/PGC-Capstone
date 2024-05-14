@@ -10,54 +10,74 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.PGCCapstone.uap.pgccapstoneapp.model.Item;
 import com.PGCCapstone.uap.pgccapstoneapp.model.UserAccount;
+import com.PGCCapstone.uap.pgccapstoneapp.repository.ItemRepository;
+import com.PGCCapstone.uap.pgccapstoneapp.repository.PoRepository;
 import com.PGCCapstone.uap.pgccapstoneapp.repository.RegistrationMybatisRepository;
+import com.PGCCapstone.uap.pgccapstoneapp.service.ItemService;
 
 @RestController
 public class ItemController {
 	
 	@Autowired
-	RegistrationMybatisRepository registrationRepo;
+	ItemRepository ItemRepo;
+	@Autowired
+	PoRepository PoRepo;
+	@Autowired
+	private ItemService itemService;
 	
-	@PostMapping("event/register/item")
+	@PostMapping("item/register")
 	public Item registerItem(@RequestBody Item item) {
 		item.setTotal(item.getPrice_per_unit(), item.getQuantity());		
-		registrationRepo.insertItem(item);
+		ItemRepo.insertItem(item);
+		PoRepo.insertPurchaseOrder(item);
+		itemService.createPpeTracker(item);
 		return item;
 	}
 	
-	@GetMapping("/item")
-	public ArrayList<Item> displayItems() {
+	@GetMapping("/item/byId")
+	public ArrayList<Item> displayItemsByItemId() {
 		ArrayList<Item> items = new ArrayList<Item>();
-		items.addAll(registrationRepo.selectAllItems());
+		items.addAll(ItemRepo.getItemByItemId());
 		return items;
 	}
 	
-	@GetMapping("/item/itemName")
-	public ArrayList<Item> displayItemByName(@RequestBody Item item) {
+	@GetMapping("/item/admin/all")
+	public ArrayList<Item> displayAdminItems() {
 		ArrayList<Item> items = new ArrayList<Item>();
-		items.addAll(registrationRepo.selectItemByName(item));
+		items.addAll(ItemRepo.getAdminAllItems());
 		return items;
 	}
 	
-	@PostMapping("/item/bySection")
-	public ArrayList<Item> displayItemBySection(@RequestBody Item item) {
+	public ArrayList<Item> displayAdminExpendableItems() {
 		ArrayList<Item> items = new ArrayList<Item>();
-		items.addAll(registrationRepo.selectAllItemsBySection(item));
+		items.addAll(ItemRepo.getAdminAllItems());
 		return items;
 	}
 	
-	@PostMapping("/item/delete/poNum")
-	public String deleteItem(@RequestBody Item item) {
-		registrationRepo.deleteItemByPoNum(item);
-		return "item should be deleted";
-	}
-	
-	@PostMapping("/item/update/poNum")
-	public String updateItem(@RequestBody Item item) {
-		registrationRepo.updateItemByPoNum(item);
-		return "item should be updated";
-	}
-	
-	
+//	@GetMapping("/item/itemName")
+//	public ArrayList<Item> displayItemByName(@RequestBody Item item) {
+//		ArrayList<Item> items = new ArrayList<Item>();
+//		items.addAll(registrationRepo.selectItemByName(item));
+//		return items;
+//	}
+//	
+//	@PostMapping("/item/bySection")
+//	public ArrayList<Item> displayItemBySection(@RequestBody Item item) {
+//		ArrayList<Item> items = new ArrayList<Item>();
+//		items.addAll(registrationRepo.selectAllItemsBySection(item));
+//		return items;
+//	}
+//	
+//	@PostMapping("/item/delete/poNum")
+//	public String deleteItem(@RequestBody Item item) {
+//		registrationRepo.deleteItemByPoNum(item);
+//		return "item should be deleted";
+//	}
+//	
+//	@PostMapping("/item/update/poNum")
+//	public String updateItem(@RequestBody Item item) {
+//		registrationRepo.updateItemByPoNum(item);
+//		return "item should be updated";
+//	}
 	
 }

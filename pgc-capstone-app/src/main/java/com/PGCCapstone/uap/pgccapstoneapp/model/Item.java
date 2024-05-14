@@ -2,24 +2,27 @@ package com.PGCCapstone.uap.pgccapstoneapp.model;
 
 public class Item {
 
-	private int  po_num;
+	private int  po_no;
 	private String date;
 	private String supplier;
+	private String department;
+	private int item_id;
+	private int item_no;
 	private String item;
 	private String item_type;
 	private String unit;
 	private int quantity;
 	private int price_per_unit;
 	private int total;
-	private String section;
-	private String department;
 	private String expiry_date;
+	private String section;
+	private String status;
 	
 	public int getPo_num() {
-		return po_num;
+		return po_no;
 	}
 	public void setPo_num(int po_num) {
-		this.po_num = po_num;
+		this.po_no = po_num;
 	}
 	public String getDate() {
 		return date;
@@ -87,7 +90,24 @@ public class Item {
 	public void setExpiry_date(String expiry_date) {
 		this.expiry_date = expiry_date;
 	}
-	
+	public int getItem_id() {
+		return item_id;
+	}
+	public void setItem_id(int item_id) {
+		this.item_id = item_id;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public int getItem_no() {
+		return item_no;
+	}
+	public void setItem_no(int item_no) {
+		this.item_no = item_no;
+	}
 	
 	
 }

@@ -1,3 +1,4 @@
+localStorage.clear();
 document.getElementById("login-button").addEventListener("click", login);
 
 async function login() {
@@ -29,6 +30,7 @@ async function login() {
     localStorage.setItem('section', result)
     
     if(result==="Invalid"){
+        console.log(result);
         window.location.href = "loginPage.html";
     }
     else{
