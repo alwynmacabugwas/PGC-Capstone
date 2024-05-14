@@ -3,6 +3,7 @@ package com.PGCCapstone.uap.pgccapstoneapp.controller;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -124,7 +125,7 @@ public class ItemController {
 	}
 	
 	@DeleteMapping("/item/edit")
-	public void editItem(@RequestBody Item item) {
+	public void deleteItem(@RequestBody Item item) {
 		ItemRepo.updateItem(item);
 	}
 	
