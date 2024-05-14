@@ -21,49 +21,49 @@ public interface ItemRepository {
 			+ "Where procured_items.po_no = purchase_order.po_no AND procured_items.item_id = expendable_items.item_id")
 	public ArrayList<Item> getAdminAllItems();
 	
-	@Select("Select distinct procured_items.item_no, procured_items.po_no, procured_items.quantity, procured_items.price_per_unit, procured_items.total, procured_items.expiry_date, expendable_items.item_id, purchase_order.date\r\n"
+	@Select("Select distinct procured_items.item_no, procured_items.po_no, procured_items.quantity, procured_items.price_per_unit, procured_items.total, procured_items.expiry_date, expendable_items.item_id, purchase_order.date, purchase_order.department, purchase_order.supplier\r\n"
 			+ "From procured_items, purchase_order, expendable_items\r\n"
 			+ "Where procured_items.po_no = purchase_order.po_no AND procured_items.item_id = expendable_items.item_id"
 			+ "AND expendable_items.type = 'expendable'")
 	public ArrayList<Item> getAdminExpendableItems();
 	
-	@Select("Select distinct procured_items.item_no, procured_items.po_no, procured_items.quantity, procured_items.price_per_unit, procured_items.total, procured_items.expiry_date, expendable_items.item_id, purchase_order.date\r\n"
+	@Select("Select distinct procured_items.item_no, procured_items.po_no, procured_items.quantity, procured_items.price_per_unit, procured_items.total, procured_items.expiry_date, expendable_items.item_id, purchase_order.date, purchase_order.department, purchase_order.supplier\r\n"
 			+ "From procured_items, purchase_order, expendable_items\r\n"
 			+ "Where procured_items.po_no = purchase_order.po_no AND procured_items.item_id = expendable_items.item_id"
 			+ "AND expendable_items.type = 'PPE'")
 	public ArrayList<Item> getAdminPpeItems();
 	
-	@Select("Select distinct procured_items.item_no, procured_items.po_no, procured_items.quantity, procured_items.price_per_unit, procured_items.total, procured_items.expiry_date, expendable_items.item_id, purchase_order.date\r\n"
+	@Select("Select distinct procured_items.item_no, procured_items.po_no, procured_items.quantity, procured_items.price_per_unit, procured_items.total, procured_items.expiry_date, expendable_items.item_id, purchase_order.date, purchase_order.department, purchase_order.supplier\r\n"
 			+ "From procured_items, purchase_order, expendable_items\r\n"
 			+ "Where procured_items.po_no = purchase_order.po_no AND procured_items.item_id = expendable_items.item_id"
 			+ "AND purchase_order.section = 'supply'")
 	public ArrayList<Item> getSupplyAllItems();
 	
-	@Select("Select distinct procured_items.item_no, procured_items.po_no, procured_items.quantity, procured_items.price_per_unit, procured_items.total, procured_items.expiry_date, expendable_items.item_id, purchase_order.date\r\n"
+	@Select("Select distinct procured_items.item_no, procured_items.po_no, procured_items.quantity, procured_items.price_per_unit, procured_items.total, procured_items.expiry_date, expendable_items.item_id, purchase_order.date, purchase_order.department, purchase_order.supplier\r\n"
 			+ "From procured_items, purchase_order, expendable_items\r\n"
 			+ "Where procured_items.po_no = purchase_order.po_no AND procured_items.item_id = expendable_items.item_id"
 			+ "AND expendable_items.type = 'expendable' AND purchase_order.section = 'supply'")
 	public ArrayList<Item> getSupplyExpendableItems();
 	
-	@Select("Select distinct procured_items.item_no, procured_items.po_no, procured_items.quantity, procured_items.price_per_unit, procured_items.total, procured_items.expiry_date, expendable_items.item_id, purchase_order.date\r\n"
+	@Select("Select distinct procured_items.item_no, procured_items.po_no, procured_items.quantity, procured_items.price_per_unit, procured_items.total, procured_items.expiry_date, expendable_items.item_id, purchase_order.date, purchase_order.department, purchase_order.supplier\r\n"
 			+ "From procured_items, purchase_order, expendable_items\r\n"
 			+ "Where procured_items.po_no = purchase_order.po_no AND procured_items.item_id = expendable_items.item_id"
 			+ "AND expendable_items.type = 'PPE' AND purchase_order.section = 'supply'")
 	public ArrayList<Item> getSupplyPpeItems();
 	
-	@Select("Select distinct procured_items.item_no, procured_items.po_no, procured_items.quantity, procured_items.price_per_unit, procured_items.total, procured_items.expiry_date, expendable_items.item_id, purchase_order.date\r\n"
+	@Select("Select distinct procured_items.item_no, procured_items.po_no, procured_items.quantity, procured_items.price_per_unit, procured_items.total, procured_items.expiry_date, expendable_items.item_id, purchase_order.date, purchase_order.department, purchase_order.supplier\r\n"
 			+ "From procured_items, purchase_order, expendable_items\r\n"
 			+ "Where procured_items.po_no = purchase_order.po_no AND procured_items.item_id = expendable_items.item_id"
 			+ "AND purchase_order.section = 'property'")
 	public ArrayList<Item> getPropertyAllItems();
 	
-	@Select("Select distinct procured_items.item_no, procured_items.po_no, procured_items.quantity, procured_items.price_per_unit, procured_items.total, procured_items.expiry_date, expendable_items.item_id, purchase_order.date\r\n"
+	@Select("Select distinct procured_items.item_no, procured_items.po_no, procured_items.quantity, procured_items.price_per_unit, procured_items.total, procured_items.expiry_date, expendable_items.item_id, purchase_order.date, purchase_order.department, purchase_order.supplier\r\n"
 			+ "From procured_items, purchase_order, expendable_items\r\n"
 			+ "Where procured_items.po_no = purchase_order.po_no AND procured_items.item_id = expendable_items.item_id"
 			+ "AND expendable_items.type = 'expendable' AND purchase_order.section = 'property'")
 	public ArrayList<Item> getPropertyExpendableItems();
 	
-	@Select("Select distinct procured_items.item_no, procured_items.po_no, procured_items.quantity, procured_items.price_per_unit, procured_items.total, procured_items.expiry_date, expendable_items.item_id, purchase_order.date\r\n"
+	@Select("Select distinct procured_items.item_no, procured_items.po_no, procured_items.quantity, procured_items.price_per_unit, procured_items.total, procured_items.expiry_date, expendable_items.item_id, purchase_order.date, purchase_order.department, purchase_order.supplier\r\n"
 			+ "From procured_items, purchase_order, expendable_items\r\n"
 			+ "Where procured_items.po_no = purchase_order.po_no AND procured_items.item_id = expendable_items.item_id"
 			+ "AND expendable_items.type = 'PPE' AND purchase_order.section = 'property'")
