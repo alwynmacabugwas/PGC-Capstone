@@ -24,7 +24,7 @@
             Home
         </a>
         <div class = sidebar-dropdowns>
-            <a href="../table_pages/item_configuration.html" class="home-link" >
+            <a href="../item_configuration_pages/item_configuration.html" class="home-link" >
                 <img src="../../icons/item config.png" alt="Home Icon">
                 Item Configuration
             </a>
@@ -34,8 +34,7 @@
                 <i class="fa fa-caret-down caret-down"></i>
             </button>
             <div class="dropdown-container">
-                <a href="../tracking_pages/track_by_PO.html">By Item ID</a>
-                <a href="../tracking_pages/track_by_item_number.html">By Item Number</a>
+                <a href="track_by_item_number.html">By Item Number</a>
             </div>
 
             <button class="dropdown-btn">
@@ -118,28 +117,20 @@
      <!-- First table -->
     <div class="table-div">
         <!-- First table -->
-        <table class="table" id="overall">
+        <table class="table" id="tracker-table">
             <thead>
                 <tr id="tableHeader">
-                    <th></th>
-                    <th>Item Number</th>
-                    <th>PO Number</th>
+                    <th>Item Code</th>
                     <th>Item ID</th>
-                    <th>Item Name</th>
-                    <th>Quantity</th>
-                    <th>Expiry Date</th>
+                    <th>Item No</th>
+                    <th>Status</th>
+                    <th>Issuer</th>
+                    <th>Recipient</th>
+                    <th>Date</th>
                 </tr>      
             </thead>          
             <tbody>
-                <tr>
-                    <td id="edit-link">Edit</td>
-                    <td>sample date</td>
-                    <td>sample supplier</td>
-                    <td>sample item</td>
-                    <td>sample item type</td>
-                    <td>sample unit</td>
-                    <td>sample Quantity</td>
-                </tr>
+    
             </tbody>
         </table>
     </div>
@@ -156,23 +147,19 @@
                 <thead>
                     <tr id="third-table-header">
                         <th></th>
-                        <th>Item Number</th>
-                        <th>PO Number</th>
-                        <th>Item ID</th>
-                        <th>Item Name</th>
-                        <th>Quantity</th>
-                        <th>Expiry Date</th>
+                        <th>Status</th>
+                        <th>Issuer</th>
+                        <th>Recipient</th>
+                        <th>Date</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td id="delete-link">Delete</td>
-                        <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                        <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                        <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                        <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                        <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                        <td><input type="date" class="input-date" placeholder="Enter Date"></td>
+                        <td><input type="text" id="status" placeholder="Enter status"></td>
+                        <td><input type="text" id="issuer" placeholder="Enter Issuer"></td>
+                        <td><input type="text" id="recipient" placeholder="Enter Recipient"></td>
+                        <td><input type="date" id="date" placeholder="Enter Date"></td>
                     </tr>
                 </tbody>
             </table>

@@ -24,7 +24,7 @@
             Home
         </a>
         <div class = sidebar-dropdowns>
-            <a href="../table_pages/item_configuration.html" class="home-link" >
+            <a href="../../item_configuration_pages/item_configuration.html" class="home-link" >
                 <img src="../../../icons/item config.png" alt="Home Icon">
                 Item Configuration
             </a>
@@ -34,8 +34,7 @@
                 <i class="fa fa-caret-down caret-down"></i>
             </button>
             <div class="dropdown-container">
-                <a href="../tracking_pages/track_by_PO.html">By Item ID</a>
-                <a href="../tracking_pages/track_by_item_number.html">By Item Number</a>
+                <a href="../../tracking_pages/track_by_item_number.html">By Item Number</a>
             </div>
 
             <button class="dropdown-btn">
@@ -44,9 +43,9 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-container">
-                <a href="../table_pages/admin_overall_table.html">All</a>
-                <a href="../table_pages/admin_PPE_table.html">PPE's</a>
-                <a href="../table_pages/admin_expendable_table.html">Expendables</a>
+                <a href="../admin_overall_table.html">All</a>
+                <a href="../admin_PPE_table.html">PPE's</a>
+                <a href="../admin_expendable_table.html">Expendables</a>
             </div>
 
             <button class="dropdown-btn">
@@ -55,9 +54,9 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-container">
-                <a href="../table_pages/Supply_Section/supply_overall_table.html">All</a>
-                <a href="../Supply_Section/supply_PPE_table.html">Semi Expendable PPE's</a>
-                <a href="../table_pages/Supply_Section/supply_expendable_table.html">Expendables</a>
+                <a href="supply_overall_table.html">All</a>
+                <a href="supply_PPE_table.html">Semi Expendable PPE's</a>
+                <a href="supply_expendable_table.html">Expendables</a>
             </div>
         
             <button class="dropdown-btn" onclick="toggleDropdown(this)">
@@ -67,9 +66,9 @@
             </button>
 
             <div class="dropdown-container">
-                <a href="../table_pages/Property_Section/property_overall_table.html">All</a>
-                <a href="../table_pages/Property_Section/property_PPE_table.html">PPE's</a>
-                <a href="../table_pages/Property_Section/property_expendable_table.html">Expendables</a>
+                <a href="../Property_Section/property_overall_table.html">All</a>
+                <a href="../Property_Section/property_PPE_table.html">PPE's</a>
+                <a href="../Property_Section/property_expendable_table.html">Expendables</a>
             </div>
         
             <button class="dropdown-btn">
@@ -84,7 +83,7 @@
             </div>
         </div>
 
-        <a href="../login_pages/loginPage.html" class="logout-link">
+        <a href="../../login_pages/loginPage.html" class="logout-link">
             <img src="../../../icons/logout icon.png">
             Log Out
         </a>
@@ -116,36 +115,36 @@
  
 
      <!-- First table -->
-    <div class="table-div">
+     <div class="table-div">
         <!-- First table -->
-        <table class="table" id="overall">
+        <table class="table" id="supply-ppe">
             <thead>
                 <tr id="tableHeader">
                     <th></th>
+                    <th>Item Number</th>
+                    <th>PO Number</th>
                     <th>Date</th>
                     <th>Supplier</th>
-                    <th>Item</th>
-                    <th>Item Type</th>
-                    <th>Unit</th>
+                    <th>Department</th>
+                    <th>Item ID/Item Name</th>
                     <th>Quantity</th>
                     <th>Price per Unit</th>
-                    <th>Total price</th>
-                    <th>Department</th>
+                    <th>Total</th>
                     <th>Expiry Date</th>
                 </tr>      
             </thead>          
             <tbody>
                 <tr>
                     <td id="edit-link">Edit</td>
-                    <td>sample date</td>
-                    <td>sample supplier</td>
-                    <td>sample item</td>
-                    <td>sample item type</td>
-                    <td>sample unit</td>
-                    <td>sample Quantity</td>
-                    <td>sample price</td>
-                    <td>sample total</td>
-                    <td>sample dept</td>
+                    <td>Item Number</td>
+                    <td>PO Number</td>
+                    <td>Date</td>
+                    <td>Supplier</td>
+                    <td>Department</td>
+                    <td>Item ID/Item Name</td>
+                    <td>Quantity</td>
+                    <td>Price per Unit</td>
+                    <td>Total</td>
                     <td>sample expiry</td>
                 </tr>
             </tbody>
@@ -165,30 +164,69 @@
         <table class="second-table">
             <thead>
                 <tr id="second-table-header">
+                    <th>PO Number</th>
                     <th>Date</th>
                     <th>Supplier</th>
-                    <th>Item</th>
-                    <th>Item Type</th>
-                    <th>Unit</th>
+                    <th>Department</th>
+                    <th>Item ID</th>
                     <th>Quantity</th>
                     <th>Price per Unit</th>
                     <th>Total price</th>
-                    <th>Department</th>
                     <th>Expiry Date</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><input type="date" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td>Php XX,XXX.00</td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="date" class="input-date" placeholder="Enter Date"></td>
+                    <td><input type="text" id="po_num" placeholder="Enter PO no."></td>
+                    <td><input type="date" id="date" placeholder="Enter Date"></td>
+                    <td><input type="text" id="supplier" placeholder="Enter Supplier"></td>
+                    <td>
+                        <select id="department-dropdown">
+                            <option value="">Select Department</option>
+                            <option value="department1">OPG</option>
+                            <option value="department2">PAIA</option>
+                            <option value="department1">PACA</option>
+                            <option value="department2">OPPDC</option>
+                            <option value="department1">OPYDO</option>
+                            <option value="department2">RSD</option>
+                            <option value="department1">OPLO</option>
+                            <option value="department2">PAIA</option>
+                            <option value="department1">OPTO</option>
+                            <option value="department2">OPIO</option>
+                            <option value="department1">OPG-PPESM</option>
+                            <option value="department2">OPHRMO</option>
+                            <option value="department1">PHDMO</option>
+                            <option value="department2">OPDRRMO</option>
+                            <option value="department1">BAC</option>
+                            <option value="department2">OPVG</option>
+                            <option value="department1">OSP</option>
+                            <option value="department2">OGSO</option>
+                            <option value="department1">OPSWDO</option>
+                            <option value="department2">OPVO</option>
+                            <option value="department1">OPA</option>
+                            <option value="department2">PG-COPS</option>
+                            <option value="department1">OPPO</option>
+                            <option value="department2">PEO</option>
+                            <option value="department1">OPENRO</option>
+                            <option value="department2">OPCDO</option>
+                            <option value="department1">PTO</option>
+                            <option value="department2">OPBO</option>
+                            <option value="department1">OPA</option>
+                            <option value="department2">PAsO</option>
+                            <option value="department1">CPL</option>
+                            <option value="department2">CQMO</option>
+                            <option value="department1">PPD</option>
+                            <option value="department2">OPHO</option>
+                            <option value="department1">CPG-OPIAS</option>
+                            <option value="department1">PSP</option>
+                            <option value="department1">CPJ</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="item_id" placeholder="Enter Item ID"></td>
+                    <td><input type="text" id="quantity" placeholder="Enter quantity"></td>
+                    <td><input type="text" id="price_per_unit" placeholder="Enter Price per Unit"></td>
+                    <td>Php XX,XXX.00</td>   
+                    <td><input type="date" id="expiry_date" placeholder="Enter Expiry Date (if applicable)"></td>
                 </tr>
             </tbody>
         </table>
@@ -280,4 +318,5 @@
       
       <script src="../../sidebar.js"></script>
       <script src="../table.js"></script>
+      <script src="supply_PPE_table.js"></script>
 </body>      

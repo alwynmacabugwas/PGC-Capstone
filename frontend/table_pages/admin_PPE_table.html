@@ -24,7 +24,7 @@
             Home
         </a>
         <div class = sidebar-dropdowns>
-            <a href="../table_pages/item_configuration.html" class="home-link" >
+            <a href="../item_configuration_pages/item_configuration.html" class="home-link" >
                 <img src="../../icons/item config.png" alt="Home Icon">
                 Item Configuration
             </a>
@@ -34,7 +34,6 @@
                 <i class="fa fa-caret-down caret-down"></i>
             </button>
             <div class="dropdown-container">
-                <a href="../tracking_pages/track_by_PO.html">By Item ID</a>
                 <a href="../tracking_pages/track_by_item_number.html">By Item Number</a>
             </div>
 
@@ -116,36 +115,36 @@
  
 
      <!-- First table -->
-    <div class="table-div">
+     <div class="table-div">
         <!-- First table -->
-        <table class="table" id="overall">
+        <table class="table" id="admin-ppe">
             <thead>
                 <tr id="tableHeader">
                     <th></th>
+                    <th>Item Number</th>
+                    <th>PO Number</th>
                     <th>Date</th>
                     <th>Supplier</th>
-                    <th>Item</th>
-                    <th>Item Type</th>
-                    <th>Unit</th>
+                    <th>Department</th>
+                    <th>Item ID/Item Name</th>
                     <th>Quantity</th>
                     <th>Price per Unit</th>
-                    <th>Total price</th>
-                    <th>Department</th>
+                    <th>Total</th>
                     <th>Expiry Date</th>
                 </tr>      
             </thead>          
             <tbody>
                 <tr>
                     <td id="edit-link">Edit</td>
-                    <td>sample date</td>
-                    <td>sample supplier</td>
-                    <td>sample item</td>
-                    <td>sample item type</td>
-                    <td>sample unit</td>
-                    <td>sample Quantity</td>
-                    <td>sample price</td>
-                    <td>sample total</td>
-                    <td>sample dept</td>
+                    <td>Item Number</td>
+                    <td>PO Number</td>
+                    <td>Date</td>
+                    <td>Supplier</td>
+                    <td>Department</td>
+                    <td>Item ID/Item Name</td>
+                    <td>Quantity</td>
+                    <td>Price per Unit</td>
+                    <td>Total</td>
                     <td>sample expiry</td>
                 </tr>
             </tbody>
@@ -165,28 +164,22 @@
         <table class="second-table">
             <thead>
                 <tr id="second-table-header">
+                    <th>PO Number</th>
                     <th>Date</th>
                     <th>Supplier</th>
-                    <th>Item</th>
-                    <th>Item Type</th>
-                    <th>Unit</th>
+                    <th>Department</th>
+                    <th>Item ID</th>
                     <th>Quantity</th>
                     <th>Price per Unit</th>
                     <th>Total price</th>
-                    <th>Department</th>
                     <th>Expiry Date</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><input type="date" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td>Php XX,XXX.00</td>
+                    <td><input type="text" id="po_num" placeholder="Enter PO no."></td>
+                    <td><input type="date" id="date" placeholder="Enter Date"></td>
+                    <td><input type="text" id="supplier" placeholder="Enter Supplier"></td>
                     <td>
                         <select id="department-dropdown">
                             <option value="">Select Department</option>
@@ -229,7 +222,11 @@
                             <option value="department1">CPJ</option>
                         </select>
                     </td>
-                    <td><input type="date" class="input-date" placeholder="Enter Date"></td>
+                    <td><input type="text" id="item_id" placeholder="Enter Item ID"></td>
+                    <td><input type="text" id="quantity" placeholder="Enter quantity"></td>
+                    <td><input type="text" id="price_per_unit" placeholder="Enter Price per Unit"></td>
+                    <td>Php XX,XXX.00</td>   
+                    <td><input type="date" id="expiry_date" placeholder="Enter Expiry Date (if applicable)"></td>
                 </tr>
             </tbody>
         </table>
@@ -321,4 +318,5 @@
 
       <script src="../sidebar.js"></script>
       <script src="table.js"></script>
+      <script src="admin_PPE_table.js"></script>
 </body>
