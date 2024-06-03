@@ -2,7 +2,7 @@ package com.PGCCapstone.uap.pgccapstoneapp.model;
 
 public class Item {
 
-	private int  po_no;
+	private int po_no;
 	private String date;
 	private String supplier;
 	private String department;

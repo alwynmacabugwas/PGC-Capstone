@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.PGCCapstone.uap.pgccapstoneapp.model.Item;
+import com.PGCCapstone.uap.pgccapstoneapp.model.TrackedItem;
 import com.PGCCapstone.uap.pgccapstoneapp.model.UserAccount;
 import com.PGCCapstone.uap.pgccapstoneapp.repository.ItemRepository;
 import com.PGCCapstone.uap.pgccapstoneapp.repository.PoRepository;
@@ -48,11 +49,38 @@ public class ItemController {
 		return items;
 	}
 	
+	@GetMapping("/item/admin/expendable")
 	public ArrayList<Item> displayAdminExpendableItems() {
 		ArrayList<Item> items = new ArrayList<Item>();
-		items.addAll(ItemRepo.getAdminAllItems());
+		items.addAll(ItemRepo.getAdminExpendableItems());
 		return items;
 	}
+	
+	@GetMapping("/item/admin/ppe")
+	public ArrayList<Item> displayAdminPpeItems() {
+		ArrayList<Item> items = new ArrayList<Item>();
+		items.addAll(ItemRepo.getAdminPpeItems());
+		return items;
+	}
+	
+	@PostMapping("/itemtracker/edit")
+	public TrackedItem editTrackedItem(@RequestBody TrackedItem trackedItem){
+		ItemRepo.updateItemTracker(trackedItem);
+		return trackedItem;
+	}
+	
+	@GetMapping("/itemtracker")
+	public ArrayList<TrackedItem> displayTrackedItems() {
+		ArrayList<TrackedItem> trackedItems = new ArrayList<TrackedItem>();
+		trackedItems.addAll(ItemRepo.getAllTrackedItems());
+		return trackedItems;
+	}
+	
+	@PostMapping("/item/edit")
+	public void editItem(@RequestBody Item item) {
+		ItemRepo.updateItem(item);
+	}
+	
 	
 //	@GetMapping("/item/itemName")
 //	public ArrayList<Item> displayItemByName(@RequestBody Item item) {

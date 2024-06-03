@@ -1,6 +1,6 @@
-async function getAllItems() {
+async function getExpendableItems() {
 
-    const url = 'http://localhost:8080/item/admin/all';
+    const url = 'http://localhost:8080/item/admin/expendable';
     const options = {
         method: 'GET',
         headers: {
@@ -19,11 +19,11 @@ async function getAllItems() {
     return result;
 }
 
-async function generateAdminPpeTable() {
+async function generateAdminExpendableTable() {
     let result;
-    result = await getAllItems();
+    result = await getExpendableItems();
     
-    var table = document.getElementById("admin-overall");
+    var table = document.getElementById("admin-expendable");
     
     for (x in result) {
         var row = table.insertRow(-1);
@@ -54,4 +54,4 @@ async function generateAdminPpeTable() {
     }
 }
 
-window.addEventListener('load', generateAdminPpeTable);
+window.addEventListener('load', generateAdminExpendableTable);
