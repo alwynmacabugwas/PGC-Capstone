@@ -31,6 +31,7 @@ async function login() {
     
     if(result==="Invalid"){
         console.log(result);
+        alert("Error! Invalid username or password.")
         window.location.href = "loginPage.html";
     }
     else{

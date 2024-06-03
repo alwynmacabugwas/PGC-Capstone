@@ -3,6 +3,7 @@ package com.PGCCapstone.uap.pgccapstoneapp.controller;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,10 +30,10 @@ public class ItemController {
 	@PostMapping("item/register")
 	public Item registerItem(@RequestBody Item item) {
 		item.setTotal(item.getPrice_per_unit(), item.getQuantity());		
-		ItemRepo.insertItem(item);
+		Item registeredItem = ItemRepo.insertItem(item);
 		PoRepo.insertPurchaseOrder(item);
-		itemService.createPpeTracker(item);
-		return item;
+		itemService.createPpeTracker(registeredItem);
+		return registeredItem;
 	}
 	
 	@GetMapping("/item/byId")
@@ -63,6 +64,48 @@ public class ItemController {
 		return items;
 	}
 	
+	@GetMapping("/item/property/all")
+	public ArrayList<Item> displayPropertyItems() {
+		ArrayList<Item> items = new ArrayList<Item>();
+		items.addAll(ItemRepo.getPropertyAllItems());
+		return items;
+	}
+	
+	@GetMapping("/item/property/expendable")
+	public ArrayList<Item> displayPropertyExpendableItems() {
+		ArrayList<Item> items = new ArrayList<Item>();
+		items.addAll(ItemRepo.getPropertyExpendableItems());
+		return items;
+	}
+	
+	@GetMapping("/item/property/ppe")
+	public ArrayList<Item> displayPropertyPpeItems() {
+		ArrayList<Item> items = new ArrayList<Item>();
+		items.addAll(ItemRepo.getPropertyPpeItems());
+		return items;
+	}
+	
+	@GetMapping("/item/supply/all")
+	public ArrayList<Item> displaySupplyItems() {
+		ArrayList<Item> items = new ArrayList<Item>();
+		items.addAll(ItemRepo.getSupplyAllItems());
+		return items;
+	}
+	
+	@GetMapping("/item/supply/expendable")
+	public ArrayList<Item> displaySupplyExpendableItems() {
+		ArrayList<Item> items = new ArrayList<Item>();
+		items.addAll(ItemRepo.getSupplyExpendableItems());
+		return items;
+	}
+	
+	@GetMapping("/item/supply/ppe")
+	public ArrayList<Item> displaySupplyPpeItems() {
+		ArrayList<Item> items = new ArrayList<Item>();
+		items.addAll(ItemRepo.getSupplyPpeItems());
+		return items;
+	}
+	
 	@PostMapping("/itemtracker/edit")
 	public TrackedItem editTrackedItem(@RequestBody TrackedItem trackedItem){
 		ItemRepo.updateItemTracker(trackedItem);
@@ -78,6 +121,11 @@ public class ItemController {
 	
 	@PostMapping("/item/edit")
 	public void editItem(@RequestBody Item item) {
+		ItemRepo.updateItem(item);
+	}
+	
+	@DeleteMapping("/item/edit")
+	public void deleteItem(@RequestBody Item item) {
 		ItemRepo.updateItem(item);
 	}
 	
