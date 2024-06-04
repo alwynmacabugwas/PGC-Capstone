@@ -6,60 +6,81 @@
     <title>Admin:Expendable</title>
     <link rel="stylesheet" href="../sidebar.css">
     <link rel="stylesheet" href="table_style.css">
+    <link rel="stylesheet" href="admin_expendable_table.css">
 </head>
 <body>
 
     <div class="sidenav">
+        <div class="sidebar-header">
+            <img src="../../icons/PGC logo.png" alt="Logo">
+            <h1>GOVERNMENT
+                OF CAVITE<br>
+                INVENTORY<br>
+            </h1>
+        </div>
       
-        <a href="../home_page/home_page.html">Home</a>
-        <a href="../item_configuration_pages/item_configuration.html" class="home-link" >
-            <img src="../../icons/item config.png" alt="Home Icon">
-            Item Configuration
+        <a href="../home_page/home_page.html" class="home-link" >
+            <img src="../../icons/home icon.png" alt="Home Icon">
+            Home
         </a>
-        <button class="dropdown-btn">Item Tracking
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-container">
-            <a href="../tracking_pages/track_by_item_number.html">By item number</a>
-        </div>
+        <div class = sidebar-dropdowns>
+            <a href="../item_configuration_pages/item_configuration.html" class="home-link" >
+                <img src="../../icons/item config.png" alt="Home Icon">
+                Item Configuration
+            </a>
+            <button class="dropdown-btn">
+                <img src="../../icons/item tracking icon.png">
+                Item Tracking
+                <i class="fa fa-caret-down caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="../tracking_pages/track_by_item_number.html">By Item Number</a>
+            </div>
 
-        <button class="dropdown-btn">Overall
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-container">
-            <a href="admin_overall_table.html">All</a>
-            <a href="admin_PPE_table.html">PPE's</a>
-            <a href="admin_expendable_table.html">Expendables</a>
-        </div>
+            <button class="dropdown-btn">
+                <img src="../../icons/inventory icon.png">
+                Overall
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="../table_pages/admin_overall_table.html">All</a>
+                <a href="../table_pages/admin_PPE_table.html">PPE's</a>
+                <a href="../table_pages/admin_expendable_table.html">Expendables</a>
+            </div>
 
-        <button class="dropdown-btn">Supplies
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-container">
-              <a href="Supply_Section/supply_overall_table.html">All</a>
-              <a href="Supply_Section/supply_PPE_table.html">Semi Expendable PPE's</a>
-              <a href="Supply_Section/supply_expendable_table.html">Expendables</a>
-          </div>
+            <button class="dropdown-btn">
+                <img src="../../icons/supplies icon.png">
+                Supplies
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="../table_pages/Supply_Section/supply_overall_table.html">All</a>
+                <a href="../table_pages/Supply_Section/supply_PPE_table.html">Semi Expendable PPE's</a>
+                <a href="../table_pages/Supply_Section/supply_expendable_table.html">Expendables</a>
+            </div>
         
-        <button class="dropdown-btn">Properties
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-container">
-            <a href="Property_Section/property_overall_table.html">All</a>
-            <a href="Property_Section/property_PPE_table.html">PPE's</a>
-            <a href="Property_Section/property_expendable_table.html">Expendables</a>
-        </div>
+            <button class="dropdown-btn" onclick="toggleDropdown(this)">
+                <img src="../../icons/properties icon.png">
+                Properties
+                <i class="fa fa-caret-down"></i>
+            </button>
+
+            <div class="dropdown-container">
+                <a href="../table_pages/Property_Section/property_overall_table.html">All</a>
+                <a href="../table_pages/Property_Section/property_PPE_table.html">PPE's</a>
+                <a href="../table_pages/Property_Section/property_expendable_table.html">Expendables</a>
+            </div>
         
-        <button class="dropdown-btn">Forms
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-container">
-              <a href="Form1">Report</a>
-              <a href="Form2">Form2</a>
-              <a href="Form3">Form3</a>
-          </div>
-          <a href="../login_pages/loginPage.html">Log Out</a>
-        </div>
+            <button class="dropdown-btn">
+                <img src="../../icons/forms icon.png">
+                Forms
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="Form1">Report</a>
+                <a href="Form2">Form2</a>
+                <a href="Form3">Form3</a>
+            </div>
         </div>
 
         <a href="../login_pages/loginPage.html" class="logout-link">
@@ -72,28 +93,25 @@
         <h1 class="overall-header">ADMIN</h1>
         <h1 class="inventory-header">Expendables
         </h1>
-
-
-
     </div> 
-
-        <a href="../login_pages/loginPage.html" class="logout-link">
-            <img src="../../icons/logout icon.png">
-            Log Out
-        </a>
-      </div> 
-
-        <!-- Overall Inventory header -->
-        <h1 class="overall-header">ADMIN</h1>
-        <h1 class="inventory-header">Expendables
-        </h1>
-
 
 
     <div class="search-bar">
         <input type="text" placeholder="Search..." name="search" id="search">
         <button type="button" id="search-button">Search</button>
     </div>
+
+    <div class="pagination-container">
+        <div class="pagination">
+            <button class="prev">&#8249; Prev</button>
+            <div class="page-numbers">
+                <span class="page-number">1</span>
+                <span class="page-number">2</span>
+                <!-- Add more page numbers dynamically -->
+            </div>
+            <button class="next">Next &#8250;</button>
+        </div>
+      </div>
 
      <!-- First table -->
      <div class="table-div">
@@ -164,42 +182,42 @@
                     <td>
                         <select id="department">
                             <option value="">Select Department</option>
-                            <option value="OPG">OPG</option>
-                            <option value="PAIA">PAIA</option>
-                            <option value="PACA">PACA</option>
-                            <option value="OPPDC">OPPDC</option>
-                            <option value="OPYDO">OPYDO</option>
-                            <option value="RSD">RSD</option>
-                            <option value="OPLO">OPLO</option>
-                            <option value="OPTO">OPTO</option>
-                            <option value="OPIO">OPIO</option>
-                            <option value="OPG-PPESM">OPG-PPESM</option>
-                            <option value="OPHRMO">OPHRMO</option>
-                            <option value="PHDMO">PHDMO</option>
-                            <option value="OPDRRMO">OPDRRMO</option>
                             <option value="BAC">BAC</option>
-                            <option value="OPVG">OPVG</option>
-                            <option value="OSP">OSP</option>
-                            <option value="OGSO">OGSO</option>
-                            <option value="OPSWDO">OPSWDO</option>
-                            <option value="OPVO">OPVO</option>
-                            <option value="OPA">OPA</option>
-                            <option value="PG-COPS">PG-COPS</option>
-                            <option value="OPPO">OPPO</option>
-                            <option value="PEO">PEO</option>
-                            <option value="OPENRO">OPENRO</option>
-                            <option value="OPCDO">OPCDO</option>
-                            <option value="PTO">PTO</option>
-                            <option value="OPBO">OPBO</option>
-                            <option value="OPA">OPA</option>
-                            <option value="PAsO">PAsO</option>
                             <option value="CPL">CPL</option>
-                            <option value="CQMO">CQMO</option>
-                            <option value="PPD">PPD</option>
-                            <option value="OPHO">OPHO</option>
-                            <option value="CPG-OPIAS">CPG-OPIAS</option>
-                            <option value="PSP">PSP</option>
                             <option value="CPJ">CPJ</option>
+                            <option value="CQMO">CQMO</option>
+                            <option value="CPG-OPIAS">CPG-OPIAS</option>
+                            <option value="OGSO">OGSO</option>
+                            <option value="OPA">OPA</option>
+                            <option value="OPA">OPA</option>
+                            <option value="OPBO">OPBO</option>
+                            <option value="OPCDO">OPCDO</option>
+                            <option value="OPDRRMO">OPDRRMO</option>
+                            <option value="OPENRO">OPENRO</option>
+                            <option value="OPG">OPG</option>
+                            <option value="OPG-PPESM">OPG-PPESM</option>
+                            <option value="OPHO">OPHO</option>
+                            <option value="OPHRMO">OPHRMO</option>
+                            <option value="OPIO">OPIO</option>
+                            <option value="OPLO">OPLO</option>
+                            <option value="OPPDC">OPPDC</option>
+                            <option value="OPPO">OPPO</option>
+                            <option value="OPSWDO">OPSWDO</option>
+                            <option value="OPTO">OPTO</option>
+                            <option value="OPVG">OPVG</option>
+                            <option value="OPVO">OPVO</option>
+                            <option value="OPYDO">OPYDO</option>
+                            <option value="OSP">OSP</option>
+                            <option value="PACA">PACA</option>
+                            <option value="PAIA">PAIA</option>
+                            <option value="PAsO">PAsO</option>
+                            <option value="PEO">PEO</option>
+                            <option value="PHDMO">PHDMO</option>
+                            <option value="PG-COPS">PG-COPS</option>
+                            <option value="PPD">PPD</option>
+                            <option value="PSP">PSP</option>
+                            <option value="PTO">PTO</option>
+                            <option value="RSD">RSD</option>    
                         </select>
                     </td>
                     <td><input type="text" id="item-id" placeholder="Enter Item ID"></td>

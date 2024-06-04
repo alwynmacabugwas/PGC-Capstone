@@ -28,14 +28,11 @@
                 <img src="../../icons/item config.png" alt="Home Icon">
                 Item Configuration
             </a>
-            <button class="dropdown-btn">
-                <img src="../../icons/item tracking icon.png">
-                Item Tracking
-                <i class="fa fa-caret-down caret-down"></i>
-            </button>
-            <div class="dropdown-container">
-                <a href="../tracking_pages/track_by_item_number.html">By Item Number</a>
-            </div>
+
+            <a href="../tracking_pages/track_by_item_number.html" class="item-tracker-link">
+                <img src="../../icons/item tracking icon.png" alt="Home Icon">
+                Item Tracker
+            </a>
 
             <button class="dropdown-btn">
                 <img src="../../icons/inventory icon.png">
@@ -87,6 +84,11 @@
             <img src="../../icons/logout icon.png">
             Log Out
         </a>
+
+        <div class="user-account">
+            <img src="../../Test Image.png" alt="User Icon">
+            <span>Username</span>
+        </div>
       </div> 
 
         <!-- Overall Inventory header -->
@@ -159,7 +161,7 @@
     <div class="overlay" id="overlay"></div>
 
     <div class="add-item-popout" id="add-item-popout-id">
-        <h1>Add Item:</h1>
+        <h1>Add Item</h1>
         <!--create a table-->
         <table class="second-table">
             <thead>
@@ -181,44 +183,44 @@
                     <td><input type="date" id="date" placeholder="Enter Date"></td>
                     <td><input type="text" id="supplier" placeholder="Enter Supplier"></td>
                     <td>
-                        <select id="department">
+                        <select id="department-dropdown">
                             <option value="">Select Department</option>
-                            <option value="OPG">OPG</option>
-                            <option value="PAIA">PAIA</option>
-                            <option value="PACA">PACA</option>
-                            <option value="OPPDC">OPPDC</option>
-                            <option value="OPYDO">OPYDO</option>
-                            <option value="RSD">RSD</option>
-                            <option value="OPLO">OPLO</option>
-                            <option value="OPTO">OPTO</option>
-                            <option value="OPIO">OPIO</option>
-                            <option value="OPG-PPESM">OPG-PPESM</option>
-                            <option value="OPHRMO">OPHRMO</option>
-                            <option value="PHDMO">PHDMO</option>
-                            <option value="OPDRRMO">OPDRRMO</option>
                             <option value="BAC">BAC</option>
-                            <option value="OPVG">OPVG</option>
-                            <option value="OSP">OSP</option>
-                            <option value="OGSO">OGSO</option>
-                            <option value="OPSWDO">OPSWDO</option>
-                            <option value="OPVO">OPVO</option>
-                            <option value="OPA">OPA</option>
-                            <option value="PG-COPS">PG-COPS</option>
-                            <option value="OPPO">OPPO</option>
-                            <option value="PEO">PEO</option>
-                            <option value="OPENRO">OPENRO</option>
-                            <option value="OPCDO">OPCDO</option>
-                            <option value="PTO">PTO</option>
-                            <option value="OPBO">OPBO</option>
-                            <option value="OPA">OPA</option>
-                            <option value="PAsO">PAsO</option>
                             <option value="CPL">CPL</option>
-                            <option value="CQMO">CQMO</option>
-                            <option value="PPD">PPD</option>
-                            <option value="OPHO">OPHO</option>
-                            <option value="CPG-OPIAS">CPG-OPIAS</option>
-                            <option value="PSP">PSP</option>
                             <option value="CPJ">CPJ</option>
+                            <option value="CQMO">CQMO</option>
+                            <option value="CPG-OPIAS">CPG-OPIAS</option>
+                            <option value="OGSO">OGSO</option>
+                            <option value="OPA">OPA</option>
+                            <option value="OPA">OPA</option>
+                            <option value="OPBO">OPBO</option>
+                            <option value="OPCDO">OPCDO</option>
+                            <option value="OPDRRMO">OPDRRMO</option>
+                            <option value="OPENRO">OPENRO</option>
+                            <option value="OPG">OPG</option>
+                            <option value="OPG-PPESM">OPG-PPESM</option>
+                            <option value="OPHO">OPHO</option>
+                            <option value="OPHRMO">OPHRMO</option>
+                            <option value="OPIO">OPIO</option>
+                            <option value="OPLO">OPLO</option>
+                            <option value="OPPDC">OPPDC</option>
+                            <option value="OPPO">OPPO</option>
+                            <option value="OPSWDO">OPSWDO</option>
+                            <option value="OPTO">OPTO</option>
+                            <option value="OPVG">OPVG</option>
+                            <option value="OPVO">OPVO</option>
+                            <option value="OPYDO">OPYDO</option>
+                            <option value="OSP">OSP</option>
+                            <option value="PACA">PACA</option>
+                            <option value="PAIA">PAIA</option>
+                            <option value="PAsO">PAsO</option>
+                            <option value="PEO">PEO</option>
+                            <option value="PHDMO">PHDMO</option>
+                            <option value="PG-COPS">PG-COPS</option>
+                            <option value="PPD">PPD</option>
+                            <option value="PSP">PSP</option>
+                            <option value="PTO">PTO</option>
+                            <option value="RSD">RSD</option>
                         </select>
                     </td>
                     <td><input type="text" id="item-id" placeholder="Enter Item ID"></td>

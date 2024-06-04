@@ -72,8 +72,17 @@ body{
 .home-link img{
   width: 24px;
   height: auto;
-  margin-right: 5px;
+  margin-right: 8px;
+  
+}
 
+.item-tracker-link img{
+  width: 24px;
+  height: auto;
+  padding-right: 10px;
+}
+.item-tracker-link{
+  margin: 11px 0;
 }
 
 .dropdown-btn img { /*sidebar for all dropdowns */
@@ -85,7 +94,7 @@ body{
 .logout-link img{
   width: 23px;
   height: auto;
-  margin-right: 5px;
+  margin-right: 8px;
   vertical-align: middle; /* Align icons vertically with text */
 
 }
@@ -180,7 +189,25 @@ body{
   display: block;
 }
 
+.user-account {
+  position: fixed;
+  top: 10px;
+  right: 25px;
+  display: flex;
+  align-items: center;
+}
 
+.user-account img {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-account span {
+  font-size: 15px;
+  font-family: "Inter-Bold";
+}
 /*
 .dropdown-btn {
   /* ... other styles */
