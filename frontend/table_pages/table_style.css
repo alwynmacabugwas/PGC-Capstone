@@ -50,17 +50,28 @@
     border-radius: 4px;
 }
 
+.table-section {
+    width: 100%;
+    overflow-x: auto; /* Enable horizontal scrolling */
+}
+.table-div {
+    position: absolute;
+    top: 195px;
+    left: 245px; /* Set left to 245px */
+    right: 0; /* Set right to 0 to ensure it ends at the viewport's right edge */
+    width: calc(100% - 245px); /* Calculate width to span from 245px left to the right edge */
+}
+
 .table{
-    border-collapse: collapse; /*reduces amount of spaces in cells*/
+    width: calc(100% - 25px); /* Adjust the width to account for the right margin */
+    max-width: calc(100% - 25px); /* Prevent the table from exceeding the container's width */
+    border-collapse: collapse;
     font-size: 14px;
     border-top: 2px solid #1b1b1b;
     border-left: 2px solid #1b1b1b;
     border-right: 2px solid #1b1b1b;
-    z-index: 1; 
-    width: 1260px;
-    position: absolute;
-    top: 195px;
-    left: 245px;
+    margin: 0; /* Remove any default margin */
+    margin-right: 25px; /* Adjust the right margin here */
 }
 
 .table thead tr{
@@ -415,6 +426,7 @@
     display: none;
     z-index: 4;
 }
+
 
 
 
