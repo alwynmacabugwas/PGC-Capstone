@@ -21,6 +21,7 @@ body::before {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed; /* Fix the background image */
   position: fixed;
   inset: 0;
   opacity: 0.2; /* Set opacity */

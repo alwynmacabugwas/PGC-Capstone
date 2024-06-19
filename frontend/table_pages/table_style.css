@@ -127,24 +127,32 @@
 .second-table {
     font-family: 'Inter-SemiBold';
     border-collapse: collapse;
-    width: 1450px;
+    width: 100%; /* Use 100% width to ensure it fits its container */
+    max-width: 1450px; /* Set max-width if needed */
     position: relative;
     left: -25px;
     top:-50px;
-  }
-  .second-table input[type="text"] {
-    width: 128px; /* Adjust the width as needed */
-    padding: 10px; /* Adjust padding as needed */
-    box-sizing: border-box; /* Ensure padding is included in the width */
-    font-family: 'Inter-Regular';
+    margin: 0 auto; /* Center the table horizontally */
+    
 }
-.second-table input[type="date"] {
-    width: 128px; /* Adjust the width as needed */
-    padding: 10px; /* Adjust padding as needed */
-    box-sizing: border-box; /* Ensure padding is included in the width */
+.second-table input[type="text"],
+.second-table input[type="date"],
+.second-table select {
+    width: 100%; /* Make inputs and selects fill the table cell */
+    padding: 10px;
+    box-sizing: border-box;
     font-family: 'Inter-Regular';
 }
 
+.second-table #item-id {
+    width: 200px; /* Example: Adjust the width as needed */
+    padding: 8px; /* Example: Adjust padding as needed */
+    font-size: 14px; /* Example: Adjust font size */
+    border: 1px solid #ccc; /* Example: Adjust border properties */
+    border-radius: 4px; /* Example: Adjust border radius */
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+    /* Add any additional styles you want to apply */
+}
 
 #department-dropdown {
     font-family: 'Inter-Regular';
@@ -154,8 +162,6 @@
     border-radius: 4px; /* Add border radius */
     background-color: #fff; /* Set background color */
   }
-
-
 
 
   /*second table header and data*/
@@ -173,9 +179,6 @@
     text-align: left;
   }
   
-  .second-table tbody tr:nth-of-type(even) {
-    background-color: #464646;
-  }
   
 
   #confirm-add{
@@ -213,9 +216,8 @@
 
 .add-item-popout h1{
     position:relative; /* Add this line */
-    z-index: 2; /* Add this line */
     top: -90px;
-    left: -640px;
+    left: -540px;
     font-size: 40px;
     font-family: "Inter-Bold";
 }
