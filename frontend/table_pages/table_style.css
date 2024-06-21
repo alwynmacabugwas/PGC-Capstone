@@ -112,17 +112,26 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) ;
+    transform: translate(-50%, -50%);
     background-color: white;
     padding: 90px;
-    width: 1300px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     opacity: 1;
-    height: 180px;
-
+    width: 95%; /* Increase the width */
+    max-width: 1400px; /* Increase the max-width to accommodate larger content */
+    box-sizing: border-box; /* Include padding in the element's total width */
+    overflow: hidden; /* Ensure no internal overflow */
 }
+
+.second-table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 
 .second-table {
     font-family: 'Inter-SemiBold';
@@ -130,10 +139,9 @@
     width: 100%; /* Use 100% width to ensure it fits its container */
     max-width: 1450px; /* Set max-width if needed */
     position: relative;
-    left: -25px;
-    top:-50px;
+    left: 200px;
+    top: -60px; /* Adjusted from -50px to -60px to move the table 10px higher */
     margin: 0 auto; /* Center the table horizontally */
-    
 }
 .second-table input[type="text"],
 .second-table input[type="date"],
@@ -142,6 +150,7 @@
     padding: 10px;
     box-sizing: border-box;
     font-family: 'Inter-Regular';
+    font-size: 15px;
 }
 
 .second-table #item-id {
@@ -152,7 +161,9 @@
     border-radius: 4px; /* Example: Adjust border radius */
     box-sizing: border-box; /* Ensure padding and border are included in width */
     /* Add any additional styles you want to apply */
+    font-size: 15px;
 }
+
 
 #department-dropdown {
     font-family: 'Inter-Regular';
@@ -190,7 +201,7 @@
     border: none;
     cursor: pointer;
     position: absolute;
-    top: 310px;
+    top: 300px;
     right: 30px;
     width: 150px;
     border-radius: 4px;
@@ -206,7 +217,7 @@
     border: none;
     cursor: pointer;
     position: absolute;
-    top: 310px;
+    top: 300px;
     left: 30px;
     width: 150px;
     border-radius: 4px;
@@ -216,8 +227,8 @@
 
 .add-item-popout h1{
     position:relative; /* Add this line */
-    top: -90px;
-    left: -540px;
+    top: -102px;
+    left: -548px;
     font-size: 40px;
     font-family: "Inter-Bold";
 }
@@ -389,7 +400,7 @@
     border: none;
     cursor: pointer;
     position: absolute;
-    top: 310px;
+    top: 300px;
     right: 30px;
     width: 150px;
     border-radius: 4px;
@@ -405,7 +416,7 @@
     border: none;
     cursor: pointer;
     position: absolute;
-    top: 310px;
+    top: 300px;
     left: 30px;
     width: 150px;
     border-radius: 4px;
@@ -428,7 +439,5 @@
     display: none;
     z-index: 4;
 }
-
-
 
 

@@ -153,32 +153,35 @@
 
     <div class="overlay" id="overlay"></div>
 
+    <!--POPOOUT DIV-->
     <div class="add-item-popout" id="add-item-popout-id">
         <h1>Configure Item ID:</h1>
-        <!--create a table-->
-        <table class="second-table">
-            <thead>
-                <tr id="second-table-header">
-                    <th>Item ID</th>
-                    <th>Item name</th>
-                    <th>Unit</th>
-                    <th>Type</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><input type="number" id="item-id" placeholder="Enter item ID" max="999"></td>
-                    <td><input type="text" id="item" placeholder="Enter item name"></td>
-                    <td><input type="text" id="unit" placeholder="Enter units"></td>
-                    <td><select id="item-type">
-                        <option value="">Select Item Type</option>
-                        <option value="PPE">PPE</option>
-                        <option value="expendable">Expendable</option>
-                        </select>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <!--Second Table-->
+        <div class="second-table-container">
+            <table class="second-table">
+                <thead>
+                    <tr id="second-table-header">
+                        <th>Item ID</th>
+                        <th>Item name</th>
+                        <th>Unit</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="number" id="item-id" placeholder="Enter item ID" max="999"></td>
+                        <td><input type="text" id="item" placeholder="Enter item name"></td>
+                        <td><input type="text" id="unit" placeholder="Enter units"></td>
+                        <td><select id="item-type">
+                            <option value="">Select Item Type</option>
+                            <option value="PPE">PPE</option>
+                            <option value="expendable">Expendable</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <button type="button" id="confirm-add">Confirm</button>
         <button type="button" id="discard-add">Cancel</button>  
