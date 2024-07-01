@@ -123,6 +123,7 @@
     max-width: 1400px; /* Increase the max-width to accommodate larger content */
     box-sizing: border-box; /* Include padding in the element's total width */
     overflow: hidden; /* Ensure no internal overflow */
+    display: flex;
 }
 
 
@@ -131,6 +132,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 100%;
 }
 
 .second-table {
@@ -139,8 +141,6 @@
     width: 100%; /* Use 100% width to ensure it fits its container */
     max-width: 1450px; /* Set max-width if needed */
     position: relative;
-    left: 200px;
-    top: -60px; /* Adjusted from -50px to -60px to move the table 10px higher */
     margin: 0 auto; /* Center the table horizontally */
 }
 .second-table input[type="text"],

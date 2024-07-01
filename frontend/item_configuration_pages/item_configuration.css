@@ -19,8 +19,8 @@
 .add-item-popout h1{
     font-size: 40px;
     font-family: "Inter-Bold";
-    position: absolute;
-    top: calc(3% - 20px);
-    left: calc(15% - 200px);
+    position: fixed; /* Change from absolute to fixed */
+    top: -11px;
+    left: 14px;
     padding-left: 10px;
 }
