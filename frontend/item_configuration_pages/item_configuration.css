@@ -16,4 +16,11 @@
     font-family: "Inter-Bold";
 }
 
-
+.add-item-popout h1{
+    font-size: 40px;
+    font-family: "Inter-Bold";
+    position: absolute;
+    top: calc(3% - 20px);
+    left: calc(15% - 200px);
+    padding-left: 10px;
+}
