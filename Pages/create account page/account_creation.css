@@ -1,0 +1,103 @@
+body {
+    font-family: 'Inter', extra-bold;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+body::before {
+    background-image: url("file:///C:/Users/Lenovo/Pictures/PGC BG.jpg");
+    content: '';
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    inset: 0;
+    opacity: 0.2;
+}
+
+h2 {
+    color: #1e1e1e;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.image-container {
+    position: absolute;
+    top: 200px;
+    left: 300px;
+    width: 200px;
+    height: 200px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    opacity: 1;
+}
+
+.welcome-text {
+    position: absolute;
+    height: 500px;
+    width: 400px;
+    top: 120px;
+    left: 150px;
+    font-size: 80px;
+    color: #1e1e1e;
+    line-height: 120px;
+    font-weight: bold;
+}
+
+.account-creation-box {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 50px rgba(0,0,0,0.1);
+    width: 500px;
+    height: 400px;
+    position: relative;
+    z-index: 1;
+    margin-left: 600px;
+}
+
+input, select {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #e1e1e1;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position-x: 98%;
+    background-position-y: 50%;
+}
+
+.create-account-button {
+    background-color: #0076a9;
+    width: 100%;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.create-account-button:hover {
+    background-color: #0056b3;
+}

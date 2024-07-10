@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="account_creation.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <div class="welcome-text">
+        <p>
+        PGC<br>
+        INVENTORY<br>
+        SYSTEM<br>
+        </p>
+    </div>
+    <div class="image-container">
+        <img src="C:/Users/Lenovo/Pictures/PGC logo.png" alt="Image">
+    </div>
+    <div class="account-creation-box">
+        <h2>CREATE ACCOUNT</h2>
+        <input id="input-username" name="username" placeholder="Username" required>
+        <input id="input-password" name="password" type="password" placeholder="Password" required>
+        <select id="input-role" name="role" required>
+            <option value="" disabled selected>Select Role</option>
+            <option value="admin">Admin</option>
+            <option value="supply">Supply</option>
+            <option value="property">Property</option>
+        </select>
+        <button class="create-account-button" id="create-account-button">Create Account</button>
+    </div>
+        
+    <script src="accountCreation.js"></script>
+</body>
+</html>
