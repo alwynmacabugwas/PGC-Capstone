@@ -89,20 +89,20 @@
             <img src="../../Test Image.png" alt="User Icon">
             <span>Username</span>
         </div>
-      </div> 
+    </div> 
 
-        <!-- Overall Inventory header -->
-        <h1 class="overall-header">OVERALL</h1>
-        <h1 class="inventory-header">Inventory</h1>
+    <!-- Overall Inventory header -->
+    <h1 class="overall-header">OVERALL</h1>
+    <h1 class="inventory-header">Inventory</h1>
 
 
 
-      <div class="search-bar">
+    <div class="search-bar">
         <input type="text" placeholder="Search..." name="search" id="search">
         <button type="button" id="search-button">Search</button>
-      </div>
+    </div>
 
-      <div class="pagination-container">
+    <div class="pagination-container">
         <div class="pagination">
             <button class="prev">&#8249; Prev</button>
             <div class="page-numbers">
@@ -112,7 +112,7 @@
             </div>
             <button class="next">Next &#8250;</button>
         </div>
-      </div>
+    </div>
     
  
     <section class ="table-section">
@@ -162,77 +162,79 @@
     <div class="overlay" id="overlay"></div>
 
     <div class="add-item-popout" id="add-item-popout-id">
-            <h1>Add Item</h1>
+        <h1>Add Item</h1>
         <!--create a table-->
-        <table class="second-table">
-            <thead>
-                <tr id="second-table-header">
-                    <th>PO Number</th>
-                    <th>Date</th>
-                    <th>Supplier</th>
-                    <th>Department</th>
-                    <th>Item ID</th>
-                    <th>Quantity</th>
-                    <th>Price per Unit</th>
-                    <th>Total price</th>
-                    <th>Expiry Date</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><input type="text" id="po_num" placeholder="Enter PO no."></td>
-                    <td><input type="date" id="date" placeholder="Enter Date"></td>
-                    <td><input type="text" id="supplier" placeholder="Enter Supplier"></td>
-                    <td>
-                        <select id="department-dropdown">
-                            <option value="">Select Department</option>
-                            <option value="BAC">BAC</option>
-                            <option value="CPL">CPL</option>
-                            <option value="CPJ">CPJ</option>
-                            <option value="CQMO">CQMO</option>
-                            <option value="CPG-OPIAS">CPG-OPIAS</option>
-                            <option value="OGSO">OGSO</option>
-                            <option value="OPA">OPA</option>
-                            <option value="OPA">OPA</option>
-                            <option value="OPBO">OPBO</option>
-                            <option value="OPCDO">OPCDO</option>
-                            <option value="OPDRRMO">OPDRRMO</option>
-                            <option value="OPENRO">OPENRO</option>
-                            <option value="OPG">OPG</option>
-                            <option value="OPG-PPESM">OPG-PPESM</option>
-                            <option value="OPHO">OPHO</option>
-                            <option value="OPHRMO">OPHRMO</option>
-                            <option value="OPIO">OPIO</option>
-                            <option value="OPLO">OPLO</option>
-                            <option value="OPPDC">OPPDC</option>
-                            <option value="OPPO">OPPO</option>
-                            <option value="OPSWDO">OPSWDO</option>
-                            <option value="OPTO">OPTO</option>
-                            <option value="OPVG">OPVG</option>
-                            <option value="OPVO">OPVO</option>
-                            <option value="OPYDO">OPYDO</option>
-                            <option value="OSP">OSP</option>
-                            <option value="PACA">PACA</option>
-                            <option value="PAIA">PAIA</option>
-                            <option value="PAsO">PAsO</option>
-                            <option value="PEO">PEO</option>
-                            <option value="PHDMO">PHDMO</option>
-                            <option value="PG-COPS">PG-COPS</option>
-                            <option value="PPD">PPD</option>
-                            <option value="PSP">PSP</option>
-                            <option value="PTO">PTO</option>
-                            <option value="RSD">RSD</option>
-                        </select>
-                    </td>
-                    <td><input type="text" id="item-id" placeholder="Enter Item ID"></td>
-                    <td><input type="text" id="quantity" placeholder="Enter quantity"></td>
-                    <td><input type="text" id="price-per-unit" placeholder="Enter Price per Unit"></td>
-                    <td>Php XX,XXX.00</td>   
-                    <td><input type="date" id="expiry-date" placeholder="Enter Expiry Date (if applicable)"></td>
-                </tr>
-            </tbody>
-        </table>
-
+        <div class="second-table-container">
+            <table class="second-table">
+                <thead>
+                    <tr id="second-table-header">
+                        <th>PO Number</th>
+                        <th>Date</th>
+                        <th>Supplier</th>
+                        <th>Department</th>
+                        <th>Item ID</th>
+                        <th>Quantity</th>
+                        <th>Price per Unit</th>
+                        <th>Total price</th>
+                        <th>Expiry Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" id="po_num" placeholder="Enter PO no."></td>
+                        <td><input type="date" id="date" placeholder="Enter Date"></td>
+                        <td><input type="text" id="supplier" placeholder="Enter Supplier"></td>
+                        <td>
+                            <select id="department-dropdown">
+                                <option value="">Select Department</option>
+                                <option value="BAC">BAC</option>
+                                <option value="CPL">CPL</option>
+                                <option value="CPJ">CPJ</option>
+                                <option value="CQMO">CQMO</option>
+                                <option value="CPG-OPIAS">CPG-OPIAS</option>
+                                <option value="OGSO">OGSO</option>
+                                <option value="OPA">OPA</option>
+                                <option value="OPA">OPA</option>
+                                <option value="OPBO">OPBO</option>
+                                <option value="OPCDO">OPCDO</option>
+                                <option value="OPDRRMO">OPDRRMO</option>
+                                <option value="OPENRO">OPENRO</option>
+                                <option value="OPG">OPG</option>
+                                <option value="OPG-PPESM">OPG-PPESM</option>
+                                <option value="OPHO">OPHO</option>
+                                <option value="OPHRMO">OPHRMO</option>
+                                <option value="OPIO">OPIO</option>
+                                <option value="OPLO">OPLO</option>
+                                <option value="OPPDC">OPPDC</option>
+                                <option value="OPPO">OPPO</option>
+                                <option value="OPSWDO">OPSWDO</option>
+                                <option value="OPTO">OPTO</option>
+                                <option value="OPVG">OPVG</option>
+                                <option value="OPVO">OPVO</option>
+                                <option value="OPYDO">OPYDO</option>
+                                <option value="OSP">OSP</option>
+                                <option value="PACA">PACA</option>
+                                <option value="PAIA">PAIA</option>
+                                <option value="PAsO">PAsO</option>
+                                <option value="PEO">PEO</option>
+                                <option value="PHDMO">PHDMO</option>
+                                <option value="PG-COPS">PG-COPS</option>
+                                <option value="PPD">PPD</option>
+                                <option value="PSP">PSP</option>
+                                <option value="PTO">PTO</option>
+                                <option value="RSD">RSD</option>
+                            </select>
+                        </td>
+                        <td><input type="text" id="item-id" placeholder="Enter Item ID"></td>
+                        <td><input type="text" id="quantity" placeholder="Enter quantity"></td>
+                        <td><input type="text" id="price-per-unit" placeholder="Enter Price per Unit"></td>
+                        <td>Php XX,XXX.00</td>   
+                        <td><input type="date" id="expiry-date" placeholder="Enter Expiry Date (if applicable)"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
         <button type="button" id="confirm-add">Confirm</button>
         <button type="button" id="discard-add">Cancel</button>  
     </div>
@@ -240,79 +242,81 @@
     <div class="edit-item-popout" id="edit-item-popout-id">
         <h1>Edit Item</h1>
         <!--create a table-->
-        <table class="third-table">
-            <thead>
-                <tr id="third-table-header">
-                    <th></th>
-                    <th>Date</th>
-                    <th>Supplier</th>
-                    <th>Item</th>
-                    <th>Item Type</th>
-                    <th>Unit</th>
-                    <th>Quantity</th>
-                    <th>Price per Unit</th>
-                    <th>Total price</th>
-                    <th>Department</th>
-                    <th>Expiry Date</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td id="delete-link">Delete</td>
-                    <td><input type="date" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                    <td>Php XX,XXX.00</td>
-                    <td>
-                        <select id="department-dropdown">
-                            <option value="">Select Department</option>
-                            <option value="department1">OPG</option>
-                            <option value="department2">PAIA</option>
-                            <option value="department1">PACA</option>
-                            <option value="department2">OPPDC</option>
-                            <option value="department1">OPYDO</option>
-                            <option value="department2">RSD</option>
-                            <option value="department1">OPLO</option>
-                            <option value="department2">PAIA</option>
-                            <option value="department1">OPTO</option>
-                            <option value="department2">OPIO</option>
-                            <option value="department1">OPG-PPESM</option>
-                            <option value="department2">OPHRMO</option>
-                            <option value="department1">PHDMO</option>
-                            <option value="department2">OPDRRMO</option>
-                            <option value="department1">BAC</option>
-                            <option value="department2">OPVG</option>
-                            <option value="department1">OSP</option>
-                            <option value="department2">OGSO</option>
-                            <option value="department1">OPSWDO</option>
-                            <option value="department2">OPVO</option>
-                            <option value="department1">OPA</option>
-                            <option value="department2">PG-COPS</option>
-                            <option value="department1">OPPO</option>
-                            <option value="department2">PEO</option>
-                            <option value="department1">OPENRO</option>
-                            <option value="department2">OPCDO</option>
-                            <option value="department1">PTO</option>
-                            <option value="department2">OPBO</option>
-                            <option value="department1">OPA</option>
-                            <option value="department2">PAsO</option>
-                            <option value="department1">CPL</option>
-                            <option value="department2">CQMO</option>
-                            <option value="department1">PPD</option>
-                            <option value="department2">OPHO</option>
-                            <option value="department1">CPG-OPIAS</option>
-                            <option value="department1">PSP</option>
-                            <option value="department1">CPJ</option>
-                        </select>
-                    </td>
-                    <td><input type="date" class="input-date" placeholder="Enter Date"></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="third-table-container">
+            <table class="third-table">
+                <thead>
+                    <tr id="third-table-header">
+                        <th></th>
+                        <th>Date</th>
+                        <th>Supplier</th>
+                        <th>Item</th>
+                        <th>Item Type</th>
+                        <th>Unit</th>
+                        <th>Quantity</th>
+                        <th>Price per Unit</th>
+                        <th>Total price</th>
+                        <th>Department</th>
+                        <th>Expiry Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="delete-link">Delete</td>
+                        <td><input type="date" class="input-date" placeholder="Enter Date"></td>
+                        <td><input type="text" id="supplier" placeholder="Enter Supplier"></td>
+                        <td><input type="text" id="item" placeholder="Enter Item"></td>
+                        <td><input type="text" id="item-type" placeholder="Enter Item Type"></td>
+                        <td><input type="text" id="unit" placeholder="Enter Unit"></td>
+                        <td><input type="text" id="quantity" placeholder="Enter quantity"></td>
+                        <td><input type="text" id="price-per-unit" placeholder="Enter Price per Unit"></td>
+                        <td>Php XX,XXX.00</td>
+                        <td>
+                            <select id="department-dropdown">
+                                <option value="">Select Department</option>
+                                <option value="department1">OPG</option>
+                                <option value="department2">PAIA</option>
+                                <option value="department1">PACA</option>
+                                <option value="department2">OPPDC</option>
+                                <option value="department1">OPYDO</option>
+                                <option value="department2">RSD</option>
+                                <option value="department1">OPLO</option>
+                                <option value="department2">PAIA</option>
+                                <option value="department1">OPTO</option>
+                                <option value="department2">OPIO</option>
+                                <option value="department1">OPG-PPESM</option>
+                                <option value="department2">OPHRMO</option>
+                                <option value="department1">PHDMO</option>
+                                <option value="department2">OPDRRMO</option>
+                                <option value="department1">BAC</option>
+                                <option value="department2">OPVG</option>
+                                <option value="department1">OSP</option>
+                                <option value="department2">OGSO</option>
+                                <option value="department1">OPSWDO</option>
+                                <option value="department2">OPVO</option>
+                                <option value="department1">OPA</option>
+                                <option value="department2">PG-COPS</option>
+                                <option value="department1">OPPO</option>
+                                <option value="department2">PEO</option>
+                                <option value="department1">OPENRO</option>
+                                <option value="department2">OPCDO</option>
+                                <option value="department1">PTO</option>
+                                <option value="department2">OPBO</option>
+                                <option value="department1">OPA</option>
+                                <option value="department2">PAsO</option>
+                                <option value="department1">CPL</option>
+                                <option value="department2">CQMO</option>
+                                <option value="department1">PPD</option>
+                                <option value="department2">OPHO</option>
+                                <option value="department1">CPG-OPIAS</option>
+                                <option value="department1">PSP</option>
+                                <option value="department1">CPJ</option>
+                            </select>
+                        </td>
+                        <td><input type="date" class="input-date" placeholder="Enter Date"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <button type="button" id="confirm-edit">Confirm</button>
         <button type="button" id="discard-edit">Cancel</button>  

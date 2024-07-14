@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="item_configuration.css">
 </head>
 <body>
-
+    <!--SIDEBAR-->
     <div class="sidenav">
         <div class="sidebar-header">
             <img src="../../icons/PGC logo.png" alt="Logo">
@@ -95,13 +95,14 @@
             <span>Username</span>
         </div>
     </div> 
+    <!--END OF SIDEBAR-->
 
-    <!-- Overall Inventory header -->
+    <!-- PAGE HEADER -->
     <h1 class="overall-header">ITEM</h1>
     <h1 class="inventory-header">Configuration</h1>
 
 
-
+    <!-- SEARCH BAR -->
     <div class="search-bar">
         <input type="text" placeholder="Search..." name="search" id="search">
         <button type="button" id="search-button">Search</button>
@@ -120,8 +121,7 @@
     </div>
     
  
-
-     <!-- First table -->
+    <!-- START OF FIRST TABLE (MAIN PAGE TABLE) DIV-->
     <div class="table-div">
         <!-- First table -->
         <table class="table" id="item-configuration-table">
@@ -145,7 +145,9 @@
             </tbody>
         </table>
     </div>
+    <!-- END OF FIRST TABLE (MAIN PAGE TABLE) DIV-->
 
+    
     <div class=add-item-button-container>
         <button type="button" id="add-item-button">Add item</button>
     </div>
@@ -153,7 +155,8 @@
 
     <div class="overlay" id="overlay"></div>
 
-    <!--POPOOUT DIV-->
+
+    <!--ADD-ITEM POPOOUT DIV-->
     <div class="add-item-popout" id="add-item-popout-id">
         <h1>Configure Item ID:</h1>
         <!--Second Table-->
@@ -186,11 +189,14 @@
         <button type="button" id="confirm-add">Confirm</button>
         <button type="button" id="discard-add">Cancel</button>  
     </div>
+    <!--END OF ADD-ITEM POPOOUT DIV-->
 
+
+    <!--EDIT-ITEM POPOOUT DIV-->
     <div class="edit-item-popout" id="edit-item-popout-id">
         <h1>Edit Item</h1>
-        <!--create a table-->
-        <div class="table-container">
+        <!--third table-->
+        <div class="third-table-container">
             <table class="third-table">
                 <thead>
                     <tr id="third-table-header">
@@ -214,6 +220,7 @@
         <button type="button" id="confirm-edit">Confirm</button>
         <button type="button" id="discard-edit">Cancel</button>  
     </div>
+    <!--END OF EDIT-ITEM POPOOUT DIV-->
 
       <script src="../sidebar.js"></script>
       <script src="../table_pages/table.js"></script>

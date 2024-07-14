@@ -120,10 +120,11 @@
     text-align: center;
     opacity: 1;
     width: 95%; /* Increase the width */
-    max-width: 1400px; /* Increase the max-width to accommodate larger content */
+    max-width: 1500px; /* Increase the max-width to accommodate larger content */
     box-sizing: border-box; /* Include padding in the element's total width */
     overflow: hidden; /* Ensure no internal overflow */
     display: flex;
+    flex-direction: column; /* Allow for flexible alignment */
 }
 
 
@@ -131,30 +132,34 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    position: relative;
+    padding-right: 250px; /* Ensure there's padding for the 25px gap */
+    width: calc(100% - 25px); /* Ensures the table is always 25px away from the edge */
+    margin-right: 25px; /* Ensures the 25px gap */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent the table from wrapping to a new line */
 }
 
 .second-table {
     font-family: 'Inter-SemiBold';
     border-collapse: collapse;
-    width: 100%; /* Use 100% width to ensure it fits its container */
-    max-width: 1450px; /* Set max-width if needed */
-    position: relative;
-    margin: 0 auto; /* Center the table horizontally */
+    margin: 0 auto; /* Center the table horizontally */ 
+    box-sizing: border-box;
+    width: 100%;
 }
+
 .second-table input[type="text"],
 .second-table input[type="date"],
 .second-table select {
-    width: 100%; /* Make inputs and selects fill the table cell */
     padding: 10px;
     box-sizing: border-box;
     font-family: 'Inter-Regular';
     font-size: 15px;
+    height: 38px;
 }
 
 .second-table #item-id {
-    width: 200px; /* Example: Adjust the width as needed */
+    width: 150px; /* Example: Adjust the width as needed */
     padding: 8px; /* Example: Adjust padding as needed */
     font-size: 14px; /* Example: Adjust font size */
     border: 1px solid #ccc; /* Example: Adjust border properties */
@@ -293,38 +298,53 @@
     z-index: 3; /* Ensure the overlay covers everything */
 }
 
-
-
-.table-container {
+#edit-item-popout-id{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 135px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    opacity: 1;
+    width: 95%; /* Increase the width */
+    max-width: 1500px; /* Increase the max-width to accommodate larger content */
+    box-sizing: border-box; /* Include padding in the element's total width */
+    overflow: hidden; /* Ensure no internal overflow */
     display: flex;
-    justify-content: center; /* center horizontally */
-    align-items: center; /* center vertically */
-    margin-top: 20px; /* adjust margin as needed */
-    max-width: 100%;
+    flex-direction: column; /* Allow for flexible alignment */
+}
+
+.third-table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-right: 225px; /* Ensure there's padding for the 25px gap */
+    width: calc(100% - 25px); /* Ensures the table is always 25px away from the edge */
+    margin-right: 25px; /* Ensures the 25px gap */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent the table from wrapping to a new line */
 }
 
 .third-table {
     font-family: 'Inter-SemiBold';
     border-collapse: collapse;
-   /* max-width: 100%; /* Ensure the table does not exceed the container's width */
-    /*width: 1335px; */
-    position: relative;
-    left: -80px;
-    top:-50px;
-    z-index: 2;
-  }
-
-  .third-table input[type="text"] {
-    width: 128px; /* Adjust the width as needed */
-    padding: 10px; /* Adjust padding as needed */
-    box-sizing: border-box; /* Ensure padding is included in the width */
+    margin: 0 auto; /* Center the table horizontally */ 
+    box-sizing: border-box;
+    width: 100%;
 }
+
+
+.third-table input[type="text"], 
 .third-table input[type="date"] {
-    width: 128px; /* Adjust the width as needed */
     padding: 10px; /* Adjust padding as needed */
     box-sizing: border-box; /* Ensure padding is included in the width */
     font-family: 'Inter-Regular';
 }
+
 #department-dropdown {
     font-family: 'Inter-Regular';
     padding: 8px; /* Add padding for better appearance */
@@ -351,40 +371,6 @@
     text-align: left;
   }
   
-
-
-  #edit-item-popout-id{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) ;
-    z-index: 1; /* Ensure the second table container is above other content */
-    background-color: white;
-    padding: 90px;
-    width: 1335px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column; /* Stack children vertically */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    text-align: center;
-    opacity: 1;
-
-}
-
-
-
-  .edit-item-popout h1{
-    position:relative; /* Add this line */
-    z-index: 2; /* Add this line */
-    top: -90px;
-    left: -660px;
-    font-size: 37px;
-    font-family: 'Inter-Bold';
-
-}
-
 #confirm-edit{
     position: relative;
     font-family: 'Inter-SemiBold';
@@ -422,7 +408,7 @@
   #delete-link{
     color: #a30000;
     cursor: pointer;
-    font-size: 10px;
+    font-size: 13px;
 }
 
   /* Initially hides the popup div until add item is pressed */
@@ -433,6 +419,44 @@
 .edit-item-popout h1 {
     display: none;
     z-index: 4;
+}
+
+
+#po_num {
+    width: 150px; /* Adjust the width as needed */
+}
+
+#supplier{
+    width: 165px;
+}
+
+#department-dropdown{
+    width: 170px;
+}
+
+#quantity{
+    width: 80px;
+}
+
+#date{
+    width: 140px;
+}
+
+#price-per-unit{
+    width: 125px;
+}
+
+.second-table input[type="date"]{
+    width: 140px;
+}
+
+
+#unit{
+    width: 150px;
+}
+
+#item-type{
+    width: 150px;
 }
 
 
