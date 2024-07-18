@@ -133,7 +133,6 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    padding-right: 250px; /* Ensure there's padding for the 25px gap */
     width: calc(100% - 25px); /* Ensures the table is always 25px away from the edge */
     margin-right: 25px; /* Ensures the 25px gap */
     overflow-x: auto; /* Enable horizontal scrolling */
@@ -322,7 +321,6 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    padding-right: 225px; /* Ensure there's padding for the 25px gap */
     width: calc(100% - 25px); /* Ensures the table is always 25px away from the edge */
     margin-right: 25px; /* Ensures the 25px gap */
     overflow-x: auto; /* Enable horizontal scrolling */
