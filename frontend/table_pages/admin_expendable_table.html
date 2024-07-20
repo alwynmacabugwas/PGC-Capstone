@@ -10,6 +10,7 @@
 </head>
 <body>
 
+    <!-- SIDEBAR -->
     <div class="sidenav">
         <div class="sidebar-header">
             <img src="../../icons/PGC logo.png" alt="Logo">
@@ -90,8 +91,10 @@
             <span>Username</span>
         </div>
     </div> 
+    <!-- END OF SIDEBAR -->
 
-    <!-- ADMIN EXPENDABLES PAGE HEADER -->
+
+    <!-- Admin Expendables Page Header -->
     <h1 class="overall-header">ADMIN</h1>
     <h1 class="inventory-header">Expendables</h1> 
 
@@ -114,10 +117,10 @@
     </div>
 
 
-
+    <!-- FIRST TABLE -->
     <section class ="table-section">
+        <!-- First table -->
         <div class="table-div">
-            <!-- First table -->
             <table class="table" id="admin-expendable">
                 <thead>
                     <tr id="tableHeader">
@@ -152,12 +155,15 @@
             </table>
         </div>
     </section>
+    <!-- END OF FIRST TABLE -->
 
+
+    <!-- Add item button to open the add-item-popout-div -->
     <div class=add-item-button-container>
         <button type="button" id="add-item-button">Add item</button>
     </div>
     
-
+    <!-- Overlay is for putting the popout divs on top of the page. It also darkens the page -->
     <div class="overlay" id="overlay"></div>
 
 
@@ -234,9 +240,12 @@
                 </tbody>
             </table>
         </div>    
+        <!--End of Second Table-->
 
-        <button type="button" id="confirm-add">Confirm</button>
-        <button type="button" id="discard-add">Cancel</button> 
+
+        <!--Popout div confirm or cancel button-->
+        <button type="button" id="confirm-add">Confirm</button>  <!--Adds the item-->
+        <button type="button" id="discard-add">Cancel</button>   <!--Exits the popout div-->
     </div>
     <!--END OF ADD-ITEM POPOOUT DIV-->
 
@@ -244,7 +253,7 @@
     <!--EDIT-ITEM POPOOUT DIV-->
     <div class="edit-item-popout" id="edit-item-popout-id">
         <h1>Edit Item</h1>
-        <!--third table-->
+        <!--Third Table-->
         <div class="third-table-container">
             <table class="third-table">
                 <thead>
@@ -318,14 +327,16 @@
                 </tbody>
             </table>
         </div>
+        <!--End of Third Table-->
 
-
-        <button type="button" id="confirm-edit">Confirm</button>
-        <button type="button" id="discard-edit">Cancel</button>  
+        <!--Popout div confirm or cancel button-->
+        <button type="button" id="confirm-edit">Confirm</button>  <!--Adds the item-->
+        <button type="button" id="discard-edit">Cancel</button>   <!--Exits the popout div-->
     </div>
     <!-- END OF EDIT-ITEM POPOOUT DIV-->
   
 
+    <!--JAVASCRIPT-->
     <script src="../sidebar.js"></script>
     <script src="table.js"></script>
     <script src="admin_expendable_table.js"></script>

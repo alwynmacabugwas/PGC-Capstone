@@ -10,6 +10,7 @@
 </head>
 <body>
 
+    <!-- SIDEBAR -->
     <div class="sidenav">
         <div class="sidebar-header">
             <img src="../../icons/PGC logo.png" alt="Logo">
@@ -90,11 +91,12 @@
             <span>Username</span>
         </div>
     </div> 
+    <!-- END OF SIDEBAR -->
 
-    <!-- Overall Inventory header -->
+
+    <!-- Overall Inventory Page Header -->
     <h1 class="overall-header">OVERALL</h1>
     <h1 class="inventory-header">Inventory</h1>
-
 
 
     <div class="search-bar">
@@ -113,12 +115,12 @@
             <button class="next">Next &#8250;</button>
         </div>
     </div>
-    
  
+
+    <!-- FIRST TABLE -->
     <section class ="table-section">
         <!-- First table -->
         <div class="table-div">
-            <!-- First table -->
             <table class="table" id="admin-overall">
                 <thead>
                     <tr id="tableHeader">
@@ -153,12 +155,17 @@
             </table>
         </div>
     </section>
+    <!-- END OF FIRST TABLE -->
 
+
+    <!-- Add item button to open the add-item-popout-div -->
     <div class=add-item-button-container>
         <button type="button" id="add-item-button">Add item</button>
     </div>
     
+    <!-- Overlay is for putting the popout divs on top of the page. It also darkens the page -->
     <div class="overlay" id="overlay"></div>
+
 
     <!--ADD-ITEM POPOOUT DIV-->
     <div class="add-item-popout" id="add-item-popout-id">
@@ -193,7 +200,6 @@
                                 <option value="CQMO">CQMO</option>
                                 <option value="CPG-OPIAS">CPG-OPIAS</option>
                                 <option value="OGSO">OGSO</option>
-                                <option value="OPA">OPA</option>
                                 <option value="OPA">OPA</option>
                                 <option value="OPBO">OPBO</option>
                                 <option value="OPCDO">OPCDO</option>
@@ -234,14 +240,20 @@
                 </tbody>
             </table>
         </div>
-        
-        <button type="button" id="confirm-add">Confirm</button>
-        <button type="button" id="discard-add">Cancel</button>  
-    </div>
+        <!--End of Second Table-->
 
+
+        <!--Popout div confirm or cancel button-->
+        <button type="button" id="confirm-add">Confirm</button>  <!--Adds the item-->
+        <button type="button" id="discard-add">Cancel</button>   <!--Exits the popout div-->
+    </div>
+    <!--END OF ADD-ITEM POPOOUT DIV-->
+
+
+    <!--EDIT-ITEM POPOOUT DIV-->
     <div class="edit-item-popout" id="edit-item-popout-id">
         <h1>Edit Item</h1>
-        <!--create a table-->
+        <!--Third Table-->
         <div class="third-table-container">
             <table class="third-table">
                 <thead>
@@ -273,43 +285,41 @@
                         <td>
                             <select id="department-dropdown">
                                 <option value="">Select Department</option>
-                                <option value="department1">OPG</option>
-                                <option value="department2">PAIA</option>
-                                <option value="department1">PACA</option>
-                                <option value="department2">OPPDC</option>
-                                <option value="department1">OPYDO</option>
-                                <option value="department2">RSD</option>
-                                <option value="department1">OPLO</option>
-                                <option value="department2">PAIA</option>
-                                <option value="department1">OPTO</option>
-                                <option value="department2">OPIO</option>
-                                <option value="department1">OPG-PPESM</option>
-                                <option value="department2">OPHRMO</option>
-                                <option value="department1">PHDMO</option>
-                                <option value="department2">OPDRRMO</option>
-                                <option value="department1">BAC</option>
-                                <option value="department2">OPVG</option>
-                                <option value="department1">OSP</option>
-                                <option value="department2">OGSO</option>
-                                <option value="department1">OPSWDO</option>
-                                <option value="department2">OPVO</option>
-                                <option value="department1">OPA</option>
-                                <option value="department2">PG-COPS</option>
-                                <option value="department1">OPPO</option>
-                                <option value="department2">PEO</option>
-                                <option value="department1">OPENRO</option>
-                                <option value="department2">OPCDO</option>
-                                <option value="department1">PTO</option>
-                                <option value="department2">OPBO</option>
-                                <option value="department1">OPA</option>
-                                <option value="department2">PAsO</option>
-                                <option value="department1">CPL</option>
-                                <option value="department2">CQMO</option>
-                                <option value="department1">PPD</option>
-                                <option value="department2">OPHO</option>
-                                <option value="department1">CPG-OPIAS</option>
-                                <option value="department1">PSP</option>
-                                <option value="department1">CPJ</option>
+                                <option value="BAC">BAC</option>
+                                <option value="CPL">CPL</option>
+                                <option value="CPJ">CPJ</option>
+                                <option value="CQMO">CQMO</option>
+                                <option value="CPG-OPIAS">CPG-OPIAS</option>
+                                <option value="OGSO">OGSO</option>
+                                <option value="OPA">OPA</option>
+                                <option value="OPBO">OPBO</option>
+                                <option value="OPCDO">OPCDO</option>
+                                <option value="OPDRRMO">OPDRRMO</option>
+                                <option value="OPENRO">OPENRO</option>
+                                <option value="OPG">OPG</option>
+                                <option value="OPG-PPESM">OPG-PPESM</option>
+                                <option value="OPHO">OPHO</option>
+                                <option value="OPHRMO">OPHRMO</option>
+                                <option value="OPIO">OPIO</option>
+                                <option value="OPLO">OPLO</option>
+                                <option value="OPPDC">OPPDC</option>
+                                <option value="OPPO">OPPO</option>
+                                <option value="OPSWDO">OPSWDO</option>
+                                <option value="OPTO">OPTO</option>
+                                <option value="OPVG">OPVG</option>
+                                <option value="OPVO">OPVO</option>
+                                <option value="OPYDO">OPYDO</option>
+                                <option value="OSP">OSP</option>
+                                <option value="PACA">PACA</option>
+                                <option value="PAIA">PAIA</option>
+                                <option value="PAsO">PAsO</option>
+                                <option value="PEO">PEO</option>
+                                <option value="PHDMO">PHDMO</option>
+                                <option value="PG-COPS">PG-COPS</option>
+                                <option value="PPD">PPD</option>
+                                <option value="PSP">PSP</option>
+                                <option value="PTO">PTO</option>
+                                <option value="RSD">RSD</option>
                             </select>
                         </td>
                         <td><input type="date" class="input-date" placeholder="Enter Date"></td>
@@ -317,13 +327,18 @@
                 </tbody>
             </table>
         </div>
+        <!--End of Third Table-->
 
-        <button type="button" id="confirm-edit">Confirm</button>
-        <button type="button" id="discard-edit">Cancel</button>  
+        <!--Popout div confirm or cancel button-->
+        <button type="button" id="confirm-edit">Confirm</button>  <!--Adds the item-->
+        <button type="button" id="discard-edit">Cancel</button>   <!--Exits the popout div-->
     </div>
+    <!--END OF EDIT-ITEM POPOOUT DIV-->
 
-      <script src="../sidebar.js"></script>
-      <script src="table.js"></script>
-      <script src="inventory_functions.js"></script>
-      <script src="admin_overall_table.js"></script>
+    
+    <!--JAVASCRIPT-->
+    <script src="../sidebar.js"></script>
+    <script src="table.js"></script>
+    <script src="inventory_functions.js"></script>
+    <script src="admin_overall_table.js"></script>
 </body>

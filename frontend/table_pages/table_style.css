@@ -1,7 +1,7 @@
+/* --------------Search Bar------------------------*/
 .search-bar{
     position: static;
     z-index: 2;
-    
 }
 .search-bar #search{
     left: 245px;
@@ -9,8 +9,6 @@
     position: absolute;
     width: 275px;
     box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
     font-size: 16px;
     background-color: white;
     padding: 12px 20px 12px 40px;
@@ -36,6 +34,8 @@
     border-radius: 0px 4px 4px 0px;
 }
 
+/* --------------Search Bar------------------------*/
+
 .add-item-button-container #add-item-button{
     font-family: 'Inter-SemiBold';
     padding: 9.5px;
@@ -50,14 +50,16 @@
     border-radius: 4px;
 }
 
+/* ------------------------FIRST TABLE-------------------------*/
 .table-section {
     width: 100%;
     overflow-x: auto; /* Enable horizontal scrolling */
 }
+
 .table-div {
     position: absolute;
     top: 195px;
-    left: 245px; /* Set left to 245px */
+    left: 245px;
     right: 0; /* Set right to 0 to ensure it ends at the viewport's right edge */
     width: calc(100% - 245px); /* Calculate width to span from 245px left to the right edge */
 }
@@ -71,7 +73,7 @@
     border-left: 2px solid #1b1b1b;
     border-right: 2px solid #1b1b1b;
     margin: 0; /* Remove any default margin */
-    margin-right: 25px; /* Adjust the right margin here */
+    margin-right: 25px;
 }
 
 .table thead tr{
@@ -99,7 +101,7 @@
 }
 
 .table thead tr#tableHeader th:first-child {
-    width: 1px; /* Adjust the width as needed */
+    width: 1px;
 }
 
 #edit-link{
@@ -108,6 +110,7 @@
 }
 
 
+/* ------------------------ADD-ITEM POPOUT DIV-------------------------*/
 #add-item-popout-id{
     position: absolute;
     top: 50%;
@@ -119,14 +122,13 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     opacity: 1;
-    width: 95%; /* Increase the width */
-    max-width: 1500px; /* Increase the max-width to accommodate larger content */
+    width: 95%; 
+    max-width: 1500px; 
     box-sizing: border-box; /* Include padding in the element's total width */
     overflow: hidden; /* Ensure no internal overflow */
     display: flex;
     flex-direction: column; /* Allow for flexible alignment */
 }
-
 
 .second-table-container {
     display: flex;
@@ -139,10 +141,11 @@
     white-space: nowrap; /* Prevent the table from wrapping to a new line */
 }
 
+/*--- Second Table ---*/
 .second-table {
     font-family: 'Inter-SemiBold';
     border-collapse: collapse;
-    margin: 0 auto; /* Center the table horizontally */ 
+    margin: 0 auto;
     box-sizing: border-box;
     width: 100%;
 }
@@ -158,16 +161,14 @@
 }
 
 .second-table #item-id {
-    width: 150px; /* Example: Adjust the width as needed */
-    padding: 8px; /* Example: Adjust padding as needed */
-    font-size: 14px; /* Example: Adjust font size */
-    border: 1px solid #ccc; /* Example: Adjust border properties */
-    border-radius: 4px; /* Example: Adjust border radius */
-    box-sizing: border-box; /* Ensure padding and border are included in width */
-    /* Add any additional styles you want to apply */
+    width: 150px; 
+    padding: 8px; 
+    font-size: 14px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    box-sizing: border-box;
     font-size: 15px;
 }
-
 
 #department-dropdown {
     font-family: 'Inter-Regular';
