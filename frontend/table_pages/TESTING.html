@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin: Overall</title>
+    <link rel="stylesheet" href="../sidebar.css">
+    <link rel="stylesheet" href="table_style.css">
+    <link rel="stylesheet" href="admin_overall_table.css">
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidenav">
+        <div class="sidebar-header">
+            <img src="../../icons/PGC logo.png" alt="Logo">
+            <h1>GOVERNMENT
+                OF CAVITE<br>
+                INVENTORY<br>
+            </h1>
+        </div>
+      
+        <a href="../home_page/home_page.html" class="home-link" >
+            <img src="../../icons/home icon.png" alt="Home Icon">
+            Home
+        </a>
+        <div class = sidebar-dropdowns>
+            <a href="../item_configuration_pages/item_configuration.html" class="home-link" >
+                <img src="../../icons/item config.png" alt="Home Icon">
+                Admin Account
+            </a>
+        </div>
+
+        <a href="../login_pages/loginPage.html" class="logout-link">
+            <img src="../../icons/logout icon.png">
+            Log Out
+        </a>
+
+        <div class="user-account">
+            <img src="../../Test Image.png" alt="User Icon">
+            <span>Username</span>
+        </div>
+    </div> 
+    <!-- END OF SIDEBAR -->
+
+
+    <!-- Overall Inventory Page Header -->
+    <h1 class="overall-header">OVERALL</h1>
+    <h1 class="inventory-header">Inventory</h1>
+
+
+    <div class="search-bar">
+        <input type="text" placeholder="Search..." name="search" id="search">
+        <button type="button" id="search-button">Search</button>
+    </div>
+
+    <div class="pagination-container">
+        <div class="pagination">
+            <button class="prev">&#8249; Prev</button>
+            <div class="page-numbers">
+                <span class="page-number">1</span>
+                <span class="page-number">2</span>
+                <!-- Add more page numbers dynamically -->
+            </div>
+            <button class="next">Next &#8250;</button>
+        </div>
+    </div>
+ 
+
+    <!-- FIRST TABLE -->
+    <section class ="table-section">
+        <!-- First table -->
+        <div class="table-div">
+            <table class="table" id="admin-overall">
+                <thead>
+                    <tr id="tableHeader">
+                        <th></th>
+                        <th>Item Number</th>
+                        <th>PO Number</th>
+                        <th>Date</th>
+                        <th>Supplier</th>
+                        <th>Department</th>
+                        <th>Item ID/Item Name</th>
+                        <th>Quantity</th>
+                        <th>Price per Unit</th>
+                        <th>Total</th>
+                        <th>Expiry Date</th>
+                    </tr>      
+                </thead>          
+                <tbody>
+                    <tr>
+                        <td id="edit-link">Edit</td>
+                        <td>Item Number</td>
+                        <td>PO Number</td>
+                        <td>Date</td>
+                        <td>Supplier</td>
+                        <td>Department</td>
+                        <td>Item ID/Item Name</td>
+                        <td>Quantity</td>
+                        <td>Price per Unit</td>
+                        <td>Total</td>
+                        <td>sample expiry</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!-- END OF FIRST TABLE -->
+
+
+    <!-- Add item button to open the add-item-popout-div -->
+    <div class=add-item-button-container>
+        <button type="button" id="add-item-button">Add item</button>
+    </div>
+    
+    <!-- Overlay is for putting the popout divs on top of the page. It also darkens the page -->
+    <div class="overlay" id="overlay"></div>
+
+
+    <!--ADD-ITEM POPOOUT DIV-->
+    <div class="add-item-popout" id="add-item-popout-id">
+        <h1>Add Item</h1>
+        <!--Second Table-->
+        <div class="second-table-container">
+            <table class="second-table">
+                <thead>
+                    <tr id="second-table-header">
+                        <th>PO Number</th>
+                        <th>Date</th>
+                        <th>Supplier</th>
+                        <th>Department</th>
+                        <th>Item ID</th>
+                        <th>Quantity</th>
+                        <th>Price per Unit</th>
+                        <th>Total price</th>
+                        <th>Expiry Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" id="po_num" placeholder="Enter PO no."></td>
+                        <td><input type="date" id="date" placeholder="Enter Date"></td>
+                        <td><input type="text" id="supplier" placeholder="Enter Supplier"></td>
+                        <td>
+                            <select id="department-dropdown">
+                                <option value="">Select Department</option>
+                                <option value="BAC">BAC</option>
+                                <option value="CPL">CPL</option>
+                                <option value="CPJ">CPJ</option>
+                                <option value="CQMO">CQMO</option>
+                                <option value="CPG-OPIAS">CPG-OPIAS</option>
+                                <option value="OGSO">OGSO</option>
+                                <option value="OPA">OPA</option>
+                                <option value="OPBO">OPBO</option>
+                                <option value="OPCDO">OPCDO</option>
+                                <option value="OPDRRMO">OPDRRMO</option>
+                                <option value="OPENRO">OPENRO</option>
+                                <option value="OPG">OPG</option>
+                                <option value="OPG-PPESM">OPG-PPESM</option>
+                                <option value="OPHO">OPHO</option>
+                                <option value="OPHRMO">OPHRMO</option>
+                                <option value="OPIO">OPIO</option>
+                                <option value="OPLO">OPLO</option>
+                                <option value="OPPDC">OPPDC</option>
+                                <option value="OPPO">OPPO</option>
+                                <option value="OPSWDO">OPSWDO</option>
+                                <option value="OPTO">OPTO</option>
+                                <option value="OPVG">OPVG</option>
+                                <option value="OPVO">OPVO</option>
+                                <option value="OPYDO">OPYDO</option>
+                                <option value="OSP">OSP</option>
+                                <option value="PACA">PACA</option>
+                                <option value="PAIA">PAIA</option>
+                                <option value="PAsO">PAsO</option>
+                                <option value="PEO">PEO</option>
+                                <option value="PHDMO">PHDMO</option>
+                                <option value="PG-COPS">PG-COPS</option>
+                                <option value="PPD">PPD</option>
+                                <option value="PSP">PSP</option>
+                                <option value="PTO">PTO</option>
+                                <option value="RSD">RSD</option>
+                            </select>
+                        </td>
+                        <td><input type="text" id="item-id" placeholder="Enter Item ID"></td>
+                        <td><input type="text" id="quantity" placeholder="Enter quantity"></td>
+                        <td><input type="text" id="price-per-unit" placeholder="Enter Price per Unit"></td>
+                        <td>Php XX,XXX.00</td>   
+                        <td><input type="date" id="expiry-date" placeholder="Enter Expiry Date (if applicable)"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--End of Second Table-->
+
+
+        <!--Popout div confirm or cancel button-->
+        <button type="button" id="confirm-add">Confirm</button>  <!--Adds the item-->
+        <button type="button" id="discard-add">Cancel</button>   <!--Exits the popout div-->
+    </div>
+    <!--END OF ADD-ITEM POPOOUT DIV-->
+
+
+    <!--EDIT-ITEM POPOOUT DIV-->
+    <div class="edit-item-popout" id="edit-item-popout-id">
+        <h1>Edit Item</h1>
+        <!--Third Table-->
+        <div class="third-table-container">
+            <table class="third-table">
+                <thead>
+                    <tr id="third-table-header">
+                        <th></th>
+                        <th>Date</th>
+                        <th>Supplier</th>
+                        <th>Item</th>
+                        <th>Item Type</th>
+                        <th>Unit</th>
+                        <th>Quantity</th>
+                        <th>Price per Unit</th>
+                        <th>Total price</th>
+                        <th>Department</th>
+                        <th>Expiry Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="delete-link">Delete</td>
+                        <td><input type="date" class="input-date" placeholder="Enter Date"></td>
+                        <td><input type="text" id="supplier" placeholder="Enter Supplier"></td>
+                        <td><input type="text" id="item" placeholder="Enter Item"></td>
+                        <td><input type="text" id="item-type" placeholder="Enter Item Type"></td>
+                        <td><input type="text" id="unit" placeholder="Enter Unit"></td>
+                        <td><input type="text" id="quantity" placeholder="Enter quantity"></td>
+                        <td><input type="text" id="price-per-unit" placeholder="Enter Price per Unit"></td>
+                        <td>Php XX,XXX.00</td>
+                        <td>
+                            <select id="department-dropdown">
+                                <option value="">Select Department</option>
+                                <option value="BAC">BAC</option>
+                                <option value="CPL">CPL</option>
+                                <option value="CPJ">CPJ</option>
+                                <option value="CQMO">CQMO</option>
+                                <option value="CPG-OPIAS">CPG-OPIAS</option>
+                                <option value="OGSO">OGSO</option>
+                                <option value="OPA">OPA</option>
+                                <option value="OPBO">OPBO</option>
+                                <option value="OPCDO">OPCDO</option>
+                                <option value="OPDRRMO">OPDRRMO</option>
+                                <option value="OPENRO">OPENRO</option>
+                                <option value="OPG">OPG</option>
+                                <option value="OPG-PPESM">OPG-PPESM</option>
+                                <option value="OPHO">OPHO</option>
+                                <option value="OPHRMO">OPHRMO</option>
+                                <option value="OPIO">OPIO</option>
+                                <option value="OPLO">OPLO</option>
+                                <option value="OPPDC">OPPDC</option>
+                                <option value="OPPO">OPPO</option>
+                                <option value="OPSWDO">OPSWDO</option>
+                                <option value="OPTO">OPTO</option>
+                                <option value="OPVG">OPVG</option>
+                                <option value="OPVO">OPVO</option>
+                                <option value="OPYDO">OPYDO</option>
+                                <option value="OSP">OSP</option>
+                                <option value="PACA">PACA</option>
+                                <option value="PAIA">PAIA</option>
+                                <option value="PAsO">PAsO</option>
+                                <option value="PEO">PEO</option>
+                                <option value="PHDMO">PHDMO</option>
+                                <option value="PG-COPS">PG-COPS</option>
+                                <option value="PPD">PPD</option>
+                                <option value="PSP">PSP</option>
+                                <option value="PTO">PTO</option>
+                                <option value="RSD">RSD</option>
+                            </select>
+                        </td>
+                        <td><input type="date" class="input-date" placeholder="Enter Date"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--End of Third Table-->
+
+        <!--Popout div confirm or cancel button-->
+        <button type="button" id="confirm-edit">Confirm</button>  <!--Adds the item-->
+        <button type="button" id="discard-edit">Cancel</button>   <!--Exits the popout div-->
+    </div>
+    <!--END OF EDIT-ITEM POPOOUT DIV-->
+
+    
+    <!--JAVASCRIPT-->
+    <script src="../sidebar.js"></script>
+    <script src="table.js"></script>
+    <script src="inventory_functions.js"></script>
+    <script src="admin_overall_table.js"></script>
+</body>
