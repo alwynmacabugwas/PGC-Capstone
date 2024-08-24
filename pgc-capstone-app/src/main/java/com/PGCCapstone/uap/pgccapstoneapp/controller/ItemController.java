@@ -1,3 +1,5 @@
+// registered item controller of the system
+// see function comments for further details
 package com.PGCCapstone.uap.pgccapstoneapp.controller;
 
 import java.util.ArrayList;
@@ -20,16 +22,29 @@ import com.PGCCapstone.uap.pgccapstoneapp.service.ItemService;
 @RestController
 public class ItemController {
 	
+	// this function connects to registered items repository
+	// registered items repository contains the database functions(SQL Queries) for registered items
+	// registered items - items that has a PO and its own item number. A specific item procured by the procurement section
+	// see ItemRepository.java for further details
 	@Autowired
 	ItemRepository ItemRepo;
+	
+	// this function connects to PO repository
+	// PO repository contains the database functions(SQL Queries) for registered items' Purchase Order (PO)
+	// Purchase Order - document that contains the necessary information of the registered item
+	// see PoRepository.java for further details
 	@Autowired
 	PoRepository PoRepo;
+	
+	// this function connects to registered item functions. It was purposefully placed on another java file for readability purpose.
+	// see ItemService.java file for further details
 	@Autowired
 	private ItemService itemService;
 	
+	//registerItem - this function adds the registered item to the database
 	@PostMapping("item/register")
 	public Item registerItem(@RequestBody Item item) {
-		item.setTotal(item.getPrice_per_unit(), item.getQuantity());		
+		item.setTotal(item.getPrice_per_unit(), item.getQuantity()); // this line of code 
 		Item registeredItem = ItemRepo.insertItem(item);
 		PoRepo.insertPurchaseOrder(item);
 		itemService.createPpeTracker(registeredItem);
@@ -121,13 +136,22 @@ public class ItemController {
 	
 	@PostMapping("/item/edit")
 	public void editItem(@RequestBody Item item) {
-		ItemRepo.updateItem(item);
+		ItemRepo.updateItemOverall(item);
 	}
 	
-	@DeleteMapping("/item/edit")
+	@DeleteMapping("/item/delete")
 	public void deleteItem(@RequestBody Item item) {
-		ItemRepo.updateItem(item);
+		ItemRepo.deleteItemOverall(item);
+		ItemRepo.deleteAllTrackedItemInstance(item);
 	}
+	
+	@DeleteMapping("/item/delete/trackedItem")
+	public void deleteSingleItem(@RequestBody TrackedItem trackedItem) {
+		ItemRepo.deleteTrackedItem(trackedItem);
+	}
+	
+	
+	
 	
 	
 //	@GetMapping("/item/itemName")

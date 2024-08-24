@@ -1,3 +1,5 @@
+// PGC PICTO INVENTORY SYSTEM BACKEND
+// SEE OTHER PACKAGES FOR TO BETTER UNDERSTAND THE BACKEND SYSTEM
 package com.PGCCapstone.uap.pgccapstoneapp;
 
 import org.springframework.boot.SpringApplication;

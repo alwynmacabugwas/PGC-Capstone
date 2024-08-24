@@ -23,6 +23,8 @@ public class ItemService {
 				itemIdRepo.insertPpeDetails(item_code, itemId, itemNo, status);
 			}
 		}
-	
+	}
+	public void updatedPpeTracker(Item item) {
+		
 	}
 }
