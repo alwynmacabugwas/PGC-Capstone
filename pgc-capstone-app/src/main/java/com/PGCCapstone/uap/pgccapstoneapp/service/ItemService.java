@@ -24,7 +24,4 @@ public class ItemService {
 			}
 		}
 	}
-	public void updatedPpeTracker(Item item) {
-		
-	}
 }
