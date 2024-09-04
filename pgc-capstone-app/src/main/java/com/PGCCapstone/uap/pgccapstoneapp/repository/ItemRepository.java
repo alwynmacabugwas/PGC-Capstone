@@ -66,7 +66,7 @@ public interface ItemRepository {
 	
 	@Update("UPDATE procured_items SET quantity = quantity + #{quantity}, price_per_unit = #{price_per_unit}, total = #{total}, expiry_date = #{expiry_date} WHERE item_no = #{item_no}")
 	public void updateItemOverall(Item item);
-	
+
 	@Delete("DELETE FROM procured_items WHERE item_no = #{item_no}")
 	public void deleteItemOverall(Item item);
 	
