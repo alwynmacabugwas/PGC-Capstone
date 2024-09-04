@@ -1,3 +1,6 @@
+// CORS CONFIG - This allows the frontend part of the system to send inputs to backend part of the system
+//             - Disregard this file. Nothing needs to be changed here
+//             - Only change this file if CORS error is encountered at the frontend part of the system
 package com.PGCCapstone.uap.pgccapstoneapp.config;
 
 import org.springframework.context.annotation.Configuration;
