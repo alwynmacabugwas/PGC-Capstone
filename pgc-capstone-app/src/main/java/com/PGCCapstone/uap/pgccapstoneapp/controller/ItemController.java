@@ -13,10 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.PGCCapstone.uap.pgccapstoneapp.model.Item;
 import com.PGCCapstone.uap.pgccapstoneapp.model.TrackedItem;
-import com.PGCCapstone.uap.pgccapstoneapp.model.UserAccount;
 import com.PGCCapstone.uap.pgccapstoneapp.repository.ItemRepository;
 import com.PGCCapstone.uap.pgccapstoneapp.repository.PoRepository;
-import com.PGCCapstone.uap.pgccapstoneapp.repository.RegistrationMybatisRepository;
 import com.PGCCapstone.uap.pgccapstoneapp.service.ItemService;
 
 @RestController
@@ -43,12 +41,11 @@ public class ItemController {
 	
 	//registerItem - this function adds the registered item to the database
 	@PostMapping("item/register")
-	public Item registerItem(@RequestBody Item item) {
+	public void registerItem(@RequestBody Item item) {
 		item.setTotal(item.getPrice_per_unit(), item.getQuantity()); // this line of code 
-		Item registeredItem = ItemRepo.insertItem(item);
+		ItemRepo.insertItem(item);
 		PoRepo.insertPurchaseOrder(item);
-		itemService.createPpeTracker(registeredItem);
-		return registeredItem;
+		itemService.createPpeTracker(item);
 	}
 	
 	@GetMapping("/item/byId")
