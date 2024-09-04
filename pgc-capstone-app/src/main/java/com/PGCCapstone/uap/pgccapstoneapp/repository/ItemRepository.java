@@ -79,6 +79,9 @@ public interface ItemRepository {
 	@Delete("DELETE FROM ppe_items_details WHERE item_code = #{item_code}")
 	public void deleteTrackedItem(TrackedItem trackedItem);
 	
+	@Update("UPDATE procured_items SET quantity = quantity - 1 WHERE item_no = #{item_no}")
+	public void updatePpeItemQuantity(TrackedItem trackedItem);
+	
 	@Select("SELECT * FROM ppe_items_details")
 	public ArrayList<TrackedItem> getAllTrackedItems();
 	

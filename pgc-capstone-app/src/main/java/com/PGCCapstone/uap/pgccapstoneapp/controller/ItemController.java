@@ -148,6 +148,7 @@ public class ItemController {
 	@DeleteMapping("/item/delete/trackedItem")
 	public void deleteSingleItem(@RequestBody TrackedItem trackedItem) {
 		ItemRepo.deleteTrackedItem(trackedItem);
+		ItemRepo.updatePpeItemQuantity(trackedItem);
 	}
 	
 	
