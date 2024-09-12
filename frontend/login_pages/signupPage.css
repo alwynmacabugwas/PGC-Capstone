@@ -1,0 +1,99 @@
+@font-face {
+    font-family: "Inter";
+    src: url(../../font/static/Inter-Bold.ttf)
+}
+
+body {
+    font-family: 'Inter';
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+h2 {
+    color: #1e1e1e;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.logo-container img {
+    position: absolute;
+    top: 185px;
+    right: 215px; /* Switched to right */
+    width: 105px;
+    height: 105px;
+}
+
+.overlay {
+    position: absolute;
+    height: 500px;
+    width: 400px;
+    top: 120px;
+    right: 150px; /* Switched to right */
+    color: #1e1e1e;
+}
+
+h1 {
+    font-size: 100px;
+    line-height: 110%;
+}
+
+.left { /* Now the form section */
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 50px rgba(0,0,0,0.1);
+    width: 500px;
+    height: 450px; /* Increased height to fit login link */
+    position: relative;
+    margin-right: 600px; /* Moved form to the right */
+    margin-top: 150px;
+}
+
+.right { /* Now the info section */
+    position: relative;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #e1e1e1;
+}
+
+.signup-button {
+    background-color: #0076a9;
+    width: 100%;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.signup-button:hover {
+    background-color: #0056b3;
+}
+
+.login-link {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #0076a9;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}

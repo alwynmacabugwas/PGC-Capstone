@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin:PPE</title>
+    <title>Admin: Overall</title>
     <link rel="stylesheet" href="../sidebar.css">
-    <link rel="stylesheet" href="../table_pages/admin_PPE_table.css">
     <link rel="stylesheet" href="table_style.css">
+    <link rel="stylesheet" href="admin_overall_table.css">
 </head>
 <body>
 
+    <!-- SIDEBAR -->
     <div class="sidenav">
         <div class="sidebar-header">
             <img src="../../icons/PGC logo.png" alt="Logo">
@@ -26,58 +27,8 @@
         <div class = sidebar-dropdowns>
             <a href="../item_configuration_pages/item_configuration.html" class="home-link" >
                 <img src="../../icons/item config.png" alt="Home Icon">
-                Item Configuration
+                Admin Account
             </a>
-
-            <a href="../tracking_pages/track_by_item_number.html" class="item-tracker-link">
-                <img src="../../icons/item tracking icon.png" alt="Home Icon">
-                Item Tracker
-            </a>
-
-            <button class="dropdown-btn">
-                <img src="../../icons/inventory icon.png">
-                Overall
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-container">
-                <a href="../table_pages/admin_overall_table.html">All</a>
-                <a href="../table_pages/admin_PPE_table.html">PPE's</a>
-                <a href="../table_pages/admin_expendable_table.html">Expendables</a>
-            </div>
-
-            <button class="dropdown-btn">
-                <img src="../../icons/supplies icon.png">
-                Supplies
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-container">
-                <a href="../table_pages/Supply_Section/supply_overall_table.html">All</a>
-                <a href="../table_pages/Supply_Section/supply_PPE_table.html">Semi Expendable PPE's</a>
-                <a href="../table_pages/Supply_Section/supply_expendable_table.html">Expendables</a>
-            </div>
-        
-            <button class="dropdown-btn" onclick="toggleDropdown(this)">
-                <img src="../../icons/properties icon.png">
-                Properties
-                <i class="fa fa-caret-down"></i>
-            </button>
-
-            <div class="dropdown-container">
-                <a href="../table_pages/Property_Section/property_overall_table.html">All</a>
-                <a href="../table_pages/Property_Section/property_PPE_table.html">PPE's</a>
-                <a href="../table_pages/Property_Section/property_expendable_table.html">Expendables</a>
-            </div>
-        
-            <button class="dropdown-btn">
-                <img src="../../icons/forms icon.png">
-                Forms
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-container">
-                <a href="Form1">Report</a>
-                <a href="Form2">Form2</a>
-                <a href="Form3">Form3</a>
-            </div>
         </div>
 
         <a href="../login_pages/loginPage.html" class="logout-link">
@@ -90,10 +41,12 @@
             <span>Username</span>
         </div>
     </div> 
+    <!-- END OF SIDEBAR -->
 
-    <!-- ADMIN PPE PAGE HEADER -->
-    <h1 class="overall-header">ADMIN PPE</h1>
-    <h1 class="inventory-header">Tables</h1>
+
+    <!-- Overall Inventory Page Header -->
+    <h1 class="overall-header">OVERALL</h1>
+    <h1 class="inventory-header">Inventory</h1>
 
 
     <div class="search-bar">
@@ -112,57 +65,61 @@
             <button class="next">Next &#8250;</button>
         </div>
     </div>
-    
  
 
-    <!-- First table -->
-    <div class="table-div">
+    <!-- FIRST TABLE -->
+    <section class ="table-section">
         <!-- First table -->
-        <table class="table" id="admin-ppe">
-            <thead>
-                <tr id="tableHeader">
-                    <th></th>
-                    <th>Item Number</th>
-                    <th>PO Number</th>
-                    <th>Date</th>
-                    <th>Supplier</th>
-                    <th>Department</th>
-                    <th>Item ID/Item Name</th>
-                    <th>Quantity</th>
-                    <th>Price per Unit</th>
-                    <th>Total</th>
-                    <th>Expiry Date</th>
-                </tr>      
-            </thead>          
-            <tbody>
-                <tr>
-                    <td id="edit-link">Edit</td>
-                    <td>Item Number</td>
-                    <td>PO Number</td>
-                    <td>Date</td>
-                    <td>Supplier</td>
-                    <td>Department</td>
-                    <td>Item ID/Item Name</td>
-                    <td>Quantity</td>
-                    <td>Price per Unit</td>
-                    <td>Total</td>
-                    <td>sample expiry</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+        <div class="table-div">
+            <table class="table" id="admin-overall">
+                <thead>
+                    <tr id="tableHeader">
+                        <th></th>
+                        <th>Item Number</th>
+                        <th>PO Number</th>
+                        <th>Date</th>
+                        <th>Supplier</th>
+                        <th>Department</th>
+                        <th>Item ID/Item Name</th>
+                        <th>Quantity</th>
+                        <th>Price per Unit</th>
+                        <th>Total</th>
+                        <th>Expiry Date</th>
+                    </tr>      
+                </thead>          
+                <tbody>
+                    <tr>
+                        <td id="edit-link">Edit</td>
+                        <td>Item Number</td>
+                        <td>PO Number</td>
+                        <td>Date</td>
+                        <td>Supplier</td>
+                        <td>Department</td>
+                        <td>Item ID/Item Name</td>
+                        <td>Quantity</td>
+                        <td>Price per Unit</td>
+                        <td>Total</td>
+                        <td>sample expiry</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!-- END OF FIRST TABLE -->
 
+
+    <!-- Add item button to open the add-item-popout-div -->
     <div class=add-item-button-container>
         <button type="button" id="add-item-button">Add item</button>
     </div>
     
-
+    <!-- Overlay is for putting the popout divs on top of the page. It also darkens the page -->
     <div class="overlay" id="overlay"></div>
 
 
     <!--ADD-ITEM POPOOUT DIV-->
     <div class="add-item-popout" id="add-item-popout-id">
-        <h1>Add Item:</h1>
+        <h1>Add Item</h1>
         <!--Second Table-->
         <div class="second-table-container">
             <table class="second-table">
@@ -224,18 +181,21 @@
                                 <option value="RSD">RSD</option>
                             </select>
                         </td>
-                        <td><input type="text" id="item_id" placeholder="Enter Item ID"></td>
+                        <td><input type="text" id="item-id" placeholder="Enter Item ID"></td>
                         <td><input type="text" id="quantity" placeholder="Enter quantity"></td>
-                        <td><input type="text" id="price_per_unit" placeholder="Enter Price per Unit"></td>
+                        <td><input type="text" id="price-per-unit" placeholder="Enter Price per Unit"></td>
                         <td>Php XX,XXX.00</td>   
-                        <td><input type="date" id="expiry_date" placeholder="Enter Expiry Date (if applicable)"></td>
+                        <td><input type="date" id="expiry-date" placeholder="Enter Expiry Date (if applicable)"></td>
                     </tr>
                 </tbody>
             </table>
-        </div>    
+        </div>
+        <!--End of Second Table-->
 
-        <button type="button" id="confirm-add">Confirm</button>
-        <button type="button" id="discard-add">Cancel</button>  
+
+        <!--Popout div confirm or cancel button-->
+        <button type="button" id="confirm-add">Confirm</button>  <!--Adds the item-->
+        <button type="button" id="discard-add">Cancel</button>   <!--Exits the popout div-->
     </div>
     <!--END OF ADD-ITEM POPOOUT DIV-->
 
@@ -243,7 +203,7 @@
     <!--EDIT-ITEM POPOOUT DIV-->
     <div class="edit-item-popout" id="edit-item-popout-id">
         <h1>Edit Item</h1>
-        <!--create a table-->
+        <!--Third Table-->
         <div class="third-table-container">
             <table class="third-table">
                 <thead>
@@ -273,7 +233,7 @@
                         <td><input type="text" id="price-per-unit" placeholder="Enter Price per Unit"></td>
                         <td>Php XX,XXX.00</td>
                         <td>
-                                                        <select id="department-dropdown">
+                            <select id="department-dropdown">
                                 <option value="">Select Department</option>
                                 <option value="BAC">BAC</option>
                                 <option value="CPL">CPL</option>
@@ -317,14 +277,18 @@
                 </tbody>
             </table>
         </div>
+        <!--End of Third Table-->
 
-        <button type="button" id="confirm-edit">Confirm</button>
-        <button type="button" id="discard-edit">Cancel</button>  
+        <!--Popout div confirm or cancel button-->
+        <button type="button" id="confirm-edit">Confirm</button>  <!--Adds the item-->
+        <button type="button" id="discard-edit">Cancel</button>   <!--Exits the popout div-->
     </div>
-    <!-- END OF EDIT-ITEM POPOOUT DIV-->
+    <!--END OF EDIT-ITEM POPOOUT DIV-->
 
-
+    
+    <!--JAVASCRIPT-->
     <script src="../sidebar.js"></script>
     <script src="table.js"></script>
-    <script src="admin_PPE_table.js"></script>
+    <script src="inventory_functions.js"></script>
+    <script src="admin_overall_table.js"></script>
 </body>
