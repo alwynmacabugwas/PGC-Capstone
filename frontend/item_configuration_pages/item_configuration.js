@@ -27,8 +27,7 @@ async function setItemId() {
     } catch (error) {
         console.error(error);
     }
-
-    window.location.reload();
+    location.reload();
 }
 
 async function getItemId() {
