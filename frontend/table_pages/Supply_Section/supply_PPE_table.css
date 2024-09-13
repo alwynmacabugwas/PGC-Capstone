@@ -15,3 +15,33 @@
     font-size: 30px;
     font-family: "Inter-Bold";
 }
+
+.add-item-popout h1{
+    font-size: 40px;
+    font-family: "Inter-Bold";
+    position: fixed; /* Change from absolute to fixed */
+    top: -11px;
+    left: 14px;
+    padding-left: 10px;
+}
+
+.edit-item-popout h1{
+    font-size: 40px;
+    font-family: "Inter-Bold";
+    position: fixed; /* Change from absolute to fixed */
+    top: -11px;
+    left: 14px;
+    padding-left: 10px;
+}
+
+.second-table-container {
+    left: -100px;
+    padding-right: 250px; /* Ensure there's padding for the 25px gap */
+
+}
+
+.third-table-container {
+    left: -100px;
+    padding-right: 225px; /* Ensure there's padding for the 25px gap */
+
+}

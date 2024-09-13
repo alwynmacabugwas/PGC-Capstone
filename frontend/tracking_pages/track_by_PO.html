@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Item Configuration</title>
+    <title>Tracking:By Item ID</title>
+    <link rel="stylesheet" href="../tracking_pages/track_by_item_id.css">
     <link rel="stylesheet" href="../sidebar.css">
-    <link rel="stylesheet" href="../table_pages/table_style.css">
-    <link rel="stylesheet" href="item_configuration.css">
+    <link rel="stylesheet" href="../../frontend/table_pages/table_style.css">
 </head>
 <body>
-    <!--SIDEBAR-->
+
     <div class="sidenav">
         <div class="sidebar-header">
             <img src="../../icons/PGC logo.png" alt="Logo">
@@ -25,17 +25,16 @@
         </a>
         <div class = sidebar-dropdowns>
             <a href="../item_configuration_pages/item_configuration.html" class="home-link" >
-
                 <img src="../../icons/item config.png" alt="Home Icon">
                 Item Configuration
             </a>
-
-            <a href="../tracking_pages/track_by_item_number.html" class="item-tracker-link">
-                <img src="../../icons/item tracking icon.png" alt="Home Icon">
-                Item Tracker
-            </a>
-
+            <button class="dropdown-btn">
+                <img src="../../icons/item tracking icon.png">
+                Item Tracking
+                <i class="fa fa-caret-down caret-down"></i>
+            </button>
             <div class="dropdown-container">
+                <a href="../tracking_pages/track_by_PO.html">By Item ID</a>
                 <a href="../tracking_pages/track_by_item_number.html">By Item Number</a>
             </div>
 
@@ -89,26 +88,20 @@
             <img src="../../icons/logout icon.png">
             Log Out
         </a>
+      </div> 
 
-        <div class="user-account">
-            <img src="../../Test Image.png" alt="User Icon">
-            <span>Username</span>
-        </div>
-    </div> 
-    <!--END OF SIDEBAR-->
-
-    <!-- PAGE HEADER -->
-    <h1 class="overall-header">ITEM</h1>
-    <h1 class="inventory-header">Configuration</h1>
+        <!-- Overall Inventory header -->
+        <h1 class="overall-header">ITEM ID</h1>
+        <h1 class="inventory-header">Tracking</h1>
 
 
-    <!-- SEARCH BAR -->
-    <div class="search-bar">
+
+      <div class="search-bar">
         <input type="text" placeholder="Search..." name="search" id="search">
         <button type="button" id="search-button">Search</button>
-    </div>
+      </div>
 
-    <div class="pagination-container">
+      <div class="pagination-container">
         <div class="pagination">
             <button class="prev">&#8249; Prev</button>
             <div class="page-numbers">
@@ -118,100 +111,56 @@
             </div>
             <button class="next">Next &#8250;</button>
         </div>
-    </div>
+      </div>
     
  
-    <!-- START OF FIRST TABLE (MAIN PAGE TABLE) DIV-->
+
+     <!-- First table -->
     <div class="table-div">
         <!-- First table -->
-        <table class="table" id="item-configuration-table">
+        <table class="table" id="overall">
             <thead>
                 <tr id="tableHeader">
                     <th></th>
                     <th>Item ID</th>
-                    <th>Item Type</th>
                     <th>Item Name</th>
-                    <th>Units</th>
+                    <th>Quantity</th>
                 </tr>      
             </thead>          
             <tbody>
                 <tr>
                     <td id="edit-link">Edit</td>
-                    <td>Sample id</td>
-                    <td>sample type</td>
-                    <td>sample name</td>
-                    <td>sample units</td>
+                    <td>sample date</td>
+                    <td>sample supplier</td>
+                    <td>sample item</td>
                 </tr>
             </tbody>
         </table>
-    </div>
-    <!-- END OF FIRST TABLE (MAIN PAGE TABLE) DIV-->
-
-    
-    <div class=add-item-button-container>
-        <button type="button" id="add-item-button">Add item</button>
     </div>
     
 
     <div class="overlay" id="overlay"></div>
 
 
-    <!--ADD-ITEM POPOOUT DIV-->
-    <div class="add-item-popout" id="add-item-popout-id">
-        <h1>Configure Item ID:</h1>
-        <!--Second Table-->
-        <div class="second-table-container">
-            <table class="second-table">
-                <thead>
-                    <tr id="second-table-header">
-                        <th>Item ID</th>
-                        <th>Item name</th>
-                        <th>Unit</th>
-                        <th>Type</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><input type="number" id="item-id" placeholder="Enter item ID" max="999"></td>
-                        <td><input type="text" id="item" placeholder="Enter item name"></td>
-                        <td><input type="text" id="unit" placeholder="Enter units"></td>
-                        <td><select id="item-type">
-                            <option value="">Select Item Type</option>
-                            <option value="PPE">PPE</option>
-                            <option value="expendable">Expendable</option>
-                            </select>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <button type="button" id="confirm-add">Confirm</button>
-        <button type="button" id="discard-add">Cancel</button>  
-    </div>
-    <!--END OF ADD-ITEM POPOOUT DIV-->
-
-
-    <!--EDIT-ITEM POPOOUT DIV-->
     <div class="edit-item-popout" id="edit-item-popout-id">
         <h1>Edit Item</h1>
-        <!--third table-->
-        <div class="third-table-container">
+        <!--create a table-->
+        <div class="table-container">
             <table class="third-table">
                 <thead>
                     <tr id="third-table-header">
                         <th></th>
                         <th>Item ID</th>
-                        <th>Item Type</th>
                         <th>Item Name</th>
+                        <th>Quantity</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td id="delete-link">Delete</td>
-                        <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                        <td><input type="text" class="input-date" placeholder="Enter Date"></td>
-                        <td><input type="text" class="input-date" placeholder="Enter Date"></td>
+                        <td><input type="text" class="input-date" placeholder="Enter Item ID"></td>
+                        <td><input type="text" class="input-date" placeholder="Enter Name"></td>
+                        <td><input type="text" class="input-date" placeholder="Enter Quantity"></td>
                     </tr>
                 </tbody>
             </table>
@@ -220,9 +169,7 @@
         <button type="button" id="confirm-edit">Confirm</button>
         <button type="button" id="discard-edit">Cancel</button>  
     </div>
-    <!--END OF EDIT-ITEM POPOOUT DIV-->
-
+      
       <script src="../sidebar.js"></script>
-      <script src="../table_pages/table.js"></script>
-      <script src="item_configuration.js"></script>
+      <script src="../tracking_pages/tracking.js"></script>
 </body>

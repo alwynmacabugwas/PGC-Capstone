@@ -27,7 +27,6 @@ async function setItemId() {
     } catch (error) {
         console.error(error);
     }
-
     location.reload();
 }
 
@@ -54,7 +53,7 @@ async function getItemId() {
         console.error(error);
     }
 
-    return result;
+    return result;    
 }
 
 async function generateConfigTable() {

@@ -21,6 +21,7 @@ body::before {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed; /* Fix the background image */
   position: fixed;
   inset: 0;
   opacity: 0.2; /* Set opacity */
@@ -72,8 +73,17 @@ body{
 .home-link img{
   width: 24px;
   height: auto;
-  margin-right: 5px;
+  margin-right: 8px;
+  
+}
 
+.item-tracker-link img{
+  width: 24px;
+  height: auto;
+  padding-right: 10px;
+}
+.item-tracker-link{
+  margin: 11px 0;
 }
 
 .dropdown-btn img { /*sidebar for all dropdowns */
@@ -85,9 +95,8 @@ body{
 .logout-link img{
   width: 23px;
   height: auto;
-  margin-right: 5px;
+  margin-right: 8px;
   vertical-align: middle; /* Align icons vertically with text */
-
 }
 
 
@@ -152,16 +161,6 @@ body{
   }
 
 
-
-  /*
-  .fa-caret-down {
-    float: right;
-    padding-right: 8px;
-    color: antiquewhite;
-  }
-  */
-
-
   
   .dropdown-btn::after {
     content: '';
@@ -180,9 +179,23 @@ body{
   display: block;
 }
 
+.user-account {
+  position: fixed;
+  top: 10px;
+  right: 25px;
+  display: flex;
+  align-items: center;
+}
 
-/*
-.dropdown-btn {
-  /* ... other styles */
-/*  position: relative; /* Set position to relative */
-/*}
+.user-account img {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-account span {
+  font-size: 15px;
+  font-family: "Inter-Bold";
+}
+
