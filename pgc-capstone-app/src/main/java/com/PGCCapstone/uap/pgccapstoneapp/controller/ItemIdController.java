@@ -3,11 +3,13 @@ package com.PGCCapstone.uap.pgccapstoneapp.controller;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.PGCCapstone.uap.pgccapstoneapp.model.Item;
 import com.PGCCapstone.uap.pgccapstoneapp.model.ItemId;
 import com.PGCCapstone.uap.pgccapstoneapp.repository.ItemIdRepository;
 
@@ -42,8 +44,8 @@ public class ItemIdController {
 		return itemId;
 	}
 	
-	@PostMapping("itemId/delete")
-	public void deleteItemId(@RequestBody ItemId itemId) {
+	@DeleteMapping("/itemId/delete")
+	public void deleteItem(@RequestBody ItemId itemId) {
 		itemIdRepo.deleteItemConfiguration(itemId);
 	}
 }

@@ -30,6 +30,33 @@ async function setItemId() {
     location.reload();
 }
 
+async function deleteItemId(itemId) {
+    const itemId = itemId;
+
+    const url = 'http://localhost:8080/itemId/delete';
+    const options = {
+        method: 'DELETE',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "item_Id": itemId
+        }),
+    };
+    let result;
+
+    try {
+        const response = await fetch(url, options);
+        result = await response.json();
+        //console.log(result);
+    } catch (error) {
+        console.error(error);
+    }
+    location.reload();
+}
+
+
+
 async function getItemId() {
     const itemId = document.getElementById("item-id").value;
     const item = document.getElementById("item").value;
@@ -75,6 +102,7 @@ async function generateConfigTable() {
         cell2.innerHTML = result[x].type;
         cell3.innerHTML = result[x].item;
         cell4.innerHTML = result[x].unit;
+        cell0.addEventListener('click',deleteItemId(result[x].itemId))
     }
 }
 
