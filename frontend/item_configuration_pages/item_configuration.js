@@ -23,16 +23,15 @@ async function setItemId() {
     try {
         const response = await fetch(url, options);
         result = await response.json();
+        location.reload();
         //console.log(result);
     } catch (error) {
         console.error(error);
     }
-    location.reload();
+
 }
 
 async function deleteItemId(itemId) {
-    const itemId = itemId;
-
     const url = 'http://localhost:8080/itemId/delete';
     const options = {
         method: 'DELETE',
@@ -54,8 +53,6 @@ async function deleteItemId(itemId) {
     }
     location.reload();
 }
-
-
 
 async function getItemId() {
     const itemId = document.getElementById("item-id").value;
@@ -102,9 +99,36 @@ async function generateConfigTable() {
         cell2.innerHTML = result[x].type;
         cell3.innerHTML = result[x].item;
         cell4.innerHTML = result[x].unit;
-        cell0.addEventListener('click',deleteItemId(result[x].itemId))
+
+        cell0.addEventListener('click',openEditItemPopout);
+        openEditItemPopout(result[x]);
+        //  cell0.addEventListener('click',editItemId(result[x]));
     }
+}
+
+function openEditItemPopout(itemId) {
+    document.getElementById("overlay").style.display = "block";
+    document.getElementById("edit-item-popout-id").style.display = "block";
+    document.getElementById("confirm-edit").style.display = "block";
+    document.getElementById("discard-edit").style.display = "block";
+    document.querySelector(".third-table").style.display = "block";
+    document.querySelector(".edit-item-popout h1").style.display = "block";
+
+    document.getElementById("edit-item-id").defaultValue = itemId.itemId;
+    document.getElementById("edit-type").defaultValue = itemId.type;
+    document.getElementById("edit-name").defaultValue = itemId.item;
+    document.getElementById("edit-units").defaultValue = itemId.unit;
+    console.log(itemId);
+}
+
+function editItemId(itemId) {
+    document.getElementById("edit-item-id").defaultValue = itemId.itemId;
+    document.getElementById("edit-type").defaultValue = itemId.type;
+    document.getElementById("edit-name").defaultValue = itemId.item;
+    document.getElementById("edit-units").defaultValue = itemId.unit;
+    console.log(itemId);
 }
 
 window.addEventListener('load', generateConfigTable);
 document.getElementById("confirm-add").addEventListener("click", setItemId);
+document.getElementById("confirm-edit").addEventListener("click", setItemId);
