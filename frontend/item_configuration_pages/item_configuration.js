@@ -80,6 +80,31 @@ async function getItemId() {
     return result;    
 }
 
+function addRowHandlers(tableId) {
+    if(document.getElementById(tableId)!=null){
+        var table = document.getElementById(tableId);
+        var rows = table.getElementsByTagName('tr');
+        for ( var i = 1; i < rows.length; i++) {
+            var itemId = '';
+            var type = '';
+            var item = '';
+            var unit = '';
+            rows[i].i = i;
+            table.rows[i].cells[0].onclick = function() {   
+                itemId = table.rows[this.i].cells[1].innerHTML;                
+                type = table.rows[this.i].cells[2].innerHTML;
+                item = table.rows[this.i].cells[3].innerHTML;
+                unit = table.rows[this.i].cells[4].innerHTML;
+                openEditItemPopout;
+                document.getElementById("edit-item-id").defaultValue = itemId;
+                document.getElementById("edit-type").defaultValue = type;
+                document.getElementById("edit-item").defaultValue = item;
+                document.getElementById("edit-units").defaultValue = unit;
+            };
+        }
+    }
+}
+
 async function generateConfigTable() {
     let result;
     result = await getItemId();
@@ -99,34 +124,17 @@ async function generateConfigTable() {
         cell2.innerHTML = result[x].type;
         cell3.innerHTML = result[x].item;
         cell4.innerHTML = result[x].unit;
-
-        cell0.addEventListener('click',openEditItemPopout);
-        openEditItemPopout(result[x]);
-        //  cell0.addEventListener('click',editItemId(result[x]));
     }
+    addRowHandlers('item-configuration-table');
 }
 
-function openEditItemPopout(itemId) {
+function openEditItemPopout() {
     document.getElementById("overlay").style.display = "block";
     document.getElementById("edit-item-popout-id").style.display = "block";
     document.getElementById("confirm-edit").style.display = "block";
     document.getElementById("discard-edit").style.display = "block";
     document.querySelector(".third-table").style.display = "block";
     document.querySelector(".edit-item-popout h1").style.display = "block";
-
-    document.getElementById("edit-item-id").defaultValue = itemId.itemId;
-    document.getElementById("edit-type").defaultValue = itemId.type;
-    document.getElementById("edit-name").defaultValue = itemId.item;
-    document.getElementById("edit-units").defaultValue = itemId.unit;
-    console.log(itemId);
-}
-
-function editItemId(itemId) {
-    document.getElementById("edit-item-id").defaultValue = itemId.itemId;
-    document.getElementById("edit-type").defaultValue = itemId.type;
-    document.getElementById("edit-name").defaultValue = itemId.item;
-    document.getElementById("edit-units").defaultValue = itemId.unit;
-    console.log(itemId);
 }
 
 window.addEventListener('load', generateConfigTable);
