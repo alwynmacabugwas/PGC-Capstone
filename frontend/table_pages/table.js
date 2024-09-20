@@ -37,8 +37,9 @@ function closeEditItemPopout() {
     document.querySelector(".edit-item-popout h1").style.display = "none";
 }
 
-document.getElementById("edit-link").addEventListener("click", openEditItemPopout);
+//document.getElementById("edit-link").addEventListener("click", openEditItemPopout);
 document.getElementById("discard-edit").addEventListener("click", closeEditItemPopout);
+
 
 
 
@@ -78,17 +79,17 @@ function updateTableDisplay() {
 
 
 
-//Function when delete table is pressed
-var deleteLink = document.getElementById('delete-link');
-// Add click event listener
-deleteLink.addEventListener('click', function() {
-    // Show confirmation pop-up
-    var confirmation = confirm("Are you sure you want to delete this item data?");
-    // If user confirms deletion
-    if (confirmation) {
-        // Perform delete action here, like removing the row from the table
-        // For example, you can use this.parentElement.parentElement.remove() to remove the entire row
-    } else {
-        // If user cancels deletion, do nothing
-    }
-});
+// //Function when delete table is pressed
+// var deleteLink = document.getElementById('delete-link');
+// // Add click event listener
+// deleteLink.addEventListener('click', function() {
+//     // Show confirmation pop-up
+//     var confirmation = confirm("Are you sure you want to delete this item data?");
+//     // If user confirms deletion
+//     if (confirmation) {
+//         // Perform delete action here, like removing the row from the table
+//         // For example, you can use this.parentElement.parentElement.remove() to remove the entire row
+//     } else {
+//         // If user cancels deletion, do nothing
+//     }
+// });

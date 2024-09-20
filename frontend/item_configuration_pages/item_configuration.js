@@ -1,5 +1,5 @@
 async function setItemId() {
-    const itemIdInput = document.getElementById("item-id");
+
     const itemId = document.getElementById("item-id").value;
     const item = document.getElementById("item").value;
     const unit = document.getElementById("unit").value;
@@ -12,7 +12,7 @@ async function setItemId() {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            "item_Id": itemId,
+            "item_id": itemId,
             "item": item,
             "unit": unit,
             "type": type
@@ -31,8 +31,42 @@ async function setItemId() {
 
 }
 
-async function deleteItemId(itemId) {
-    const url = 'http://localhost:8080/itemId/delete';
+async function editItemId() {
+    const itemId = document.getElementById("edit-item-id").value;
+    const item = document.getElementById("edit-name").value;
+    const unit = document.getElementById("edit-units").value;
+    const type = document.getElementById("edit-type").value;
+    
+    const url = 'http://localhost:8080/itemId/update';
+    const options = {
+        method: 'PUT',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "item_id": itemId,
+            "item": item,
+            "unit": unit,
+            "type": type
+        }),
+    };
+    let result;
+
+    try {
+        const response = await fetch(url, options);
+        result = await response.json();
+        console.log(result);
+    } catch (error) {
+        console.error(error);
+    }
+
+}
+
+async function deleteItemId() {
+    var confirmation = confirm("Are you sure you want to delete this item data?");
+    if (confirmation) {
+        const url = 'http://localhost:8080/itemId/delete';
+    const itemId = document.getElementById("edit-item-id").value;
     const options = {
         method: 'DELETE',
         headers: {
@@ -47,11 +81,15 @@ async function deleteItemId(itemId) {
     try {
         const response = await fetch(url, options);
         result = await response.json();
-        //console.log(result);
+        console.log(itemId);
     } catch (error) {
         console.error(error);
     }
-    location.reload();
+    window.location.href = "item_configuration.html";
+
+    } else {
+        console.log("user cancelled");
+    }
 }
 
 async function getItemId() {
@@ -84,21 +122,22 @@ function addRowHandlers(tableId) {
     if(document.getElementById(tableId)!=null){
         var table = document.getElementById(tableId);
         var rows = table.getElementsByTagName('tr');
-        for ( var i = 1; i < rows.length; i++) {
+        for ( var i = 0; i < rows.length; i++) {
             var itemId = '';
             var type = '';
             var item = '';
             var unit = '';
             rows[i].i = i;
-            table.rows[i].cells[0].onclick = function() {   
+            rows[i].onclick = function() {   
                 itemId = table.rows[this.i].cells[1].innerHTML;                
                 type = table.rows[this.i].cells[2].innerHTML;
                 item = table.rows[this.i].cells[3].innerHTML;
                 unit = table.rows[this.i].cells[4].innerHTML;
-                openEditItemPopout;
+                console.log(table.rows[this.i].cells[3].innerHTML)
+                openEditItemPopout();
                 document.getElementById("edit-item-id").defaultValue = itemId;
                 document.getElementById("edit-type").defaultValue = type;
-                document.getElementById("edit-item").defaultValue = item;
+                document.getElementById("edit-name").defaultValue = item;
                 document.getElementById("edit-units").defaultValue = unit;
             };
         }
@@ -139,4 +178,5 @@ function openEditItemPopout() {
 
 window.addEventListener('load', generateConfigTable);
 document.getElementById("confirm-add").addEventListener("click", setItemId);
-document.getElementById("confirm-edit").addEventListener("click", setItemId);
+document.getElementById("confirm-edit").addEventListener("click", editItemId);
+document.getElementById('delete-link').addEventListener("click", deleteItemId);

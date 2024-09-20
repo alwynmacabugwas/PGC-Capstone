@@ -1,16 +1,16 @@
 package com.PGCCapstone.uap.pgccapstoneapp.model;
 
 public class ItemId {
-	private int item_Id;
+	private int item_id;
 	private String item;
 	private String unit;
 	private String type;
 	
 	public int getItemId() {
-		return item_Id;
+		return item_id;
 	}
 	public void setItem_Id(int item_Id) {
-		this.item_Id = item_Id;
+		this.item_id = item_Id;
 	}
 	public String getItem() {
 		return item;

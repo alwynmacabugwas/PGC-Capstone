@@ -18,7 +18,7 @@ public interface ItemIdRepository {
 	@Select("SELECT * FROM expendable_items")
 	public ArrayList<ItemId> getAllExpendableItem();
 
-	@Update("UPDATE expendable_items SET item_id = #{item_id}, item = #{item}, unit = #{unit}, type = #{type} WHERE item_id = #{item_id}")
+	@Update("UPDATE expendable_items SET item = #{item}, unit = #{unit}, type = #{type} WHERE item_id = #{item_id}")
 	public void updateItemConfiguration(ItemId itemId);
 	
 	@Delete("DELETE FROM expendable_items WHERE item_id = #{item_id}")
