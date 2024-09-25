@@ -119,27 +119,41 @@ async function getItemId() {
 }
 
 function addRowHandlers(tableId) {
-    if(document.getElementById(tableId)!=null){
+    if (document.getElementById(tableId) != null) {
         var table = document.getElementById(tableId);
         var rows = table.getElementsByTagName('tr');
-        for ( var i = 0; i < rows.length; i++) {
+
+        for (var i = 0; i < rows.length; i++) {
             var itemId = '';
             var type = '';
             var item = '';
             var unit = '';
+            
             rows[i].i = i;
-            rows[i].onclick = function() {   
-                itemId = table.rows[this.i].cells[1].innerHTML;                
-                type = table.rows[this.i].cells[2].innerHTML;
-                item = table.rows[this.i].cells[3].innerHTML;
-                unit = table.rows[this.i].cells[4].innerHTML;
-                console.log(table.rows[this.i].cells[3].innerHTML)
-                openEditItemPopout();
-                document.getElementById("edit-item-id").defaultValue = itemId;
-                document.getElementById("edit-type").defaultValue = type;
-                document.getElementById("edit-name").defaultValue = item;
-                document.getElementById("edit-units").defaultValue = unit;
-            };
+            var editLink = rows[i].getElementsByClassName('edit-link')[0]; // Target the Edit link
+
+            if (editLink) {
+                editLink.addEventListener('click', function (e) {
+                    // Prevent the default action of the anchor and stop event propagation
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Fetch data from the row
+                    itemId = table.rows[this.parentNode.parentNode.i].cells[1].innerHTML;
+                    type = table.rows[this.parentNode.parentNode.i].cells[2].innerHTML;
+                    item = table.rows[this.parentNode.parentNode.i].cells[3].innerHTML;
+                    unit = table.rows[this.parentNode.parentNode.i].cells[4].innerHTML;
+                    
+                    console.log(table.rows[this.parentNode.parentNode.i].cells[3].innerHTML);
+
+                    // Open the pop-up and populate the fields with row data
+                    openEditItemPopout();
+                    document.getElementById("edit-item-id").defaultValue = itemId;
+                    document.getElementById("edit-type").defaultValue = type;
+                    document.getElementById("edit-name").defaultValue = item;
+                    document.getElementById("edit-units").defaultValue = unit;
+                });
+            }
         }
     }
 }

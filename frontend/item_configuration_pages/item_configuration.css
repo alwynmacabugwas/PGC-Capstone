@@ -34,6 +34,13 @@
     padding-left: 10px;
 }
 
+.edit-link {
+    text-decoration: none; /* Remove underline */
+    color: #047CFC;
+    cursor: pointer;
+}
+
+
 .second-table-container {
     left: 220px;
 }
