@@ -148,10 +148,10 @@ function addRowHandlers(tableId) {
 
                     // Open the pop-up and populate the fields with row data
                     openEditItemPopout();
-                    document.getElementById("edit-item-id").defaultValue = itemId;
-                    document.getElementById("edit-type").defaultValue = type;
-                    document.getElementById("edit-name").defaultValue = item;
-                    document.getElementById("edit-units").defaultValue = unit;
+                    document.getElementById("edit-item-id").value = itemId;
+                    document.getElementById("edit-type").placeholder = "Enter Type";;
+                    document.getElementById("edit-name").placeholder = "Enter Name";;
+                    document.getElementById("edit-units").placeholder = "Enter Units";;
                 });
             }
         }
@@ -181,14 +181,6 @@ async function generateConfigTable() {
     addRowHandlers('item-configuration-table');
 }
 
-function openEditItemPopout() {
-    document.getElementById("overlay").style.display = "block";
-    document.getElementById("edit-item-popout-id").style.display = "block";
-    document.getElementById("confirm-edit").style.display = "block";
-    document.getElementById("discard-edit").style.display = "block";
-    document.querySelector(".third-table").style.display = "block";
-    document.querySelector(".edit-item-popout h1").style.display = "block";
-}
 
 window.addEventListener('load', generateConfigTable);
 document.getElementById("confirm-add").addEventListener("click", setItemId);

@@ -46,10 +46,17 @@
 }
 
 .third-table-container {
-    left: 190px;
+    margin-left: 80px; /* Adjust the value as needed */
 }
 
 .third-table input[type="text"],
 .third-table input[type="date"] {
     width: 240px;
 }
+
+#edit-item-id[readonly] {
+    background-color: #e0e0e0;
+    color: #000;
+    border: 1px solid #ccc;
+    cursor: not-allowed;
+  }
