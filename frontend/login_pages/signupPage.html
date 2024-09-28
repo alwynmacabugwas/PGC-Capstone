@@ -34,7 +34,13 @@
             <div class="inputs">
                 <input type="text" id="input-username" placeholder="Username">
                 <input type="email" id="input-name" placeholder="Name">
-                <input type="password" id="input-department" placeholder="Department">
+                <select id="input-department" required>
+                    <option value="" disabled selected>Select Department</option>
+                    <option value="department1">Supply</option>
+                    <option value="department2">Properties</option>
+                    <option value="department3">Admin</option>
+                    <!-- Add more options as needed -->
+                </select>
                 <input type="password" id="input-password" placeholder="Password">
             </div>
 

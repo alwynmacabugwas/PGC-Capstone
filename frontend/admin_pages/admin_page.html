@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="../sidebar.css">
+    <link rel="stylesheet" href="../table_pages/table_style.css">
+    <link rel="stylesheet" href="admin_page.css">
+</head>
+<body>
+    <!--SIDEBAR-->
+    <div class="sidenav">
+        <div class="sidebar-header">
+            <img src="../../icons/PGC logo.png" alt="Logo">
+            <h1>GOVERNMENT
+                OF CAVITE<br>
+                INVENTORY<br>
+            </h1>
+        </div>
+
+        <a href="../home_page/home_page.html" class="home-link" >
+            <img src="../../icons/home icon.png" alt="Home Icon">
+            Home
+        </a>
+
+        <a href="../login_pages/loginPage.html" class="logout-link">
+            <img src="../../icons/logout icon.png">
+            Log Out
+        </a>
+
+        <div class="user-account">
+            <img src="../../Test Image.png" alt="User Icon">
+            <span>Username</span>
+        </div>
+    </div> 
+    <!--END OF SIDEBAR-->
+
+    <!-- PAGE HEADER -->
+    <h1 class="overall-header">ADMIN</h1>
+    <h1 class="inventory-header">PAGE</h1>
+
+
+    <!-- SEARCH BAR -->
+    <div class="search-bar">
+        <input type="text" placeholder="Search..." name="search" id="search">
+        <button type="button" id="search-button">Search</button>
+    </div>
+
+    <div class="pagination-container">
+        <div class="pagination">
+            <button class="prev">&#8249; Prev</button>
+            <div class="page-numbers">
+                <span class="page-number">1</span>
+                <span class="page-number">2</span>
+                <!-- Add more page numbers dynamically -->
+            </div>
+            <button class="next">Next &#8250;</button>
+        </div>
+    </div>
+    
+ 
+    <!-- START OF FIRST TABLE (MAIN PAGE TABLE) DIV-->
+    <div class="table-div">
+        <!-- First table -->
+        <table class="table" id="item-configuration-table">
+            <thead>
+                <tr id="tableHeader">
+                    <th></th>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                </tr>      
+            </thead>          
+            <tbody>
+                <tr>
+                    <td id="delete-link">Delete</td>
+                    <td>Sample id</td>
+                    <td>sample type</td>
+                    <td>sample name</td>
+                    <td>sample units</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- END OF FIRST TABLE (MAIN PAGE TABLE) DIV-->
+    
+
+    <div class="overlay" id="overlay"></div>
+
+
+    <!--EDIT-ITEM POPOOUT DIV-->
+    <div class="edit-item-popout" id="edit-item-popout-id">
+        <h1>Edit Item</h1>
+        <!--third table-->
+        <div class="third-table-container">
+            <table class="third-table">
+                <thead>
+                    <tr id="third-table-header">
+                        <th></th>
+                        <th>Item ID</th>
+                        <th>Item Type</th>
+                        <th>Item Name</th>
+                        <th>Units</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="delete-link">Delete</td>
+                        <td><input type="text" id="edit-item-id" placeholder="Enter Item Id" readonly></td>
+                        <td><input type="text" id="edit-type" placeholder="Enter Type"></td>
+                        <td><input type="text" id="edit-name" placeholder="Enter Name"></td>
+                        <td><input type="text" id="edit-units" placeholder="Enter Units"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <button type="button" id="confirm-edit">Confirm</button>
+        <button type="button" id="discard-edit">Cancel</button>  
+    </div>
+    <!--END OF EDIT-ITEM POPOOUT DIV-->
+
+      <script src="../sidebar.js"></script>
+      <script src="../table_pages/table.js"></script>
+      <script src="item_configuration.js"></script>
+</body>

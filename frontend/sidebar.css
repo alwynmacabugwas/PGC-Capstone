@@ -199,3 +199,10 @@ body{
   font-family: "Inter-Bold";
 }
 
+
+.admin-icon {
+  width: 24px;
+  height: auto;
+  padding-right: 10px;
+  padding-top: 10px;
+}
