@@ -9,8 +9,8 @@ public class ItemId {
 	public int getItemId() {
 		return item_id;
 	}
-	public void setItem_Id(int item_Id) {
-		this.item_id = item_Id;
+	public void setItemId(int item_id) {
+		this.item_id = item_id;
 	}
 	public String getItem() {
 		return item;

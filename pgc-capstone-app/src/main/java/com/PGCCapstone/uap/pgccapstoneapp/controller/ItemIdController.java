@@ -22,10 +22,11 @@ public class ItemIdController {
 	
 	@PostMapping("itemId/register/expendable")
 	public ItemId registerExpandableItem(@RequestBody ItemId itemId) {
+		System.out.println(itemId.getItemId());
 		String type = itemId.getType();
 		if(type.equals("PPE")) {
 			int id = itemId.getItemId();
-			itemId.setItem_Id(id + 1000);
+			itemId.setItemId(id + 1000);
 		}
 		System.out.println(itemId.getItemId());
 		itemIdRepo.insertExpendableItem(itemId);
@@ -39,7 +40,7 @@ public class ItemIdController {
 		return expendableItemId;
 	}
 	
-	@PutMapping("itemId/update")
+	@PostMapping("itemId/update")
 	public ItemId updatingItemId(@RequestBody ItemId itemId) {
 		itemIdRepo.updateItemConfiguration(itemId);
 		return itemId;

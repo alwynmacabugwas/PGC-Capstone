@@ -12,7 +12,7 @@ import com.PGCCapstone.uap.pgccapstoneapp.model.ItemId;
 
 @Mapper
 public interface ItemIdRepository {
-	@Insert("INSERT INTO expendable_items(item_id, item, unit, type) VALUES (#{itemId}, #{item}, #{unit}, #{type})")
+	@Insert("INSERT INTO expendable_items(item_id, item, unit, type) VALUES (#{item_id}, #{item}, #{unit}, #{type})")
 	public int insertExpendableItem(ItemId itemId);
 	
 	@Select("SELECT * FROM expendable_items")
