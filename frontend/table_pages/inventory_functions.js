@@ -2,7 +2,7 @@ async function setItem() {
     const po_no = document.getElementById("po_num").value;
     const date = document.getElementById("date").value;
     const supplier = document.getElementById("supplier").value;
-    const department = document.getElementById("department").value;
+    const department = document.getElementById("department-dropdown").value;
     const item_id = document.getElementById("item-id").value;
     const quantity = document.getElementById("quantity").value;
     const price_per_unit = document.getElementById("price-per-unit").value;
