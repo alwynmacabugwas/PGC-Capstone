@@ -74,7 +74,7 @@ async function deleteItemId() {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            "item_Id": itemId
+            "itemId": itemId
         }),
     };
     let result;
@@ -163,18 +163,18 @@ function addRowHandlers(tableId) {
     if(document.getElementById(tableId)!=null){
         var table = document.getElementById(tableId);
         var rows = table.getElementsByTagName('tr');
-        for ( let i = 1; i < rows.length; i++) {
+        for ( let i = 0; i < rows.length; i++) {
             var itemId = '';
             var type = '';
             var item = '';
             var unit = '';
             rows[i].i = i;
-            table.rows[i].cells[0].onclick = function() {   
-                itemId = table.rows[this.i].cells[0].innerHTML;                
+            rows[i].onclick = function() {   
+                itemId = table.rows[this.i].cells[1].innerHTML;                
                 type = table.rows[this.i].cells[2].innerHTML;
                 item = table.rows[this.i].cells[3].innerHTML;
                 unit = table.rows[this.i].cells[4].innerHTML;
-
+                openEditItemPopout();
                 document.getElementById("edit-item-id").value = itemId;
                 document.getElementById("edit-type").value = type;
                 document.getElementById("edit-name").value = item;
