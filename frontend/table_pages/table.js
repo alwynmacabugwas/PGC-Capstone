@@ -37,11 +37,41 @@ function closeEditItemPopout() {
     document.querySelector(".edit-item-popout h1").style.display = "none";
 }
 
-//document.getElementById("edit-link").addEventListener("click", openEditItemPopout);
+document.getElementById("edit-link").addEventListener("click", openEditItemPopout);
 document.getElementById("discard-edit").addEventListener("click", closeEditItemPopout);
 
+async function getItemId() {
+    const url = 'http://localhost:8080/itemId/list/expandable';
+    const options = {
+        method: 'GET',
+        headers: {
+            "Content-Type": "application/json"
+        },
+    };
+    let result;
 
+    try {
+        const response = await fetch(url, options);
+        result = await response.json();
+        console.log(result);
+    } catch (error) {
+        console.error(error);
+    }
+    
+    for (x in result) { 
+        let itemId = result[x].itemId;
+        let item = result[x].item;
 
+        var itemIdDropdown = document.getElementById("item-id");
+        var option = document.createElement("option");
+        option.text = itemId + " - " + item;
+        option.value = itemId;
+        itemIdDropdown.add(option, itemIdDropdown[-1]);
+
+    }
+}
+
+window.addEventListener('load', getItemId);
 
 var rowsPerPage = 10; // Adjust as needed
 var currentPage = 1;
