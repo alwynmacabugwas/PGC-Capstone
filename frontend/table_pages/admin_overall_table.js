@@ -54,4 +54,37 @@ async function generateAdminPpeTable() {
     }
 }
 
+document.getElementById('search-button').addEventListener('click', function () {
+    const input = document.getElementById('search').value.toLowerCase();
+    const table = document.getElementById('admin-overall');
+    const tr = table.getElementsByTagName('tr');
+    
+    // Loop through all table rows, and hide those that don't match the search query
+    for (let i = 1; i < tr.length; i++) { // Skip the header row
+        let row = tr[i];
+        let tdArray = row.getElementsByTagName('td');
+        let rowContainsQuery = false;
+
+        // Loop through each cell in the row
+        for (let j = 0; j < tdArray.length; j++) {
+            let td = tdArray[j];
+            if (td) {
+                let textValue = td.textContent || td.innerText;
+                if (textValue.toLowerCase().includes(input)) {
+                    rowContainsQuery = true;
+                    break; // Stop checking this row if a match is found
+                }
+            }
+        }
+
+        // Show the row if a match is found, otherwise hide it
+        if (rowContainsQuery) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+    }
+});
+
+
 window.addEventListener('load', generateAdminPpeTable);
