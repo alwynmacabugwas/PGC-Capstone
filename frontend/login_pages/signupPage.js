@@ -1,5 +1,5 @@
 localStorage.clear();
-document.getElementById("login-button").addEventListener("click", login);
+document.getElementById("signup-button").addEventListener("click", login);
 
 async function login() {
     const username = document.getElementById("input-username").value;

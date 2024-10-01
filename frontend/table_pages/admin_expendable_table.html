@@ -169,6 +169,7 @@
             <table class="second-table">
                 <thead>
                     <tr id="second-table-header">
+                        <th>Item Number</th>
                         <th>PO Number</th>
                         <th>Date</th>
                         <th>Supplier</th>
@@ -182,6 +183,7 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <td><input type="number" id="item_num" placeholder="Enter Item No."></td>
                         <td><input type="text" id="po_num" placeholder="Enter PO no."></td>
                         <td><input type="date" id="date" placeholder="Enter Date"></td>
                         <td><input type="text" id="supplier" placeholder="Enter Supplier"></td>
@@ -259,12 +261,9 @@
                         <th></th>
                         <th>Date</th>
                         <th>Supplier</th>
-                        <th>Item</th>
-                        <th>Item Type</th>
-                        <th>Unit</th>
+                        <th>Item Id</th>
                         <th>Quantity</th>
                         <th>Price per Unit</th>
-                        <th>Total price</th>
                         <th>Department</th>
                         <th>Expiry Date</th>
                     </tr>
@@ -272,14 +271,11 @@
                 <tbody>
                     <tr>
                         <td id="delete-link">Delete</td>
-                        <td><input type="date" class="input-date" placeholder="Enter Date"></td>
-                        <td><input type="text" id="supplier" placeholder="Enter Supplier"></td>
-                        <td><input type="text" id="item" placeholder="Enter Item"></td>
-                        <td><input type="text" id="item-type" placeholder="Enter Item Type"></td>
-                        <td><input type="text" id="unit" placeholder="Enter Unit"></td>
-                        <td><input type="text" id="quantity" placeholder="Enter quantity"></td>
-                        <td><input type="text" id="price-per-unit" placeholder="Enter Price per Unit"></td>
-                        <td>Php XX,XXX.00</td>
+                        <td><input type="date" class="edit-date" placeholder="Enter Date"></td>
+                        <td><input type="text" id="edit-supplier" placeholder="Enter Supplier"></td>
+                        <td><input type="text" id="edit-item-id" placeholder="Enter Item Id"></td>
+                        <td><input type="text" id="edit-quantity" placeholder="Enter quantity"></td>
+                        <td><input type="text" id="-edit-price-per-unit" placeholder="Enter Price per Unit"></td>
                         <td>
                             <select id="department-dropdown">
                                 <option value="">Select Department</option>
@@ -320,7 +316,7 @@
                                 <option value="RSD">RSD</option>
                             </select>
                         </td>
-                        <td><input type="date" class="input-date" placeholder="Enter Date"></td>
+                        <td><input type="date" class="edit-expiry-date" placeholder="Enter Date"></td>
                     </tr>
                 </tbody>
             </table>
@@ -335,7 +331,8 @@
   
 
     <!--JAVASCRIPT-->
+    <script src="admin_expendable_table.js"></script>
+    <script src="inventory_functions.js"></script>
     <script src="../sidebar.js"></script>
     <script src="table.js"></script>
-    <script src="admin_expendable_table.js"></script>
 </body>

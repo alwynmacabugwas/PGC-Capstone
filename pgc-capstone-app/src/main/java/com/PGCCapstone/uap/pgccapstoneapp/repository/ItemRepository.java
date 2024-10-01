@@ -13,7 +13,7 @@ import com.PGCCapstone.uap.pgccapstoneapp.model.TrackedItem;
 
 @Mapper
 public interface ItemRepository {
-	@Insert("INSERT INTO procured_items(po_no, item_id, quantity, price_per_unit, total, expiry_date, status) VALUES (#{po_no}, #{item_id}, #{quantity}, #{price_per_unit}, #{total}, #{expiry_date}, #{status})")
+	@Insert("INSERT INTO procured_items(item_no, po_no, item_id, quantity, price_per_unit, total, expiry_date, status) VALUES (#{item_no}, #{po_no}, #{item_id}, #{quantity}, #{price_per_unit}, #{total}, #{expiry_date}, #{status})")
 	public int insertItem(Item item);
 	
 	@Select("SELECT procured_items.item_id, expendable_items.item, SUM(procured_items.quantity) as quantity FROM procured_items, expendable_items WHERE procured_items.item_id = expendable_items.item_id GROUP BY procured_items.item_id ORDER BY count(quantity) DESC")
@@ -64,7 +64,7 @@ public interface ItemRepository {
 			+ "Where procured_items.po_no = purchase_order.po_no AND procured_items.item_id = expendable_items.item_id AND expendable_items.type = 'PPE' AND purchase_order.section = 'property'")
 	public ArrayList<Item> getPropertyPpeItems();
 	
-	@Update("UPDATE procured_items SET quantity = quantity + #{quantity}, price_per_unit = #{price_per_unit}, total = #{total}, expiry_date = #{expiry_date} WHERE item_no = #{item_no}")
+	@Update("UPDATE procured_items SET quantity = #{quantity}, price_per_unit = #{price_per_unit}, total = #{total}, expiry_date = #{expiry_date} WHERE item_no = #{item_no}")
 	public void updateItemOverall(Item item);
 
 	@Delete("DELETE FROM procured_items WHERE item_no = #{item_no}")

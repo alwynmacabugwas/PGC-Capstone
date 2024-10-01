@@ -18,7 +18,7 @@ public class ItemService {
 		
 		if (itemId > 1000) {	
 			for(int i = 0; count >= i; i++) {
-				String item_code = "ICTO -" + (itemId) + "-" + (i + 1);
+				String item_code = (itemNo) + "ICTO -" + (itemId) + "-" + (i + 1);
 				String status = "available";
 				itemIdRepo.insertPpeDetails(item_code, itemId, itemNo, status);
 			}
