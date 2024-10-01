@@ -39,7 +39,8 @@ async function generateAdminExpendableTable() {
         var cell9 = row.insertCell(9);
         var cell10 = row.insertCell(10);
 
-        cell0.innerHTML = "edit";
+        cell0.innerHTML = "Edit";
+        cell0.setAttribute('id',"edit-link");
         cell1.innerHTML = result[x].item_no;
         cell2.innerHTML = result[x].po_num;
         cell3.innerHTML = result[x].date;

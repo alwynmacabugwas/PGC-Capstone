@@ -73,6 +73,7 @@ async function getItemId() {
 
 window.addEventListener('load', getItemId);
 
+
 var rowsPerPage = 10; // Adjust as needed
 var currentPage = 1;
 function updateTableDisplay() {
