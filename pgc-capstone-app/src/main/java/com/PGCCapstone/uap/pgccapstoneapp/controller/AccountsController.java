@@ -2,12 +2,17 @@
 // see function comments for further details
 package com.PGCCapstone.uap.pgccapstoneapp.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.PGCCapstone.uap.pgccapstoneapp.model.ItemId;
+import com.PGCCapstone.uap.pgccapstoneapp.model.TrackedItem;
 import com.PGCCapstone.uap.pgccapstoneapp.model.UserAccount;
 import com.PGCCapstone.uap.pgccapstoneapp.repository.RegistrationMybatisRepository;
 import com.PGCCapstone.uap.pgccapstoneapp.service.AccountService;
@@ -46,5 +51,18 @@ public class AccountsController {
 	public String deleteAccount(@RequestBody UserAccount user) {
 		registrationRepo.deleteUser(user);
 		return "Account deleted";
+	}
+	
+	@GetMapping("/account/list")
+	public ArrayList<UserAccount> displayUsers() {
+		 ArrayList<UserAccount> users = new ArrayList<UserAccount>();
+		users.addAll(registrationRepo.getUser());
+		return users;
+	}
+	
+	@PostMapping("account/update")
+	public UserAccount updatingItemId(@RequestBody UserAccount account) {
+		registrationRepo.updateAccount(account);
+		return account;
 	}
 }

@@ -60,3 +60,10 @@
     border: 1px solid #ccc;
     cursor: not-allowed;
   }
+
+  #edit-type[readonly] {
+    background-color: #e0e0e0;
+    color: #000;
+    border: 1px solid #ccc;
+    cursor: not-allowed;
+  }

@@ -27,14 +27,19 @@ function addRowHandlers(tableId) {
             var issuer = '';
             var recipient = '';
             var date = '';
+            let item_code = '';
+            let item_no = '';
             rows[i].i = i;
             rows[i].onclick = function() {   
-                item_code = table.rows[this.i].cells[0].innerHTML;                
+                item_code = table.rows[this.i].cells[0].innerHTML; 
+                item_no = table.rows[this.i].cells[2].innerHTML;               
                 status = table.rows[this.i].cells[3].innerHTML;
                 issuer = table.rows[this.i].cells[4].innerHTML;
                 recipient = table.rows[this.i].cells[5].innerHTML;
                 date = table.rows[this.i].cells[6].innerHTML;
                 openEditItemPopout();
+                document.getElementById("item-code").defaultValue = item_code;
+                document.getElementById("item-no").defaultValue = item_no;
                 document.getElementById("status").defaultValue = status;
                 document.getElementById("issuer").defaultValue = issuer;
                 document.getElementById("recipient").defaultValue = recipient;
@@ -62,6 +67,34 @@ async function getTrackedItems() {
     } catch (error) {
         console.error(error);
     }
+    return result;
+}
+
+async function deleteTrackedItem() {
+    const item_code = document.getElementById("item-code").value;
+    const item_no = document.getElementById("item-no").value;
+
+    const url = 'http://localhost:8080/item/delete/trackedItem';
+    const options = {
+        method: 'DELETE',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "item_code": item_code,
+            "item_no": item_no
+        }),
+    };
+    let result;
+
+    try {
+        const response = await fetch(url, options);
+        result = await response.json();
+        console.log(result);
+    } catch (error) {
+        console.error(error);
+    }
+    window.reload();
     return result;
 }
 
@@ -124,10 +157,11 @@ async function setItemId() {
         console.error(error);
     }
     closeEditItemPopout();
-    return result;
+    location.reload();
 }
 
 
 window.addEventListener('load', generateTrackerTable);
 document.getElementById("discard-edit").addEventListener("click", closeEditItemPopout);
 document.getElementById("confirm-edit").addEventListener("click", setItemId);
+document.getElementById("delete-link").addEventListener("click", deleteTrackedItem);

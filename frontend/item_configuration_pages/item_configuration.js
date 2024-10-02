@@ -23,13 +23,12 @@ async function setItemId() {
     try {
         const response = await fetch(url, options);
         result = await response.json();
-        //location.reload();
-        console.log(options);
-        console.log(result);
     } catch (error) {
         console.error(error);
+        alert(error);
+        window.location.href = "item_configuration.html";
     }
-
+    location.reload();
 }
 
 async function editItemId() {
@@ -217,8 +216,18 @@ function openEditItemPopout() {
     document.querySelector(".edit-item-popout h1").style.display = "block";
 }
 
+function closeEditItemPopout() {
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("edit-item-popout-id").style.display = "none";
+    document.getElementById("confirm-edit").style.display = "none";
+    document.getElementById("discard-edit").style.display = "none";
+    document.querySelector(".third-table").style.display = "none";
+    document.querySelector(".edit-item-popout h1").style.display = "none";
+}
+
 
 window.addEventListener('load', generateConfigTable);
 document.getElementById("confirm-add").addEventListener("click", setItemId);
 document.getElementById("confirm-edit").addEventListener("click", editItemId);
 document.getElementById('delete-link').addEventListener("click", deleteItemId);
+document.getElementById("discard-edit").addEventListener("click", closeEditItemPopout);

@@ -9,6 +9,7 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import com.PGCCapstone.uap.pgccapstoneapp.model.Item;
+import com.PGCCapstone.uap.pgccapstoneapp.model.ItemId;
 import com.PGCCapstone.uap.pgccapstoneapp.model.UserAccount;
 
 @Mapper
@@ -39,4 +40,10 @@ public interface RegistrationMybatisRepository {
 	
 	@Delete("DELETE FROM users WHERE username = #{username}")
 	public int deleteUser(UserAccount account);
+	
+	@Select("SELECT * FROM users")
+	public ArrayList<UserAccount> getUser();
+	
+	@Update("UPDATE users SET name = #{name}, department = #{department}, password = #{password} WHERE username = #{username}")
+	public UserAccount updateAccount(UserAccount account);
 }

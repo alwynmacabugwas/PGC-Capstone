@@ -63,19 +63,19 @@
     <!-- START OF FIRST TABLE (MAIN PAGE TABLE) DIV-->
     <div class="table-div">
         <!-- First table -->
-        <table class="table" id="item-configuration-table">
+        <table class="table" id="accounts-table">
             <thead>
                 <tr id="tableHeader">
                     <th></th>
                     <th>Name</th>
                     <th>Username</th>
-                    <th>Email</th>
+                    <th>Section</th>
                     <th>Password</th>
                 </tr>      
             </thead>          
             <tbody>
                 <tr>
-                    <td id="delete-link">Delete</td>
+                    <td id="edit-link">Edit</td>
                     <td>Sample id</td>
                     <td>sample type</td>
                     <td>sample name</td>
@@ -99,19 +99,19 @@
                 <thead>
                     <tr id="third-table-header">
                         <th></th>
-                        <th>Item ID</th>
-                        <th>Item Type</th>
-                        <th>Item Name</th>
-                        <th>Units</th>
+                        <th>Username</th>
+                        <th>Name</th>
+                        <th>Section</th>
+                        <th>Password</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td id="delete-link">Delete</td>
-                        <td><input type="text" id="edit-item-id" placeholder="Enter Item Id" readonly></td>
-                        <td><input type="text" id="edit-type" placeholder="Enter Type"></td>
+                        <td><input type="text" id="edit-username" placeholder="Username" readonly></td>
                         <td><input type="text" id="edit-name" placeholder="Enter Name"></td>
-                        <td><input type="text" id="edit-units" placeholder="Enter Units"></td>
+                        <td><input type="text" id="edit-section" placeholder="Enter Section"></td>
+                        <td><input type="text" id="edit-password" placeholder="Enter password"></td>
                     </tr>
                 </tbody>
             </table>
@@ -124,5 +124,5 @@
 
       <script src="../sidebar.js"></script>
       <script src="../table_pages/table.js"></script>
-      <script src="item_configuration.js"></script>
+      <script src="admin_page.js"></script>
 </body>
